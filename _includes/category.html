@@ -1,0 +1,38 @@
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>关于</h4>
+            <p>{{ site.about }}</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>文章归档</h4>
+            <ol class="list-unstyled">
+                  {% for post in site.posts  %}
+                  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+                  {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+                  {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+                  {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+                  {% if forloop.first %}
+                        <li><a href="{{ site.url }}/archives/#aa{{ post.date | date: "%Y%m" }}">{{this_month}} {{this_year}}</a></li>
+                  {% endif %}
+                  {% if forloop.last %}
+                  {% else %}
+                    {% if this_year != next_year %}
+                          <li><a href="{{ site.url }}/archives/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
+                    {% else %}    
+                      {% if this_month != next_month %}
+                          <li><a href="{{ site.url }}/archives/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>其它位置</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/joytou/">GitHub</a></li>
+              <li><a href="http://1540294142.qzone.qq.com/">Qzone</a></li>
+              <li><a href="mailto:1540294142@qq.com">E-mail</a></li>
+            </ol>
+          </div>
+        </div>

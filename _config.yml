@@ -1,1 +1,43 @@
-theme: jekyll-theme-cayman
+# Resources settings
+source:      .
+layouts:     ./_layouts
+timezone:    +0800
+lang: zh-CN
+
+# Site settings
+name: JOYTOU
+subname: 一个热爱折腾、不肯休息的业余程序员！
+email: 1540294142@qq.com
+author: Joytou Wu
+url: https://joytou.github.io
+
+github: https://github.com/joytou/
+baseurl: ""
+description: 此博客模板由Joytou通过Bootstrap创建
+about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。
+
+future: true
+show_drafts: nil
+lsi: true
+published: false
+safe: false
+permalink: /:year/:month/:day/:title/
+paginate: 2
+markdown: kramdown
+excerpt_separator: '<!-- more -->'
+
+exclude: ['README.md']
+
+github_username: joytou
+owner_name: Joytou
+
+# Keywords
+keywords:
+        - "github"
+        - "bootstrap"
+        - "blog"
+        - "joytou"
+        - "markdown"
+        - "博客"
+        - "个人博客"
+        - "博客模板"
