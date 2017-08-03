@@ -31,6 +31,8 @@ nav: index
     </div>
     <div class="panel-footer">
             由<a class="text-muted" href="#">{{ site.author }}</a>发布于<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>
+			<p><span class="glyphicon glyphicon-bookmark"></span><span class="label label-default">{{ post.categories }}</span></p>
+			<p><span class="glyphicon glyphicon-tags"></span>{% for tag in post.tags %}<span class="label label-default">{{ tag }}</span>{% endfor %}</p>
     </div>
 </div>
 {% endfor %}
