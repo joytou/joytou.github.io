@@ -50,6 +50,16 @@
                 {% endfor %}
                           </ul>
             </li>
+			<li class="dropdowm{% if page.nav == "tag" %} active{% endif %}">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章标签 <b class="caret"></b>
+                          </a>
+		          <ul class="dropdown-menu">
+                {% for tag in site.tags  %}
+                        <li><a href="/tags/#aa{{ tag | first }}">{{ tag | first }}</a></li>
+                {% endfor %}
+                          </ul>
+            </li>
             <li class="{% if page.nav == "feed" %} active{% endif %}"><a href="{{ site.url }}/feed.xml"><span class="glyphicon glyphicon-envelope"></span>RSS订阅</a></li>
 		  </ul>
 		</div>
