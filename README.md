@@ -1,8 +1,9 @@
 # JOYTOU
 
-#I'm sorry, my English is not very good. If there is a mistake in the document, please understand.
+#I'm sorry, my English is not so well. If there any mistakes in the document, please understand.
 
 *JOYTOU is a blog template built from Bootstrap by Joytou. You can choose to [preview the theme](https://joytou.github.io/) first.*
+
 *JOYTOU是一款由Joytou通过Bootstrap制作的博客模板。您可以先选择[预览主题](https://joytou.github.io/)。*
 
 ================
@@ -26,31 +27,57 @@ timezone:    +0800
 lang: zh-CN
 
 # Site settings
-name: JOYTOU #Your site name #您的网站名称
-subname: 一个热爱折腾、不肯休息的业余程序员！#Your site sub name #您的网站子名称
-email: 1540294142@qq.com #your email #您的电子邮件
-author: Joytou Wu #author name #作者名称
-url: https://joytou.github.io #the site url #网址
+name: JOYTOU 
+      #Your site name 
+      #您的网站名称
+subname: 一个热爱折腾、不肯休息的业余程序员！
+         #Your site sub name
+         #您的网站子名称
+email: 1540294142@qq.com 
+       #your email 
+       #您的电子邮件
+author: Joytou Wu 
+        #author name 
+        #作者名称
+url: https://joytou.github.io 
+     #the site url 
+     #网址
 
-github: https://github.com/joytou/ #your github url #您的github网址
+github: https://github.com/joytou/ 
+        #your github url 
+        #您的github网址
 baseurl: "" 
-description: 此博客模板由Joytou通过Bootstrap创建 #your site's description #您的网站描述
-about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。 #about your site #关于您的网站
+         # application directory
+         #安装目录
+description: 此博客模板由Joytou通过Bootstrap创建 
+             #your site's description 
+             #您的网站描述
+about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。 
+       #about your site 
+       #关于您的网站
 
 future: true
 show_drafts: nil
 lsi: true
 published: false
 safe: false
-permalink: /:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/ 
+           #The format of the article's link
+           #文章链接的格式
 paginate: 2
+          #The number of articles per page
+          #每页的文章数量
 markdown: kramdown
 excerpt_separator: '<!-- more -->'
 
 exclude: ['README.md']
 
-github_username: joytou #your github user name #您的github用户名
-owner_name: Joytou #the owner name #所有者名称
+github_username: joytou 
+                 #your github user name 
+                 #您的github用户名
+owner_name: Joytou 
+            #the owner name 
+            #所有者名称
 
 # Keywords
 keywords: #the keywords for the meta:<meta name="keywords" content="">
@@ -78,20 +105,34 @@ create a empty file in '_posts' and name it like 'year-month-date-title.md',and 
 ```bash
 ---
 layout: post
-title:  #article title #文章标题
-date:   #publish date #发布日期, like: 2015-04-05 08:00:00 +0800
-nav: post #don't change this line #请不要修改这一行
-stickie: true #Make the article stick to the top if true #如果为true则文章置顶
-category: official #the category for the article #文章的分类
-tags: [log, bootstrap, joytou]#the tags for the article, it should be a array #文章的标签，必须是数组
+title:  test
+       #article title 
+       #文章标题
+date:   2015-04-05 08:00:00 +0800
+      #publish date 
+      #发布日期
+nav: post 
+     #don't change this line 
+     #请不要修改这一行
+stickie: true 
+         #Make the article stick to the top if true 
+         #如果为true则文章置顶
+category: official 
+          #the category for the article 
+          #文章的分类
+tags: [log, bootstrap, joytou]
+      #the tags for the article, it should be a array 
+      #文章的标签，必须是数组
 ---
 
 * content
 {:toc}
 
-Summary content.摘要内容
+#Summary content.
+#摘要内容
 <!-- more -->
-Writting the article here.在这儿写文章
+#Writting the article here.
+#在这儿写文章
 ```
  and so on.
  
