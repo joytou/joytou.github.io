@@ -92,6 +92,12 @@ keywords: #the keywords for the meta:<meta name="keywords" content="">
         - "博客"
         - "个人博客"
         - "博客模板"
+#Others
+BaiduSiteVerification: "***"
+                       -Your Baidu HTML Tag Verification：baidu-site-verification
+                       -If not, please leave blank.
+                       -您的百度HTML标签验证：baidu-site-verification
+                       -如果没有，请留空白
 ```
 
 3.Write article

@@ -5,6 +5,7 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{% for word in site.keywords %}{{ word | append: ',' }}{% endfor %}">
     <meta name="author" content="{{ site.author }}">
+	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
     <link rel="icon" href="{{ '/assets/favicon.ico' | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
