@@ -12,6 +12,7 @@
 
 1.Download the template from https://github.com/joytou/joytou.github.io [Demo](https://joytou.github.io)
 1.从https://github.com/joytou/joytou.github.io 下载模板资源。[Demo](https://joytou.github.io)
+
 2.Change the '_config.yml' to your setting:
 2.修改'_config.yml'中的如下配置:
 ```yml:
@@ -62,6 +63,7 @@ keywords: #the keywords for the meta:<meta name="keywords" content="">
         - "个人博客"
         - "博客模板"
 ```
+
 3.Write article
 3.写文章
  create a empty file in '_posts' and name it like 'year-month-date-title.md',and then write like this:
