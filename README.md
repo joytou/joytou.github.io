@@ -11,10 +11,13 @@
 ##使用
 
 1.Download the template from https://github.com/joytou/joytou.github.io [Demo](https://joytou.github.io)
+
 1.从https://github.com/joytou/joytou.github.io 下载模板资源。[Demo](https://joytou.github.io)
 
 2.Change the '_config.yml' to your setting:
+
 2.修改'_config.yml'中的如下配置:
+
 ```yml:
 # Resources settings
 source:      .
@@ -65,9 +68,12 @@ keywords: #the keywords for the meta:<meta name="keywords" content="">
 ```
 
 3.Write article
+
 3.写文章
- create a empty file in '_posts' and name it like 'year-month-date-title.md',and then write like this:
-  在'_posts'文件夹创建空白文件，并以下面格式命名：'year-month-date-title.md' (注：title为英文格式，不能为中文)，按以下要求写文章：
+
+create a empty file in '_posts' and name it like 'year-month-date-title.md',and then write like this:
+
+在'_posts'文件夹创建空白文件，并以下面格式命名：'year-month-date-title.md' (注：title为英文格式，不能为中文)，按以下要求写文章：
   
 ```bash
 ---
@@ -88,3 +94,5 @@ Summary content.摘要内容
 Writting the article here.在这儿写文章
 ```
  and so on.
+ 
+ 完结。
