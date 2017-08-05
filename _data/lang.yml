@@ -1,5 +1,5 @@
-#{% if page.language == 'cn' %}{% else %}{% endif %}
-- cn:
+
+cn:
      about: "关于"
      archivearticle: "文章归档"
      otherplace: "其它位置"
@@ -15,7 +15,7 @@
      aboutme: "关于我"
     
     
-- en:
+en:
      about: "About"
      archivearticle: "Article archive"
      otherplace: "Other location"
