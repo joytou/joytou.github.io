@@ -3,6 +3,7 @@ source:      .
 layouts:     ./_layouts
 timezone:    +0800
 lang: zh-CN
+language: cn
 
 # Site settings
 name: JOYTOU

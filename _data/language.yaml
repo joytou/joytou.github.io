@@ -1,0 +1,47 @@
+en:
+    about: About
+    about_me: About me
+    archive_article: Article archiving
+    other_location: Other location
+    footer_copyright: This blog template is built from <a href=\"https://joytou.github.io/\">Joytou</a> through<a href=\"http://getbootstrap.com\">Bootstrap</a>.
+    back_top: Back to top
+    switch_navigation: Switch navigation
+    home: Home
+    article_classification: Article classification
+    article_tags: Article tags
+    article_poston: post from {{ site.author }} on 
+    rss_feed: RSS feed
+    page_first: First page
+    page_last: Last page
+    page_which: Page {{paginator.page}}
+    page_total: All {{paginator.total_pages}}
+    share_to: share to:
+    date_yb: {{ post.date | date: "%B %Y" }}
+    date_ybd: {{ post.date | date: "%B %D,%Y" }}
+    date_ym: {{ post.date | date: "%Y-%m" }}
+    date_ymd: {{ post.date | date: "%Y-%m-%d" }}
+    read_more: Read more
+    
+cn:
+    about: 关于
+    about_me: 关于我
+    archive_article: 文章归档
+    other_location: 其它位置
+    footer_copyright: 此博客模板由<a href="https://joytou.github.io/">Joytou</a>通过<a href="http://getbootstrap.com">Bootstrap</a>创建。
+    back_top: 返回顶部
+    switch_navigation: 切换导航
+    home: 首页
+    article_classification: 文章分类
+    article_tags: 文章标签
+    article_poston: 由{{ site.author }}发布于
+    rss_feed: RSS订阅
+    page_first: 首页
+    page_last: 末页
+    page_which: 第{{paginator.page}}页
+    page_total: 共{{paginator.total_pages}}页
+    share_to: 分享到：
+    date_yb: {{ post.date | date: "%Y年%m月" }}
+    date_ybd: {{ post.date | date: "%Y年%m月%D日" }}
+    date_ym: {{ post.date | date: "%Y-%m" }}
+    date_ymd: {{ post.date | date: "%Y-%m-%d" }}
+    read_more: 阅读全文
