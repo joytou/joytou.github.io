@@ -3,7 +3,9 @@ source:      .
 layouts:     ./_layouts
 timezone:    +0800
 lang: zh-CN
-language: cn
+gems: ['jekyll-paginate', 'jekyll-multiple-languages']
+languages: ['cn', 'en']
+language_default: 'cn'
 
 # Site settings
 name: JOYTOU

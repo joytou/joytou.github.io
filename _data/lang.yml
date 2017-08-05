@@ -1,0 +1,33 @@
+#{% if page.language == 'cn' %}{% else %}{% endif %}
+- cn:
+     about: "关于"
+     archivearticle: "文章归档"
+     otherplace: "其它位置"
+     backtop: "返回顶部"
+     switchnav: "切换导航"
+     home: "首页"
+     categoryarticle: "文章分类"
+     tagarticle: "文章标签"
+     rssfeed: "RSS 订阅"
+     firstpage: "首页"
+     lastpage: "末页"
+     shareto: "分享到"
+     aboutme: "关于我"
+    
+    
+- en:
+     about: "About"
+     archivearticle: "Article archive"
+     otherplace: "Other location"
+     backtop: "Back to top"
+     switchnav: "Switch navigation"
+     home: "Home"
+     categoryarticle: "Article classifications"
+     tagarticle: "Article tags"
+     rssfeed: "RSS feed"
+     firstpage: "First page"
+     lastpage: "Last page"
+     shareto: "Share to"
+     aboutme: "About me"
+    
+    

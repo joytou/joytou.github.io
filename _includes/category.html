@@ -1,10 +1,10 @@
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>关于</h4>
+            <h4>{{ site.data.lang[page.language].about }}</h4>
             <p>{{ site.about }}</p>
           </div>
           <div class="sidebar-module">
-            <h4>文章归档</h4>
+            <h4>{{ site.data.lang[page.language].archivearticle }}</h4>
             <ol class="list-unstyled">
                   {% for post in site.posts  %}
                   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -28,7 +28,7 @@
             </ol>
           </div>
           <div class="sidebar-module">
-            <h4>其它位置</h4>
+            <h4>{{ site.data.lang[page.language].otherplace }}</h4>
             <ol class="list-unstyled">
               <li><a href="https://github.com/joytou/">GitHub</a></li>
               <li><a href="http://1540294142.qzone.qq.com/">Qzone</a></li>
