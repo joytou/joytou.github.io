@@ -27,7 +27,7 @@ cn:
     about_me: 关于我
     archive_article: 文章归档
     other_location: 其它位置
-    footer_copyright: 此博客模板由<a href="https://joytou.github.io/">Joytou</a>通过<a href="http://getbootstrap.com">Bootstrap</a>创建。
+    footer_copyright: 此博客模板由<a href=\"https://joytou.github.io/\">Joytou</a>通过<a href=\"http://getbootstrap.com\">Bootstrap</a>创建。
     back_top: 返回顶部
     switch_navigation: 切换导航
     home: 首页
@@ -39,7 +39,7 @@ cn:
     page_last: 末页
     page_which: 第{{paginator.page}}页
     page_total: 共{{paginator.total_pages}}页
-    share_to: 分享到：
+    share_to: 分享到\：
     date_yb: {{ post.date | date: "%Y年%m月" }}
     date_ybd: {{ post.date | date: "%Y年%m月%D日" }}
     date_ym: {{ post.date | date: "%Y-%m" }}
