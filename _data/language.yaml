@@ -15,7 +15,7 @@ en:
     page_last: Last page
     page_which: Page {{paginator.page}}
     page_total: All {{paginator.total_pages}}
-    share_to: share to:
+    share_to: share to\:
     date_yb: {{ post.date | date: "%B %Y" }}
     date_ybd: {{ post.date | date: "%B %D,%Y" }}
     date_ym: {{ post.date | date: "%Y-%m" }}
