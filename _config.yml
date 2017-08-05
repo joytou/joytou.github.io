@@ -5,7 +5,7 @@ timezone:    +0800
 lang: zh-CN
 gems: ['jekyll-paginate', 'jekyll-multiple-languages']
 languages: ['cn', 'en']
-language_default: 'cn'
+language_default: 'en'
 
 # Site settings
 name: JOYTOU
