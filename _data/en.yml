@@ -1,5 +1,9 @@
+     sitename: "JOYTOU"
+     sitesubname: "An amateur programmer who loves to sit around and refuse to rest!"
+     sitedescription: "This blog template build by builder from style"
+     siteabout: "JOYTOU was done by me (Joytou). If you like this template, you can finance this template fairly small."
      about: "About"
-     archivearticle: "Article archive"
+     archivearticle: "Article archives"
      otherplace: "Other location"
      backtop: "Back to top"
      switchnav: "Switch navigation"
@@ -14,6 +18,8 @@
      top: "Top"
      readmore: "Read more"
      postinfo: "author post on date"
-     footcopyright: "Blog template build from builder by style"
+     footcopyright: "This blog template build by builder from style"
+     pagenum: "Page num"
+     pagetotal: "Total num"
     
     

@@ -1,3 +1,7 @@
+     sitename: "JOYTOU"
+     sitesubname: "一个热爱折腾、不肯休息的业余程序员！"
+     sitedescription: "此博客模板由builder通过style创建"
+     siteabout: "JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。"
      about: "关于"
      archivearticle: "文章归档"
      otherplace: "其它位置"
@@ -15,6 +19,8 @@
      readmore: "阅读全文"
      postinfo: "由author发布于date"
      footcopyright: "此博客模板由builder通过style创建。"
+     pagenum: "第num页"
+     pagetotal: "共num页"
     
     
 

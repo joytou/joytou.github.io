@@ -19,7 +19,7 @@
     <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
     <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="/page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' }}/">{{ translation.lastpage }}</a></li>
     <li class="disabled">
-            <span>第{{paginator.page}}页 / 共{{paginator.total_pages}}页</span>
+            <span>{{ translation.pagenum | replace:'num', paginator.page}} / {{ translation.pagetotal | replace:'num', paginator.total_pages}}</span>
         </li>
 </ul>
 {% endif %}

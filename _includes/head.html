@@ -1,3 +1,4 @@
+{% assign translation = site.data[site.language_default] %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    <title>{% if page.title%}{{ page.title }} - {{ site.name }}{% else %}{{ site.name }} - {{ site.subname }}{% endif %}</title>
+    <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">-->

@@ -8,16 +8,16 @@ languages: ['cn', 'en']
 language_default: 'en'
 
 # Site settings
-name: JOYTOU
-subname: 一个热爱折腾、不肯休息的业余程序员！
+#name: JOYTOU
+#subname: 一个热爱折腾、不肯休息的业余程序员！
 email: 1540294142@qq.com
 author: Joytou Wu
 url: https://joytou.github.io
 
 github: https://github.com/joytou/
 baseurl: ""
-description: 此博客模板由Joytou通过Bootstrap创建
-about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。
+#description: 此博客模板由Joytou通过Bootstrap创建
+#about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。
 
 future: true
 show_drafts: nil
