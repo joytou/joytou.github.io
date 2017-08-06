@@ -25,14 +25,17 @@ source:      .
 layouts:     ./_layouts
 timezone:    +0800
 lang: zh-CN
+      #set the <meta lang="">
+      #设置<meta lang="">
+gems: ['jekyll-paginate', 'jekyll-multiple-languages']
+languages: ['cn', 'en']
+           #list all of your site languages
+           #列出您的网站所有的语言
+language_default: 'en'
+                  #your site default language
+                  #您的网站的默认语言
 
 # Site settings
-name: JOYTOU 
-      #Your site name 
-      #您的网站名称
-subname: 一个热爱折腾、不肯休息的业余程序员！
-         #Your site sub name
-         #您的网站子名称
 email: 1540294142@qq.com 
        #your email 
        #您的电子邮件
@@ -49,12 +52,6 @@ github: https://github.com/joytou/
 baseurl: "" 
          # application directory
          #安装目录
-description: 此博客模板由Joytou通过Bootstrap创建 
-             #your site's description 
-             #您的网站描述
-about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。 
-       #about your site 
-       #关于您的网站
 
 future: true
 show_drafts: nil
@@ -100,9 +97,30 @@ BaiduSiteVerification: "***"
                        -如果没有，请留空白
 ```
 
-3.Write article
+3.Setting the site information
 
-3.写文章
+3.配置网站信息
+
+In each '(language code).yml' file, change under information
+
+在各个'(语言代码).yml'文件中，修改以下信息
+```
+name: JOYTOU 
+      #Your site name 
+      #您的网站名称
+subname: 一个热爱折腾、不肯休息的业余程序员！
+         #Your site sub name
+         #您的网站子名称
+description: 此博客模板由Joytou通过Bootstrap创建 
+             #your site's description 
+             #您的网站描述
+about: JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。 
+       #about your site 
+       #关于您的网站
+```
+4.Write article
+
+4.写文章
 
 create a empty file in '_posts' and name it like 'year-month-date-title.md',and then write like this:
 
