@@ -2,7 +2,8 @@
 layout: default
 nav: index
 ---
-<p>{{ page.language_test }}</p>
+{% assign llaanngg = site.data[site.language_default] %}
+<p>{{ llaanngg.home }}</p>
 {% for post in site.posts %}
 {% if post.stickie == true %}
 <div class="panel panel-primary">
