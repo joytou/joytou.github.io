@@ -13,6 +13,6 @@
      aboutme: "About me"
      top: "Top"
      readmore: "Read more"
-     postinfo: "\<a class\=\"text-muted\" href\=\"#\">"{{ site.author }}"\<\/a\> post on\<span class\=\"text-muted\"\>"{{ post.date | date:"%B %d, %Y" }}"\<\/span\>"
+     postinfo: "\<a class\=\"text-muted\" href\=\"#\"\>"{{ site.author }}"\<\/a\> post on\<span class\=\"text-muted\"\>"{{ post.date | date:"%B %d, %Y" }}"\<\/span\>"
     
     
