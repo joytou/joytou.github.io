@@ -1,7 +1,9 @@
 {% assign translation = site.data[site.language_default] %}
+{% capture builder %}<a href="https://joytou.github.io/">Joytou</a>{% endcapture %}
+{% capture style %}<a href="http://getbootstrap.com">Bootstrap</a>{% endcapture %}
 <div class="blog-footer">
       <p>Copyright &copy; 2017 <a href="https://joytou.github.io/">Joytou</a></p>
-      <p>此博客模板由<a href="https://joytou.github.io/">Joytou</a>通过<a href="http://getbootstrap.com">Bootstrap</a>创建。</p>
+      <p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
       <p>
         <a href="#">{{ translation.backtop }}</a>
       </p>
