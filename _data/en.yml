@@ -13,6 +13,6 @@
      aboutme: "About me"
      top: "Top"
      readmore: "Read more"
-     postinfo: [site.author]
+     postinfo: "[author](#) post on date"
     
     
