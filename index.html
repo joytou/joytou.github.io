@@ -14,7 +14,7 @@ nav: index
         <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
     </div>
     <div class="panel-footer">
-            {{ translation.postinfo | replace: 'author', [site.author](#) | replace: 'date', [post.date | date:"%B %d, %Y"] }}由<a class="text-muted" href="#">{{ site.author }}</a>发布于<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>
+            {{ translation.postinfo | replace: 'author', site.author | replace: 'date', post.date }}由<a class="text-muted" href="#">{{ site.author }}</a>发布于<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>
 			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-primary">{{ post.categories }}</span></p>
 			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-primary">{{ tag }}</span> {% endfor %}</p>
     </div>
