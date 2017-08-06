@@ -1,6 +1,7 @@
+{% assign translation = site.data[site.language_default] %}
 {% if paginator.total_pages > 1 %}
 <ul class="pagination">
-    <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}><a href="/">首页</a></li>
+    <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}><a href="/">{{ translation.firstpage }}</a></li>
     <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
@@ -16,7 +17,7 @@
       </li>
   {% endfor %}
     <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
-    <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="/page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' }}/">末页</a></li>
+    <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="/page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' }}/">{{ translation.lastpage }}</a></li>
     <li class="disabled">
             <span>第{{paginator.page}}页 / 共{{paginator.total_pages}}页</span>
         </li>
