@@ -28,7 +28,7 @@ nav: index
     </div>
     <div class="panel-body">
         {{ post.excerpt | strip_html }}
-        <p><a href="{{ post.url }}">{ translation.readmore }}</a></p>
+        <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
     </div>
     <div class="panel-footer">
             由<a class="text-muted" href="#">{{ site.author }}</a>发布于<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>
