@@ -5,7 +5,7 @@ date: 2017-08-06 23:40:00 +0800
 nav: post
 stickie: true
 category: personal
-tags: [jekyll, multiple-languages]
+tags: [jekyll, multiple\-languages]
 ---
 
 * content
