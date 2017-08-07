@@ -1,4 +1,4 @@
-{% assign translation = site.data[site.language_default] %}
+{% assign translation = site.data[page.lang] %}
 <div class="blog-header">
         <h1 class="blog-title">{{ translation.sitename }}</h1>
         <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>

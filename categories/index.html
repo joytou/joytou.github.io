@@ -1,6 +1,8 @@
 ---
 layout: default
 nav: category
+permalink: /categories/cn/
+lang: cn
 ---
 
 <ul id="myTab" class="nav nav-tabs">
@@ -9,7 +11,7 @@ nav: category
 	{% if categoryname != cn %}
 		{% assign categoryname = cn %}
 	    <li{% if forloop.first %} class="active"{% endif %}>
-        <a href="#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
+		  <a href="/{{ page.lang }}/#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
     </li>
 	{% endif %}
 {% endfor %}

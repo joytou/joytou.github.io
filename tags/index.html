@@ -1,6 +1,8 @@
 ---
 layout: default
 nav: tag
+permalink: /tags/cn/
+lang: cn
 ---
 
 <ul id="myTab" class="nav nav-tabs">
@@ -9,7 +11,7 @@ nav: tag
 	{% if tagname != tn %}
 		{% assign tagname = tn %}
 	    <li{% if forloop.first %} class="active"{% endif %}>
-        <a href="#aa{{ tn }}" data-toggle="tab">{{ tag | first }}</a>
+		  <a href="/{{ page.lang }}/#aa{{ tn }}" data-toggle="tab">{{ tag | first }}</a>
     </li>
 	{% endif %}
 {% endfor %}

@@ -1,4 +1,4 @@
-{% assign translation = site.data[site.language_default] %}
+{% assign translation = site.data[page.lang] %}
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	  <div class="container-fluid">
 		<div class="navbar-header">
@@ -9,12 +9,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="{{ site.url }}/">{{ translation.sitename }}</a>
+		  <a class="navbar-brand" href="{{ site.url }}/{{ page.lang }}/">{{ translation.sitename }}</a>
 		</div>
 		<div class="collapse navbar-collapse" id="example-navbar-collapse">
 		  <ul class="nav navbar-nav">
-            <li class="{% if page.nav == "index" %} active{% endif %}"><a href="{{ site.url }}/"><span class="glyphicon glyphicon-home"></span>{{ translation.home }}</a></li>
-            <li class="{% if page.nav == "about" %} active{% endif %}"><a href="{{ site.url }}/about/"><span class="glyphicon glyphicon-user"></span>{{ translation.about }}</a></li>
+            <li class="{% if page.nav == "index" %} active{% endif %}"><a href="{{ site.url }}/{{ page.lang }}/"><span class="glyphicon glyphicon-home"></span>{{ translation.home }}</a></li>
+            <li class="{% if page.nav == "about" %} active{% endif %}"><a href="{{ site.url }}/about/{{ page.lang }}/"><span class="glyphicon glyphicon-user"></span>{{ translation.about }}</a></li>
             <li class="dropdowm{% if page.nav == "post" %} active{% endif %}">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				  <span class="glyphicon glyphicon-sort-by-order-alt"></span>{{ translation.archivearticle }} <b class="caret"></b>
@@ -26,15 +26,15 @@
                   {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
                   {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
                   {% if forloop.first %}
-                        <li><a href="/archives/#aa{{ post.date | date: "%Y%m"}}">{{this_month}} {{this_year}}</a></li>
+					<li><a href="/archives/{{ page.lang }}/#aa{{ post.date | date: "%Y%m"}}">{{this_month}} {{this_year}}</a></li>
                   {% endif %}
                   {% if forloop.last %}
                   {% else %}
                     {% if this_year != next_year %}
-                          <li><a href="/archives/#aa{{ post.previous.date | date: "%Y%m"}}">{{next_month}} {{next_year}}</a></li>
+					<li><a href="/archives/{{ page.lang }}/#aa{{ post.previous.date | date: "%Y%m"}}">{{next_month}} {{next_year}}</a></li>
                     {% else %}    
                       {% if this_month != next_month %}
-                          <li><a href="/archives/#aa{{ post.previous.date | date: "%Y%m"}}">{{next_month}} {{next_year}}</a></li>
+					<li><a href="/archives/{{ page.lang }}/#aa{{ post.previous.date | date: "%Y%m"}}">{{next_month}} {{next_year}}</a></li>
                       {% endif %}
                     {% endif %}
                   {% endif %}
@@ -47,7 +47,7 @@
                           </a>
 		          <ul class="dropdown-menu">
                 {% for category in site.categories  %}
-                        <li><a href="/categories/#aa{{ category | first }}">{{ category | first }}</a></li>
+					<li><a href="/categories/{{ page.lang }}/#aa{{ category | first }}">{{ category | first }}</a></li>
                 {% endfor %}
                           </ul>
             </li>
@@ -57,7 +57,7 @@
                           </a>
 		          <ul class="dropdown-menu">
                 {% for tag in site.tags  %}
-                        <li><a href="/tags/#aa{{ tag | first }}">{{ tag | first }}</a></li>
+					<li><a href="/tags/{{ page.lang }}/#aa{{ tag | first }}">{{ tag | first }}</a></li>
                 {% endfor %}
                           </ul>
             </li>

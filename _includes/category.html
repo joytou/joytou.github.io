@@ -1,4 +1,4 @@
-{% assign translation = site.data[site.language_default] %}
+{% assign translation = site.data[page.lang] %}
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>{{ translation.about }}</h4>
@@ -13,15 +13,15 @@
                   {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
                   {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
                   {% if forloop.first %}
-                        <li><a href="{{ site.url }}/archives/#aa{{ post.date | date: "%Y%m" }}">{{this_month}} {{this_year}}</a></li>
+			  <li><a href="{{ site.url }}/archives/{{ page.lang }}/#aa{{ post.date | date: "%Y%m" }}">{{this_month}} {{this_year}}</a></li>
                   {% endif %}
                   {% if forloop.last %}
                   {% else %}
                     {% if this_year != next_year %}
-                          <li><a href="{{ site.url }}/archives/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
+			  <li><a href="{{ site.url }}/archives/{{ page.lang }}/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
                     {% else %}    
                       {% if this_month != next_month %}
-                          <li><a href="{{ site.url }}/archives/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
+			  <li><a href="{{ site.url }}/archives/{{ page.lang }}/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
                       {% endif %}
                     {% endif %}
                   {% endif %}

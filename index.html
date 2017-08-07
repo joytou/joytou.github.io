@@ -1,8 +1,10 @@
 ---
 layout: default
 nav: index
+permalink: /cn/
+lang: cn
 ---
-{% assign translation = site.data[site.language_default] %}
+{% assign translation = site.data[page.lang] %}
 {% for post in site.posts %}
 {% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
 {% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
