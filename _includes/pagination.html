@@ -2,7 +2,7 @@
 {% if paginator.total_pages > 1 %}
 <ul class="pagination">
   <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}><a href="/{{ page.lang }}/">{{ translation.firstpage }}</a></li>
-  <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}">&laquo;</a></li>
+  <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'lang', page.lang }}">&laquo;</a></li>
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
       <li class="active">
@@ -10,14 +10,14 @@
       <li>
     {% endif %}
     {% if page == 1 %}
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}">{{ page }}</a>
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'lang', page.lang }}">{{ page }}</a>
     {% else %}
-		<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page | replace: ':lang', page.lang }}">{{ page }}</a>
+		<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page | replace: 'lang', page.lang }}">{{ page }}</a>
     {% endif %}
       </li>
   {% endfor %}
-	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}">&raquo;</a></li>
-	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}">{{ translation.lastpage }}</a></li>
+	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'lang', page.lang }}">&raquo;</a></li>
+	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' | replace: 'lang', page.lang }}">{{ translation.lastpage }}</a></li>
     <li class="disabled">
             <span>{{ translation.pagenum | replace:'num', paginator.page}} / {{ translation.pagetotal | replace:'num', paginator.total_pages}}</span>
         </li>
