@@ -27,14 +27,14 @@ How to add multiple language function without plugin for the Jekyll web site?
 
 - 3.in _config.yml input ```language_default: '(your default language)'```
 
-- 4.在需要引用的文件中输入```\{\% assign translation = site.data\[site.language_default\] \%\}```
+- 4.在需要引用的文件中输入```{% raw %}{% assign translation = site.data[site.language_default] %}{% endraw %}```
 
-- 4.enter ```\{\% assign translation = site.data\[site.language_default\] \%\}``` in the file which to be referenced
+- 4.enter ```{% raw %}{% assign translation = site.data[site.language_default] %}{% endraw %}``` in the file which to be referenced
 
-- 5.```\{\{ translation.String \}\}```即可输出'String'的翻译
+- 5.```{% raw %}{{ translation.String }}{% endraw %}```即可输出'String'的翻译
 
-- 5.```\{\{ translation.String \}\}``` can output the translation of 'String'
+- 5.```{% raw %}{{ translation.String }}{% endraw %}``` can output the translation of 'String'
 
->另外，如果需要翻译的字符串包含变量名或HTML标签，可以把标签或HTML内容用另外的字符串表示，在需要引用的文件中使用'capture 变量名'导入或HTML，最后再使用```\{\{ translation.String | replace: \}\}```即可
+>另外，如果需要翻译的字符串包含变量名或HTML标签，可以把标签或HTML内容用另外的字符串表示，在需要引用的文件中使用'capture 变量名'导入或HTML，最后再使用```{% raw %}{{ translation.String | replace: }}{% endraw %}```即可
 
->In addition, if the translation string contains a jekyll(markdown) variable name or HTML tag: you can put the variable name or HTML content expressed by the addition of strings; using'capture (variable name) 'import needs a reference file; at last use```\{\{translation.String | replace: \}\}```
+>In addition, if the translation string contains a jekyll(markdown) variable name or HTML tag: you can put the variable name or HTML content expressed by the addition of strings; using'capture (variable name) 'import needs a reference file; at last use```{% raw %}{{translation.String | replace: }}{% endraw %}```
