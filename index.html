@@ -1,43 +1,72 @@
 ---
-layout: default
-nav: index
-permalink: /cn/
-lang: cn
+layout: null
 ---
-{% assign translation = site.data[page.lang] %}
-{% for post in site.posts %}
-{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
-{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
-{% if post.stickie == true %}
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title"><a href="{{ post.url }}"><span class="label label-primary">{{ translation.top }}</span>{{ post.title }}</a></h3>
-    </div>
-    <div class="panel-body">
-        {{ post.excerpt | strip_html }}
-        <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
-    </div>
-    <div class="panel-footer">
-            {{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}
-			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-primary">{{ post.categories }}</span></p>
-			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-primary">{{ tag }}</span> {% endfor %}</p>
-    </div>
-</div>
-{% endif %}
-{% endfor %}
-{% for post in site.posts %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    </div>
-    <div class="panel-body">
-        {{ post.excerpt | strip_html }}
-        <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
-    </div>
-    <div class="panel-footer">
-            {{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}
-			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ post.categories }}</span></p>
-			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</p>
-    </div>
-</div>
-{% endfor %}
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8"> 
+	<title>JOYTOU - Jekyll Blog Template</title>
+	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+  </head>
+  <body>
+
+	<div id="myCarousel" class="carousel slide">
+	  <!-- 轮播（Carousel）指标 -->
+	  <ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+	  </ol>   
+
+	  <!-- 轮播（Carousel）项目 -->
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_cn.png' | prepend: site.baseurl }}" alt="mobile style in Chinese">
+		</div>
+		<div class="item">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_en.png' | prepend: site.baseurl }}" alt="mobile style in English">
+		</div>
+		<div class="item">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_cn.png' | prepend: site.baseurl }}" alt="pc style in Chinese">
+		</div>
+		<div class="item">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_en.png' | prepend: site.baseurl }}" alt="pc style in English">
+		</div>
+	  </div>
+	  <!-- 轮播（Carousel）导航 -->
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+	</div>
+	
+<script>
+	$(function(){
+		// 初始化轮播
+			$("#myCarousel").carousel('cycle');
+		// 循环轮播到上一个项目
+		$(".prev-slide").click(function(){
+			$("#myCarousel").carousel('prev');
+		});
+		// 循环轮播到下一个项目
+		$(".next-slide").click(function(){
+			$("#myCarousel").carousel('next');
+		});
+		// 循环轮播到某个特定的帧 
+		$(".slide-one").click(function(){
+			$("#myCarousel").carousel(0);
+		});
+		$(".slide-two").click(function(){
+			$("#myCarousel").carousel(1);
+		});
+		$(".slide-three").click(function(){
+			$("#myCarousel").carousel(2);
+		});
+		$(".slide-four").click(function(){
+			$("#myCarousel").carousel(3);
+		});
+	});
+</script>
+  </body>
+</html>
