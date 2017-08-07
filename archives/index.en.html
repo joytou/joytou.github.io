@@ -11,7 +11,7 @@ lang: en
   {% if yearmonth != ym %}
   {% assign yearmonth = ym %}
   <li{% if forloop.first %} class="active"{% endif %}>
-	<a href="/archives/{{ page.lang }}/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%Y年%m月" }}</a>
+	<a href="/archives/{{ page.lang }}/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%B %Y" }}</a>
   </li>
   {% endif %}
   {% endfor %}
