@@ -2,9 +2,7 @@
 <html lang="{{ site.lang | default: "en-US" }}">
 <!--include head-->
 {% include head.html %}
-
   <body>
-
 	<!--include baidu push-->
 	<script>
     (function(){
@@ -22,33 +20,18 @@
     </script>
     <!--include masthead-->
     {% include masthead.html %}
-
     <div class="container">
-
       <!--include header-->
       {% include header.html %}
-
       <div class="row">
-
         <div class="col-sm-8 blog-main">
-        
-          
           <!--include post -->
-          
           {{ content }}
-          
-        <!--include pagination-->
-        {% include pagination.html %}
-          
         </div><!-- /.blog-main -->
-        
         <!--include category-->
         {% include category.html %}
-
       </div><!-- /.row -->
-
     </div><!-- /.container -->
-
     <!--include foot-->
     {% include foot.html %}
   </body>
