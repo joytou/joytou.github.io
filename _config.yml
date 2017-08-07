@@ -21,6 +21,7 @@ lsi: true
 published: false
 safe: false
 permalink: /:year/:month/:day/:title/
+paginate_path: "/:lang/page:num"
 paginate: 2
 markdown: kramdown
 excerpt_separator: '<!-- more -->'
