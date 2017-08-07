@@ -3,7 +3,6 @@ layout: post
 title: "Add multiple languages for Jekyll web site"
 date: 2017-08-07 10:08:00 +0800
 nav: post
-stickie: true
 category: personal
 tags: [jekyll, multiple-languages]
 ---
