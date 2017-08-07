@@ -17,7 +17,7 @@
       </li>
   {% endfor %}
 	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}">&raquo;</a></li>
-	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}/">{{ translation.lastpage }}</a></li>
+	  <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}><a href="page{{ paginator.total_pages | prepend: site.baseurl | replace: '//', '/' | replace: ':lang', page.lang }}">{{ translation.lastpage }}</a></li>
     <li class="disabled">
             <span>{{ translation.pagenum | replace:'num', paginator.page}} / {{ translation.pagetotal | replace:'num', paginator.total_pages}}</span>
         </li>
