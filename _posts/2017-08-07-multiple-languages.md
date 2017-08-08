@@ -35,6 +35,6 @@ How to add multiple language function without plugin for the Jekyll web site?
 
 - 5.```{% raw %}{{ translation.String }}{% endraw %}``` can output the translation of 'String'
 
->另外，如果需要翻译的字符串包含变量名或HTML标签，可以把标签或HTML内容用另外的字符串表示，在需要引用的文件中使用```{% raw %}{% capture 变量名 %} 赋予变量的内容值 {% endcapture %}{% endraw %}```导入或HTML，最后再使用```{% raw %}{{ translation.String | replace: }}{% endraw %}```即可
+>另外，如果需要翻译的字符串包含变量名或HTML标签，可以把标签或HTML内容用另外的字符串表示，在需要引用的文件中使用```{% raw %}{% capture 变量名 %} 赋予变量的内容值 {% endcapture %}{% endraw %}```导入变量或HTML，最后再使用```{% raw %}{{ translation.String | replace: }}{% endraw %}```即可
 
->In addition, if the translation string contains a jekyll(markdown) variable name or HTML tag: you can put the variable name or HTML content expressed by the addition of strings; using```{% raw %}{% capture variable name %} Give the contents or values ​​of the variable here {% endcapture %}{% endraw %}```import needs a reference file; at last use```{% raw %}{{translation.String | replace: }}{% endraw %}```
+>In addition, if the translation string contains a jekyll(markdown) variable name or HTML tag: you can put the variable name or HTML content expressed by the addition of strings; using```{% raw %}{% capture variable name %} Give the contents or values ​​of the variable here {% endcapture %}{% endraw %}```import the variable or html; at last use```{% raw %}{{translation.String | replace: }}{% endraw %}```
