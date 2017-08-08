@@ -17,9 +17,9 @@
     
     <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
 
-	<!-- Google Font Api -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
+    <!-- pictonic font icon css-->
+    <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}">
+    <!--[if lt IE 8]><script src="{{ '/assets/js/pictonic.min.js' | prepend: site.baseurl }}"></script><![endif]-->
 	
     <!-- Bootstrap core CSS -->
     <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
