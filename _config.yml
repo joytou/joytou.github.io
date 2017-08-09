@@ -10,7 +10,7 @@ language_default: 'en'
 # Site settings
 email: 1540294142@qq.com
 author: Joytou Wu
-url: https://joytou.nets.hk
+url: http://joytou.nets.hk
 
 github: https://github.com/joytou/
 baseurl: ""
