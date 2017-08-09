@@ -6,6 +6,9 @@ layout: null
   <head>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{% for word in site.keywords %}{{ word | append: ',' }}{% endfor %}">
+    <meta name="author" content="{{ site.author }}">
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
