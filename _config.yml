@@ -29,6 +29,7 @@ excerpt_separator: '<!-- more -->'
 exclude: ['README.md']
 
 github_username: joytou
+repo: joytou.github.io
 owner_name: Joytou
 
 # Keywords
