@@ -1,6 +1,8 @@
 {% assign translation = site.data[page.lang] %}
 <div class="blog-header">
-  {% if site.remind %}
+        <h1 class="blog-title">{{ translation.sitename }}</h1>
+        <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>
+		  {% if site.remind %}
 <div class="alert alert-info alert-dismissable" id="JOYTOUupdate">
 	<button type="button" class="close" data-dismiss="alert"
 			aria-hidden="true">
@@ -8,6 +10,4 @@
 	</button>
 </div>
 {% endif %}
-        <h1 class="blog-title">{{ translation.sitename }}</h1>
-        <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>
       </div>
