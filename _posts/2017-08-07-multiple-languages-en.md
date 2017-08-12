@@ -2,6 +2,7 @@
 layout: posten
 title: "Add multiple languages for Jekyll web site"
 date: 2017-08-07 10:08:00 +0800
+lang: en
 nav: post
 category: personal
 tags: [jekyll, multiple-languages]
