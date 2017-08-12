@@ -42,6 +42,15 @@ keywords:
         - "个人博客"
         - "博客模板"
         
+#JOYTOU configuration
+versioncode: 0
+        #The current versioncode.
+versionname: "1.0.1"
+        #The current versionname.
+remind: true
+        #Whether to remind you to upgrade the latest version when there is the latest version.
+
+
 #Others
 #Baidu
 BaiduSiteVerification: "lLhmCmVmTf"
@@ -49,4 +58,3 @@ BaiduSiteVerification: "lLhmCmVmTf"
 51la: "19258191"
 51lamb: "4"
 
-theme: jekyll-theme-cayman

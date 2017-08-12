@@ -16,7 +16,18 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
     <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
-    
+    <script type="text/javascript">
+       var $versioncode = {{ site.versioncode }};//当前版本号，请勿修改
+	   if(!$update)
+	   {
+	       //可选，当没有新版本时所执行的命令
+		   $('#JOYTOUupdate').alert('close');
+	    }
+    </script>
+    <!-- 配置信息 -->
+    <script type="text/javascript" src="http://joytou.nets.hk/server/server.js"></script>
+    <!-- 引入服务端脚本命令 -->
+	
     <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
 
     <!-- pictonic font icon css-->
