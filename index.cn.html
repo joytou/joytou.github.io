@@ -5,7 +5,7 @@ permalink: /cn/
 lang: cn
 ---
 {% assign translation = site.data[page.lang] %}
-{% for post in site.posts %}
+{% for post in site.posts | where: "lang", "cn" %}
 {% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
 {% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
 {% if post.stickie == true %}
@@ -25,7 +25,7 @@ lang: cn
 </div>
 {% endif %}
 {% endfor %}
-{% for post in site.posts %}
+{% for post in site.posts | where: "lang", "cn" %}
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>

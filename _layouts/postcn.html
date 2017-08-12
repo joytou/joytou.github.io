@@ -1,0 +1,16 @@
+---
+layout: default
+lang: cn
+---
+<div class="blog-post">
+            <h2 class="blog-post-title">{{ page.title }}</h2>
+            <p class="blog-post-meta">由<a href="#">{{ site.author }}</a>发布于{{ page.date | date:"%B %d, %Y" }}</p>
+			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ page.categories }}</span></p>
+			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in page.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</p>
+            {{ content }}
+</div>
+<!--include post share-->
+{% include post_share.html %}
+<!--include post comment-->
+{% include comment.html %}
+
