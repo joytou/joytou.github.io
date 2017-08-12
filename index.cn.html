@@ -28,6 +28,8 @@ lang: cn
 {% endif %}
 {% endfor %}
 {% for post in site.posts %}
+{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
+{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
 {% if post.lang contains 'cn' %}
 <div class="panel panel-default">
     <div class="panel-heading">
