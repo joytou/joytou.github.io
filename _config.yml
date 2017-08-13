@@ -32,6 +32,8 @@ github_username: joytou
 repo: joytou.github.io
 owner_name: Joytou
 
+# Description
+description: "只为博客而生，也因博客而存在。Only for the existence of the blog, but also because of the existence of the blog."
 # Keywords
 keywords:
         - "github"
