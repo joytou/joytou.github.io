@@ -26,7 +26,9 @@
     <!-- 配置信息 -->
     <script type="text/javascript" src="http://joytou.nets.hk/server/server.js"></script>
     <!-- 引入服务端脚本命令 -->
-	
+    <script src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/cb-search.js' | prepend: site.baseurl }}"></script>
+	  
     <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
 
     <!-- pictonic font icon css-->
@@ -39,6 +41,9 @@
     <!-- Custom styles for this template -->
     <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
 
+	<!-- search style -->
+    <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}" rel="stylesheet">
+	
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="{{ '/assets/js/ie-emulation-modes-warning.js' | prepend: site.baseurl }}"></script>
