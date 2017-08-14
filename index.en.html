@@ -6,7 +6,7 @@ lang: en
 ---
 {% assign translation = site.data[page.lang] %}
 {% for post in site.posts %}
-{% if post.postupdate %}
+{% if post.lastdate %}
 {% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}
 {% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
 {% else %}
@@ -24,7 +24,7 @@ lang: en
         <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
     </div>
     <div class="panel-footer">
-            {{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}
+            {% if post.lastdate %}{{ translation.postupdate | replace: 'author', pauthor | replace: 'date', pdate }}{% else %}{{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}{% endif %}
 			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-primary">{{ post.categories }}</span></p>
 			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-primary">{{ tag }}</span> {% endfor %}</p>
     </div>
@@ -33,8 +33,13 @@ lang: en
 {% endif %}
 {% endfor %}
 {% for post in site.posts %}
+{% if post.lastdate %}
+{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}
+{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
+{% else %}
 {% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
 {% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
+{% endif %}
 {% if post.lang contains 'en' %}
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -45,7 +50,7 @@ lang: en
         <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
     </div>
     <div class="panel-footer">
-            {{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}
+            {% if post.lastdate %}{{ translation.postupdate | replace: 'author', pauthor | replace: 'date', pdate }}{% else %}{{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}{% endif %}
 			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ post.categories }}</span></p>
 			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</p>
     </div>
