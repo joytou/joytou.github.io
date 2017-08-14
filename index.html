@@ -10,6 +10,12 @@ lang: cn
 	<meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{% for word in site.keywords %}{{ word | append: ',' }}{% endfor %}">
     <meta name="author" content="{{ site.author }}">
+	{% if site.BaiduSiteVerification %}
+	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
+    {% endif %}
+	{% if site.SogouSiteVerification %}
+	<meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
+	{% endif %}
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
