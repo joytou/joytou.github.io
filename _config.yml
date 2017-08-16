@@ -2,10 +2,7 @@
 source:      .
 layouts:     ./_layouts
 timezone:    +0800
-#lang: zh-CN
 gems: ['jekyll-paginate', 'jekyll-multiple-languages']
-#languages: ['cn', 'en']
-#language_default: 'en'
 
 # Site settings
 email: 1540294142@qq.com

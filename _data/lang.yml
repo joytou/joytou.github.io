@@ -1,7 +1,10 @@
 cn: 
-   language: "Chinese"
-   code: "zh"
+   language: "Simple Chinese"
+   code: "zh-Hans"
 en: 
    language: "English"
    code: "en"
+tw:
+   language: "Traditional Chinese"
+   code: "zh-Hant"
    
