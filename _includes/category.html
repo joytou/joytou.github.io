@@ -20,7 +20,7 @@
 			  <li><a href="{{ site.url }}/archives/{{ page.lang }}/#aa{{ post.previous.date | date: "%Y%m" }}">{{next_month}} {{next_year}}</a></li>
                       {% endif %}
                     {% endif %}
-                  {% endif %}
+                  {% endunless %}
                 {% endfor %}
             </ol>
           </div>
