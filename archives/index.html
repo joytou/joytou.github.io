@@ -6,7 +6,7 @@ lang: cn
 ---
 
 <ul id="myTab" class="nav nav-tabs">
-{% for post in site.posts | where: "lang", page.lang %}
+{% for post in site.posts %}
 	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}
@@ -17,7 +17,7 @@ lang: cn
 {% endfor %}
 </ul>
 <div id="myTabContent" class="tab-content">
-{% for post in site.posts %}
+  {% for post in site.posts | where: "lang", page.lang %}
 	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}
