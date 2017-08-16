@@ -6,7 +6,7 @@ lang: en
 ---
 
 <ul id="myTab" class="nav nav-tabs">
-  {% for tag in site.tags %}
+  {% for tag in site.tags | where: "lang", page.lang %}
   {% capture tn %}{{ tag | first }}{% endcapture %}
   {% if tagname != tn %}
   {% assign tagname = tn %}

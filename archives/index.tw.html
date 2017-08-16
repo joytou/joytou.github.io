@@ -6,7 +6,7 @@ lang: tw
 ---
 
 <ul id="myTab" class="nav nav-tabs">
-{% for post in site.posts %}
+{% for post in site.posts | where: "lang", page.lang %}
 	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}

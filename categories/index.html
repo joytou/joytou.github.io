@@ -6,7 +6,7 @@ lang: cn
 ---
 
 <ul id="myTab" class="nav nav-tabs">
-{% for category in site.categories %}
+{% for category in site.categories | where: "lang", page.lang %}
 	{% capture cn %}{{ category | first }}{% endcapture %}
 	{% if categoryname != cn %}
 		{% assign categoryname = cn %}
