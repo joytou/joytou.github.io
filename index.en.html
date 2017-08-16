@@ -6,15 +6,8 @@ lang: en
 ---
 {% assign translation = site.data[page.lang] %}
 {% for post in site.posts %}
-{% if post.lastdate %}
-{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}
-{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
-{% else %}
-{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
-{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
-{% endif %}
-{% if post.lang contains 'en' %}
-{% if post.stickie == true %}
+{% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
+{% if post.lang contains 'en' %}{% if post.stickie == true %}
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title"><a href="{{ post.url }}"><span class="label label-primary">{{ translation.top }}</span>{{ post.title }}</a></h3>
@@ -33,13 +26,7 @@ lang: en
 {% endif %}
 {% endfor %}
 {% for post in site.posts %}
-{% if post.lastdate %}
-{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}
-{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
-{% else %}
-{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}
-{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}
-{% endif %}
+{% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
 {% if post.lang contains 'en' %}
 <div class="panel panel-default">
     <div class="panel-heading">
