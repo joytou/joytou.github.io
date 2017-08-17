@@ -17,7 +17,8 @@ lang: en
   {% endfor %}
 </ul>
 <div id="myTabContent" class="tab-content">
-  {% for post in site.posts | where: "lang", page.lang %}
+  {% for post in site.posts %}
+  {% if post.lang contains page.lang %}
   {% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
   {% if yearmonth != ym %}
   {% assign yearmonth = ym %}
@@ -28,6 +29,7 @@ lang: en
 	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
 	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
   </p>
+  {% endif %}
   {% endfor %}
 </div>
 </div>
