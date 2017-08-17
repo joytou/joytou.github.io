@@ -25,7 +25,7 @@ lang: en
 <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ cn }}">
   {% endif %}
   {% for post in category.last %}
-  {% if post.lang contains page.lang %}
+  {% if post.lang contains 'en' %}
   <p>
 	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
 	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>

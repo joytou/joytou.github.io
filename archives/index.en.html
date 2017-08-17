@@ -18,7 +18,7 @@ lang: en
 </ul>
 <div id="myTabContent" class="tab-content">
   {% for post in site.posts %}
-  {% if post.lang contains page.lang %}
+  {% if post.lang contains 'en' %}
   {% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
   {% if yearmonth != ym %}
   {% assign yearmonth = ym %}

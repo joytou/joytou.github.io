@@ -27,7 +27,7 @@ lang: tw
 {% endfor %}
 {% for post in site.posts %}
 {% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
-{% if post.lang contains 'cn' %}
+{% if post.lang contains 'tw' %}
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
