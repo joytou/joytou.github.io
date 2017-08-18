@@ -20,13 +20,13 @@ lang: tw
 </ul>
 <div id="myTabContent" class="tab-content">
   {% for post in site.posts %}
-  {% if post.lang contains page.lang %}
 	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}
                 {% if forloop.first %}{% else %}</div>{% endif %}
                 <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ ym }}">
 	{% endif %}
+	{% if post.lang contains page.lang %}
 	<p>
 	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
 	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
