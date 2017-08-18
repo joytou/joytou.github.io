@@ -25,10 +25,12 @@ lang: en
 <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ tn }}">
   {% endif %}
   {% for post in tag.last %}
+  {% if post.lang contains page.lang %}
   <p>
 	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
 	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
   </p>
+  {% endif %}
   {% endfor %}
   {% endfor %}
 </div>

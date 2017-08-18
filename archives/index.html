@@ -7,6 +7,7 @@ lang: cn
 
 <ul id="myTab" class="nav nav-tabs">
 {% for post in site.posts %}
+{% if post.lang contains page.lang %}
 	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}
@@ -14,10 +15,12 @@ lang: cn
 		  <a href="/archives/{{ page.lang }}/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%Y年%m月" }}</a>
     </li>
 	{% endif %}
+{% endif %}
 {% endfor %}
 </ul>
 <div id="myTabContent" class="tab-content">
   {% for post in site.posts %}
+  {% if post.lang contains page.lang %}
 	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}
@@ -28,6 +31,7 @@ lang: cn
 	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
 	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 	</p>
+{% endif %}
 {% endfor %}
 </div>
 </div>
