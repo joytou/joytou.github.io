@@ -2,6 +2,8 @@
 source:      .
 layouts:     ./_layouts
 timezone:    +0800
+incremental: true
+profile: true
 gems: ['jekyll-paginate', 'jekyll-multiple-languages']
 
 # Site settings
