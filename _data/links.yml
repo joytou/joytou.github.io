@@ -1,10 +1,10 @@
-- jekyllthemes:
-	cn: "Jekyll Themes"
-	en: "Jekyll Themes"
-	tw: "Jekyll Themes"
-	link: "http://jekyllthemes.org/themes/JOYTOU/"
-- google:
-	cn: "谷歌"
-	en: "Google"
-	tw: "谷歌"
-	link: "https://www.google.com/search?q=joytou"
+- link: "http://jekyllthemes.org/themes/JOYTOU/"
+  cn: "Jekyll Themes"
+  en: "Jekyll Themes"
+  tw: "Jekyll Themes"
+
+- link: "https://www.google.com/search?q=joytou"
+  cn: "谷歌"
+  en: "Google"
+  tw: "谷歌"
+
