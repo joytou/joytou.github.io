@@ -16,7 +16,7 @@ tags: [jekyll, multiple-languages]
 
 - 1.在'_data'文件夾中創建名爲'(語言代碼).yml'的文件
 
-- 2.在文件中以'(StringKey: StringValue)Key: Value'方式羅列出需要多語言翻譯的字符串，詳情參考[^tw.yml]
+- 2.在文件中以'(StringKey: StringValue)Key: Value'方式羅列出需要多語言翻譯的字符串，詳情參考[tw.yml][1]
 
 - 3.在_config.yml中輸入```language_default: '(your default language)'```
 
@@ -26,4 +26,4 @@ tags: [jekyll, multiple-languages]
 
 >另外，如果需要翻譯的字符串包含變量名或HTML標簽，可以把標簽或HTML內容用另外的字符串表示，在需要引用的文件中使用```{% raw %}{% capture 變量名 %} 賦予變量的內容值 {% endcapture %}{% endraw %}```導入變量或HTML，最後再使用```{% raw %}{{ translation.String | replace: }}{% endraw %}```即可
 
-[^tw.yml]: https://github.com/joytou/joytou.github.io/blob/master/_data/tw.yml
+[1]: https://github.com/joytou/joytou.github.io/blob/master/_data/tw.yml
