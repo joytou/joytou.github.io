@@ -25,7 +25,7 @@ lang: en
   <p>==================</p>
   <h3>Friend Links</h3>
 	{% for exlinks in site.data.links %}
-	<p><a href="{{ exlinks.link }}">{{ exlinks.name[page.lang] }}</a></p>
+	<p><a href="{{ exlinks.link }}">{{ exlinks[page.lang] }}</a></p>
 	{% endfor %}
   <p>==================</p>
   <p>
