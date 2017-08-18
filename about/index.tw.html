@@ -9,24 +9,22 @@ lang: tw
   <h2 class="blog-post-title">{{ translation.aboutme }}</h2>
   <p class="blog-post-meta">Joytou Wu</p>
   一個熱愛折騰、不肯休息的業余程序員！
-  <p>
-	聯絡人：Joytou
-  </p>
-  <p>
-	QQ：1540294142
-  </p>
-  <p>
-	E-mail：1540294142@qq.com
-  </p>
-  <p>
-	主頁：http://joytou.nets.hk/
-  </p>
-  <p>微信：wu__ruitao</p>
+  <ul class="list-group">
+  <li class="list-group-item">聯絡人：Joytou</li>
+  <li class="list-group-item">QQ：1540294142</li>
+  <li class="list-group-item">E-mail：1540294142@qq.com</li>
+  <li class="list-group-item">主頁：http://joytou.nets.hk/</li>
+  <li class="list-group-item">微信：wu__ruitao</li>
+  </ul>
   <p>==================</p>
-  <h3>友情鏈接</h3>
+  <ul class="list-group">
+	<a class="list-group-item active">
+	<h3 class="list-group-item-heading">友情鏈接</h3>
+	</a>
 	{% for exlinks in site.data.links %}
-	<p><a href="{{ exlinks.link }}">{{ exlinks[page.lang] }}</a></p>
+	<li class="list-group-item"><a href="{{ exlinks.link }}">{{ exlinks[page.lang] }}</a></li>
 	{% endfor %}
+  </ul>
   <p>==================</p>
   <p>
 	<h3>我和開發的一點故事</h3>
