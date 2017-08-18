@@ -6,7 +6,7 @@ lang: cn
 ---
 {% assign translation = site.data[page.lang] %}
 <div class="blog-post">
-  <h2 class="blog-post-title">{{ translation.about.me }}</h2>
+  <h2 class="blog-post-title">{{ translation.aboutme }}</h2>
   <p class="blog-post-meta">Joytou Wu</p>
   一个热爱折腾、不肯休息的业余程序员！
   <p>
@@ -22,6 +22,11 @@ lang: cn
 	主页：http://joytou.nets.hk/
   </p>
   <p>微信：wu__ruitao</p>
+  <p>==================</p>
+    <h3>友情链接</h3>
+	{% for exlinks in site.data.links %}
+	<p><a href="{{ exlinks.link }}">{{ exlinks.name[page.lang] }}</a></p>
+	{% endfor %}
   <p>==================</p>
   <p>
 	<h3>我和开发的一点故事</h3>
