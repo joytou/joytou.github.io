@@ -1,9 +1,9 @@
-jekyllthemes:
+- jekyllthemes:
 	cn: "Jekyll Themes"
 	en: "Jekyll Themes"
 	tw: "Jekyll Themes"
 	link: "http://jekyllthemes.org/themes/JOYTOU/"
-google:
+- google:
 	cn: "谷歌"
 	en: "Google"
 	tw: "谷歌"
