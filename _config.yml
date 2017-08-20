@@ -1,16 +1,14 @@
 # Resources settings
 source:      .
 layouts:     ./_layouts
-timezone:    +0800
-incremental: true
-profile: true
-gems: ['jekyll-paginate', 'jekyll-multiple-languages']
+timezone:    Asia/Hongkong
 
 # Site settings
 email: 1540294142@qq.com
 author: Joytou Wu
-url: http://joytou.nets.hk
 
+#Server
+url: http://joytou.nets.hk
 github: https://github.com/joytou/
 baseurl: ""
 
@@ -20,12 +18,10 @@ lsi: true
 published: false
 safe: false
 permalink: /:year/:month/:day/:title/
-paginate_path: /lang/page:num
-paginate: 2
 markdown: kramdown
 excerpt_separator: '<!-- more -->'
 
-exclude: ['README.md']
+exclude: ['README.md','Manifest.md']
 
 github_username: joytou
 repo: joytou.github.io
