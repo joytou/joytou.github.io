@@ -12,7 +12,7 @@ lang: cn
 	{% if yearmonth != ym %}
 		{% assign yearmonth = ym %}
 	    <li{% if forloop.first %} class="active"{% endif %}>
-		  <a href="/archives/{{ page.lang }}/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%Y年%m月" }}</a>
+		  <a href="/{{ page.lang }}/archives/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%Y年%m月" }}</a>
     </li>
 	{% endif %}
 {% endif %}
@@ -37,6 +37,6 @@ lang: cn
 </div>
 <script>
     $(function () {
-        $('#myTab a[href="/archives/{{ page.lang }}/'+window.location.hash+'"]').tab('show');
+        $('#myTab a[href="/{{ page.lang }}/archives/'+window.location.hash+'"]').tab('show');
     });
 </script>

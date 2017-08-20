@@ -11,7 +11,7 @@ lang: tw
 	{% if categoryname != cn %}
 		{% assign categoryname = cn %}
 	    <li{% if forloop.first %} class="active"{% endif %}>
-		  <a href="/categories/{{ page.lang }}/#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
+		  <a href="/{{ page.lang }}/categories/#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
     </li>
 	{% endif %}
 {% endfor %}
@@ -37,6 +37,6 @@ lang: tw
 </div>
 <script>
     $(function () {
-        $('#myTab a[href="/categories/{{ page.lang }}/'+window.location.hash+'"]').tab('show');
+        $('#myTab a[href="/{{ page.lang }}/categories/'+window.location.hash+'"]').tab('show');
     });
 </script>
