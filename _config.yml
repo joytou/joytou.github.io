@@ -6,12 +6,16 @@ timezone:    Asia/Hongkong
 # Site settings
 email: 1540294142@qq.com
 author: Joytou Wu
+owner_name: Joytou Wu
+github_username: joytou
+repo: joytou.github.io
 
 #Server
 url: http://joytou.nets.hk
 github: https://github.com/joytou/
 baseurl: ""
 
+//Page settings
 future: true
 show_drafts: nil
 lsi: true
@@ -23,12 +27,8 @@ excerpt_separator: '<!-- more -->'
 
 exclude: ['README.md','Manifest.md']
 
-github_username: joytou
-repo: joytou.github.io
-owner_name: Joytou
-
 # Description
-description: "只为博客而生，也因为博客而存在。Only for the existence of the blog, but also because of the existence of the blog."
+description: "只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog."
 # Keywords
 keywords:
         - "github"
@@ -36,18 +36,18 @@ keywords:
         - "blog"
         - "joytou"
         - "markdown"
+        - "jekyll"
         - "博客"
         - "个人博客"
         - "博客模板"
         
-#JOYTOU configuration
+#Update configuration
 versioncode: 1
         #The current versioncode.
 versionname: "1.0.1"
         #The current versionname.
 remind: true
         #Whether to remind you to upgrade the latest version when there is the latest version.
-
 
 #Others
 #Baidu

@@ -7,9 +7,12 @@ lang: cn
   <head>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="JOYTOU - Jekyll Blog Template" />
 	<meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
     <meta name="author" content="{{ site.author }}">
+	<meta name="owner" content="{{ site.owner_name }}" />
+    <meta name="copyright" content="(c) 2017" />
 	{% if site.BaiduSiteVerification %}
 	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
     {% endif %}
