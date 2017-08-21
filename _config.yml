@@ -15,7 +15,7 @@ url: http://joytou.nets.hk
 github: https://github.com/joytou/
 baseurl: ""
 
-//Page settings
+#Page settings
 future: true
 show_drafts: nil
 lsi: true
