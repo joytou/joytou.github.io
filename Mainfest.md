@@ -89,7 +89,7 @@
 - CNAME
 - LICENSE
 - README.md
-- Directory.md
+- Mainfest.md
 - _config.yml
 - index.html
 - index.cn.html
