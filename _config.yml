@@ -26,6 +26,7 @@ markdown: kramdown
 excerpt_separator: '<!-- more -->'
 
 exclude: ['README.md','Manifest.md']
+include: ['robots.txt']
 
 # Description
 description: "只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog."
