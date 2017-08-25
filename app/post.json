@@ -19,6 +19,8 @@ layout: null
 				{% endfor %}
 				],
 			"category":"{{ post.categories }}",
+			"path":"{{ post.path }}",
+			"url":"{{ post.url }}"
 			{% if forloop.last %}
 			 } 
 			{% else %}
