@@ -8,7 +8,7 @@ layout: null
 		{
 			"id":"{{ post.id }}",
 			"title":"{{ post.title }}",
-			"summary":"{{ post.excerpt }}",
+			"summary":"{{ post.excerpt | replace:" ","" }}",
 			"date":"{{ post.date }}",
 			"tag":[
 				{% for tag in post.tags %}
