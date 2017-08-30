@@ -1,0 +1,13 @@
+---
+layout: null
+---
+{
+"code":0,
+"type":"Sort articles by category",
+"data":[
+{% for category in site.categories %}
+"{{ category.first }}"
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+}
