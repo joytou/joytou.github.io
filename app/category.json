@@ -19,7 +19,7 @@ layout: null
 "update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
 "lang":"{{ post.lang }}",
 "path":"{{ post.path }}",
-"url":"{{ post.url }}"
+"url":"https://raw.githubusercontent.com/{{ site.github_username }}/{{ site.repo }}/master/{{ post.path }}"
 {% if forloop.last %}
 } 
 {% else %}
