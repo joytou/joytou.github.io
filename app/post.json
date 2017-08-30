@@ -9,7 +9,7 @@ layout: null
 {
 "id":"{{ post.id }}",
 "title":"{{ post.title }}",
-"summary":"{{ post.excerpt | replace:" ","" }}",
+"summary":"{{ post.excerpt | replace:"\n","" }}",
 "date":"{{ post.date }}",
 "tag":[
 {% for tag in post.tags %}
