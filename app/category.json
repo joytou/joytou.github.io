@@ -13,7 +13,8 @@ layout: null
 {
 "id":"{{ post.id }}",
 "title":"{{ post.title }}",
-"summary":"{{ post.excerpt | strip_html | xml_escape }}",
+"summary":"{{ post.excerpt | strip_html | xml_escape | replace:"
+","" }}",
 "date":"{{ post.date }}",
 "update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
 "lang":"{{ post.lang }}",
