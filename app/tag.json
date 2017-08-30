@@ -7,7 +7,7 @@ layout: null
 "data":[
 {% for tag in site.tags %}
 {
-"tag":"{{ tag.first }}"
+"tag":"{{ tag.first }}",
 "posts":[
 {% for post in tag.last %}
 {

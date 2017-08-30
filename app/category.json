@@ -6,7 +6,27 @@ layout: null
 "type":"Sort articles by category",
 "data":[
 {% for category in site.categories %}
-"{{ category.first }}"
+{
+"category":"{{ category.first }}",
+"posts":[
+{% for post in category.last %}
+{
+"id":"{{ post.id }}",
+"title":"{{ post.title }}",
+"summary":"{{ post.excerpt | replace:"\n","" }}",
+"date":"{{ post.date }}",
+"update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
+"lang":"{{ post.lang }}",
+"path":"{{ post.path }}",
+"url":"{{ post.url }}"
+{% if forloop.last %}
+} 
+{% else %}
+}, 
+{% endif %}
+{% endfor %}
+]
+}
 {% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]
