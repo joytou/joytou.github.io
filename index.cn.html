@@ -6,7 +6,7 @@ lang: cn
 ---
 {% assign translation = site.data[page.lang] %}
 {% for post in site.posts %}
-{% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
+{% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%Y-%b-%d" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%Y-%b-%d" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
 {% if post.lang contains 'cn' %}{% if post.stickie == true %}
 <div class="panel panel-primary">
     <div class="panel-heading">
@@ -26,7 +26,7 @@ lang: cn
 {% endif %}
 {% endfor %}
 {% for post in site.posts %}
-{% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%B %d, %Y" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
+{% if post.lastdate %}{% capture pdate %}<span class="text-muted">{{ post.lastdate | date:"%Y-%b-%d" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% else %}{% capture pdate %}<span class="text-muted">{{ post.date | date:"%Y-%b-%d" }}</span>{% endcapture %}{% capture pauthor %}<a class="text-muted" href="#">{{ site.author }}</a>{% endcapture %}{% endif %}
 {% if post.lang contains 'cn' %}
 <div class="panel panel-default">
     <div class="panel-heading">
