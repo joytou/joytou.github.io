@@ -18,8 +18,8 @@ lang: cn
     </div>
     <div class="panel-footer">
             {% if post.lastdate %}{{ translation.postupdate | replace: 'author', pauthor | replace: 'date', pdate }}{% else %}{{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}{% endif %}
-			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-primary">{{ post.categories }}</span></p>
-			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-primary">{{ tag }}</span> {% endfor %}</p>
+	  <p><span class="glyphicon glyphicon-bookmark"></span> <a href="/{{ page.lang }}/categories/#aa{{ post.categories }}"><span class="label label-primary">{{ post.categories }}</span></a></p>
+	  <p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<a href="/{{ page.lang }}/tags/#aa{{ tag }}"><span class="label label-primary">{{ tag }}</span></a> {% endfor %}</p>
     </div>
 </div>
 {% endif %}
@@ -38,8 +38,8 @@ lang: cn
     </div>
     <div class="panel-footer">
             {% if post.lastdate %}{{ translation.postupdate | replace: 'author', pauthor | replace: 'date', pdate }}{% else %}{{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}{% endif %}
-			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ post.categories }}</span></p>
-			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</p>
+	  <p><span class="glyphicon glyphicon-bookmark"></span> <a href="/{{ page.lang }}/categories/#aa{{ post.categories }}"><span class="label label-default">{{ post.categories }}</span></a></p>
+	  <p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<a href="/{{ page.lang }}/tags/#aa{{ tag }}"><span class="label label-default">{{ tag }}</span></a> {% endfor %}</p>
     </div>
 </div>
 {% endif %}
