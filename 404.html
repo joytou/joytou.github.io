@@ -35,56 +35,7 @@ permalink: /404.html
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="{{ site.url }}/{{ page.lang }}/"><span><img src="{{ '/assets/logo.png' | prepend: site.baseurl }}" width="32px" alt="JOYTOU" style="margin-top: -6px"/> JOYTOU</span></a>
-		</div>
-		<div class="collapse navbar-collapse" id="example-navbar-collapse">
-		  <ul class="nav navbar-nav">
-            <li class="{% if page.nav == "index" %} active{% endif %}"><a href="{{ site.url }}/{{ page.lang }}/"><span class="glyphicon glyphicon-home"></span>首页/Home</a></li>
-            <li class="{% if page.nav == "about" %} active{% endif %}"><a href="{{ site.url }}/{{ page.lang }}/about/"><span class="glyphicon glyphicon-user"></span>关于/About</a></li>
-            <li class="dropdowm{% if page.nav == "post" %} active{% endif %}">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			  <span class="glyphicon glyphicon-sort-by-order-alt"></span>文章归档/Archives <b class="caret"></b>
-			</a>
-			<ul class="dropdown-menu">
-			  {% for post in site.posts  %}
-			  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}{% capture this_month %}{{ post.date | date: "%m" }}{% endcapture %}{% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}{% capture next_month %}{{ post.previous.date | date: "%m" }}{% endcapture %}
-			  {% if forloop.first %}
-			  <li><a href="/{{ page.lang }}/archives/#aa{{ post.date | date: "%Y%m"}}">{{this_year}}-{{this_month}}</a></li>
-			  {% endif %}
-			  {% unless forloop.last %}
-			  {% if this_year != next_year %}
-			  <li><a href="/{{ page.lang }}/archives/#aa{{ post.previous.date | date: "%Y%m"}}">{{next_year}}-{{next_month}}</a></li>
-			  {% else %}    
-			  {% if this_month != next_month %}
-			  <li><a href="/{{ page.lang }}/archives/#aa{{ post.previous.date | date: "%Y%m"}}">{{next_year}}-{{next_month}}</a></li>
-			  {% endif %}
-			  {% endif %}
-			  {% endunless %}
-			  {% endfor %}
-			</ul>
-            </li>
-			<li class="dropdowm{% if page.nav == "category" %} active{% endif %}">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章分类/Categories <b class="caret"></b>
-			</a>
-			<ul class="dropdown-menu">
-			  {% for category in site.categories  %}
-			  <li><a href="/{{ page.lang }}/categories/#aa{{ category | first }}">{{ category | first }}</a></li>
-			  {% endfor %}
-			</ul>
-            </li>
-			<li class="dropdowm{% if page.nav == "tag" %} active{% endif %}">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章标签/Tags <b class="caret"></b>
-			</a>
-			<ul class="dropdown-menu">
-			  {% for tag in site.tags  %}
-			  <li><a href="/{{ page.lang }}/tags/#aa{{ tag | first }}">{{ tag | first }}</a></li>
-			  {% endfor %}
-			</ul>
-            </li>
-            <li class="{% if page.nav == "feed" %} active{% endif %}"><a href="{{ site.url }}/feed.xml"><span class="icon-rss"></span>RSS订阅/RSS feed</a></li>
-		  </ul>
+		  <a class="navbar-brand" href="{{ site.url }}"><span><img src="{{ '/assets/logo.png' | prepend: site.baseurl }}" width="32px" alt="JOYTOU" style="margin-top: -6px"/> JOYTOU</span></a>
 		</div>
 	  </div>
 	</nav>
