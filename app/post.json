@@ -11,6 +11,9 @@ layout: null
 "title":"{{ post.title }}",
 "summary":"{{ post.excerpt | replace:"\n","" }}",
 "date":"{{ post.date }}",
+"update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
+"lang":"{{ post.lang }}",
+"stickie":{% if post.stickie %}1{% else %}0{% endif %},
 "tag":[
 {% for tag in post.tags %}
 "{{ tag }}"

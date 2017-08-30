@@ -6,7 +6,27 @@ layout: null
 "type":"Sort articles by tag",
 "data":[
 {% for tag in site.tags %}
-"{{ tag.first }}"
+{
+"tag":"{{ tag.first }}"
+"posts":[
+{% for post in tag.last %}
+{
+"id":"{{ post.id }}",
+"title":"{{ post.title }}",
+"summary":"{{ post.excerpt | replace:"\n","" }}",
+"date":"{{ post.date }}",
+"update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
+"lang":"{{ post.lang }}",
+"path":"{{ post.path }}",
+"url":"{{ post.url }}"
+{% if forloop.last %}
+} 
+{% else %}
+}, 
+{% endif %}
+{% endfor %}
+]
+}
 {% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]
