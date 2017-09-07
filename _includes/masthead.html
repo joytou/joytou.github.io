@@ -74,11 +74,11 @@
 			  <ul class="dropdown-menu">
 				{% for weblangs in site.data.lang %}
 				{% assign weblang = weblangs[1] %}
-				<li><a href="/{{ weblang.lang }}">{{ weblang.language }}</a></li>
+				<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="/{{ weblang.lang }}">{{ weblang.language }}</a></li>
 				{% endfor %}
 			  </ul>
 			</li>
-            <li class="{% if page.nav == "feed" %} active{% endif %}"><a href="{{ site.url }}/feed.xml"><span class="icon-rss"></span>{{ translation.rssfeed }}</a></li>
+            <li class="{% if page.nav == "feed" %}active{% endif %}"><a href="{{ site.url }}/feed.xml"><span class="icon-rss"></span>{{ translation.rssfeed }}</a></li>
 		  </ul>
 		</div>
 	  </div>
