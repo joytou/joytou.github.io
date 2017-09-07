@@ -57,3 +57,10 @@ BaiduSiteVerification: "lLhmCmVmTf"
 51la: "19258191"
 51lamb: "1"
  
+#Multiple-Deploy
+deploy:
+  type: git
+  repository:
+      github: git@github.com:joytou/joytou.github.io.git
+      coding: git@git.coding.net:joytou/JOYTOU.git
+  branch: master
