@@ -74,7 +74,7 @@
 			  <ul class="dropdown-menu">
 				{% for weblangs in site.data.lang %}
 				{% assign weblang = weblangs[1] %}
-				<li><a href="/{{ weblang.lang }}">{{ webline.language }}</a></li>
+				<li><a href="/{{ weblang.lang }}">{{ weblang.language }}</a></li>
 				{% endfor %}
 			  </ul>
 			</li>
