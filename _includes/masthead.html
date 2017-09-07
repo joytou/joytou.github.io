@@ -72,7 +72,8 @@
 				<span class="glyphicon glyphicon-transfer"></span>{{ translation.selectlang }} <b class="caret"></b>
 			  </a>
 			  <ul class="dropdown-menu">
-				{% for weblang in site.data.lang %}
+				{% for weblangs in site.data.lang %}
+				{% assign weblang = weblangs[1] %}
 				<li><a href="/{{ weblang.lang }}">{{ webline.language }}</a></li>
 				{% endfor %}
 			  </ul>
