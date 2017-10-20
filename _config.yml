@@ -8,11 +8,12 @@ email: 1540294142@qq.com
 author: Joytou Wu
 owner_name: Joytou Wu
 github_username: joytou
-repo: joytou.github.io
+repo: JOYTOU
 
 #Server
 url: http://joytou.nets.hk
 github: https://github.com/joytou/
+coding: https://coding.net/joytou/
 baseurl: ""
 
 #Page settings
@@ -57,3 +58,9 @@ BaiduSiteVerification: "eb6Z6IT34b"
 51la: "19258191"
 51lamb: "1"
 
+coding_comments:
+  owner: 'wusisu'
+  repo: 'wusisu'
+  oauth:
+    client_id: '624713aab28c44e0555b0e8d5d18dece'
+    client_secret: '5d2d45460648bfbd3b9f77bead1a0ac6aa7c3c95'
