@@ -3,14 +3,10 @@
 {% capture style %}<a href="http://getbootstrap.com">Bootstrap</a>{% endcapture %}
 <div class="blog-footer">
       <p>Copyright &copy; 2017 <a href="http://joytou.nets.hk/">Joytou</a></p>
+      <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
       <p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
       <p>
-        <a href="#">{{ translation.backtop }}</a><br/>
-		<a href="http://check.links.cn/?weburl=joytou.nets.hk&bshow=1" target="_blank" title="友情链接检查">友情链接检查</a>
-		<a href="http://i.links.cn/?weburl=joytou.nets.hk" target="_blank" title="查看收录情况">网站收录查询</a><br/>
-		<a href="http://br.links.cn/" target=_blank><img border=0 src="http://br.links.cn/getbr.asp?url=joytou.nets.hk&style=2"></a>
-		<a href="http://pr.links.cn/querypr.asp?url=joytou.nets.hk" target=_blank><img border=0 src="http://pr.links.cn/getpr.asp?queryurl=joytou.nets.hk&show=3"></a><br/>
-		Alexa {{ translation.rank }}:<script language="javascript" src="http://alexa.links.cn/getAlexaRank.asp?queryurl=joytou.nets.hk"></script>
+        <a href="#">{{ translation.backtop }}</a>
       </p>
 	  {% if site.51la and site.51lamb %}
 	  <p>

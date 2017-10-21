@@ -48,7 +48,7 @@ versioncode: 1
         #The current versioncode.
 versionname: "1.0.1"
         #The current versionname.
-remind: true
+#remind: true
         #Whether to remind you to upgrade the latest version when there is the latest version.
 
 #Others
