@@ -63,8 +63,8 @@ SogouSiteVerification: "xhqLIE4SUI"
 51lamb: "1"
 
 coding_comments:
-  owner: 'wusisu'
-  repo: 'wusisu'
+  owner: 'joytou'
+  repo: 'JOYTOU'
   oauth:
     client_id: '624713aab28c44e0555b0e8d5d18dece'
     client_secret: '5d2d45460648bfbd3b9f77bead1a0ac6aa7c3c95'
