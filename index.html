@@ -21,6 +21,9 @@ lang: cn
 	{% if site.SogouSiteVerification %}
     <meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
 	{% endif %}
+	{% if site.360SiteVerification %}
+    <meta name="360-site-verification" content="{{ site.360SiteVerification }}" />
+	{% endif %}
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
