@@ -2,15 +2,17 @@
 <script type="text/javascript" src="//dn-coding-net-public-file.qbox.me/Coding-Comments/v0.1.0/gitment.min.js"></script>
 <div id="container"></div>
 <script>
-    var clientId = '624713aab28c44e0555b0e8d5d18dece'
-    var clientSecret = '5d2d45460648bfbd3b9f77bead1a0ac6aa7c3c95'
+    var clientId = '{{ site.coding_comments.oauth.client_id }}'
+    var clientSecret = '{{ site.coding_comments.oauth.client_secret }}'
     var gitment = new Gitment({
-      owner: 'joytou',
-      repo: 'JOYTOU',
+      owner: '{{ site.coding_comments.owner }}',
+      repo: '{{ site.coding_comments.repo }}',
       oauth: {
         client_id: clientId,
         client_secret: clientSecret,
       },
+	  author: '1540294142@qq.com',
+	  theme: 'JOYTOU'
     })
     document.getElementById('container').appendChild(gitment.render())
 </script>
