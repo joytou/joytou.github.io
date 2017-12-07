@@ -1,5 +1,7 @@
+# Attention
+Because of the server,JOYTOU(http://joytou.net.cn) has moved from "github" to "Coding pages", and no longer support updates. But it still can be used as a template. Hope you can understand, thank you!
 # JOYTOU
-JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
+JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
 
 # Content
 
