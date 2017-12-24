@@ -1,0 +1,13 @@
+cn: 
+   language: "简体中文"
+   code: "zh-Hans"
+   lang: "cn"
+tw:
+   language: "繁體中文"
+   code: "zh-Hant"
+   lang: "tw"
+en: 
+   language: "English"
+   code: "en"
+   lang: "en"
+

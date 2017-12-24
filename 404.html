@@ -1,0 +1,63 @@
+---
+layout: null
+lang: cn
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="Page not found - JOYTOU" />
+	<meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+    <meta name="author" content="{{ site.author }}">
+	<meta name="owner" content="{{ site.owner_name }}" />
+    <meta name="copyright" content="(c) 2017" />
+	{% if site.BaiduSiteVerification %}
+	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
+    {% endif %}
+	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
+    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
+	<title>Page not found - JOYTOU</title>
+	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+  </head>
+  <body>
+	<nav class="navbar navbar-inverse" role="navigation">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse"
+			data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航/Switch navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="/"><span><img src="{{ '/assets/logo.png' | prepend: site.baseurl }}" width="32px" alt="JOYTOU" style="margin-top: -6px"/> JOYTOU</span></a>
+		</div>
+	  </div>
+	</nav>
+	<div class="container">
+	  <div class="blog-header"></div>
+	  
+	  <div class="blog-main">
+		<h1>这里已经是废墟了，什么东西都没有<small><p>404-未找到页面</p></small></h1>
+		<h1>The page can not be found<small><p>404-Page not found</p></small></h1>
+		<a class="btn btn-default btn-lg btn-block" role="button" href="/">
+		  返回首页/Home</a>
+	  </div>
+	  {% capture builder %}<a href="//joytou.net.cn/">Joytou</a>{% endcapture %}
+	  {% capture style %}<a href="http://getbootstrap.com">Bootstrap</a>{% endcapture %}
+	  <div class="blog-footer">
+		<p>Copyright &copy; 2017 <a href="//joytou.net.cn/">Joytou</a></p>
+		<p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
+		<p>
+		  <a href="#">{{ translation.backtop }}</a>
+		</p>
+	  </div>
+	</div>
+  </body>
+</html>
+		

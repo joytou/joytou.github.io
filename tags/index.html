@@ -1,0 +1,42 @@
+---
+layout: default
+nav: tag
+permalink: /cn/tags/
+lang: cn
+---
+
+<ul id="myTab" class="nav nav-tabs">
+{% for tag in site.tags %}
+	{% capture tn %}{{ tag | first }}{% endcapture %}
+	{% if tagname != tn %}
+		{% assign tagname = tn %}
+	    <li{% if forloop.first %} class="active"{% endif %}>
+		  <a href="/{{ page.lang }}/tags/#aa{{ tn }}" data-toggle="tab">{{ tag | first }}</a>
+    </li>
+	{% endif %}
+{% endfor %}
+</ul>
+<div id="myTabContent" class="tab-content">
+{% for tag in site.tags %}
+	{% capture tn %}{{ tag | first }}{% endcapture %}
+	{% if tagname != tn %}
+		{% assign tagname = tn %}
+                {% if forloop.first %}{% else %}</div>{% endif %}
+                <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ tn }}">
+	{% endif %}
+	{% for post in tag.last %}
+	{% if post.lang contains page.lang %}
+	  <p>
+	  <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+	  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+	  </p>
+	{% endif %}
+	{% endfor %}
+{% endfor %}
+</div>
+</div>
+<script>
+    $(function () {
+        $('#myTab a[href="/{{ page.lang }}/tags/'+window.location.hash+'"]').tab('show');
+    });
+</script>

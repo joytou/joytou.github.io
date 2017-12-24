@@ -1,0 +1,34 @@
+---
+layout: null
+---
+{
+"code":0,
+"type":"all posts",
+"data":[
+{% for post in site.posts %}
+{
+"id":"{{ post.id }}",
+"title":"{{ post.title }}",
+"summary":"{{ post.excerpt | strip_html | xml_escape | replace:"
+","" }}",
+"date":"{{ post.date }}",
+"update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
+"lang":"{{ post.lang }}",
+"stickie":{% if post.stickie == true %}1{% else %}0{% endif %},
+"tag":[
+{% for tag in post.tags %}
+"{{ tag }}"
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+],
+"category":"{{ post.categories }}",
+"path":"{{ post.path }}",
+"url":"https://raw.githubusercontent.com/{{ site.github_username }}/{{ site.repo }}/master/{{ post.path }}",
+{% if forloop.last %}
+} 
+{% else %}
+}, 
+{% endif %}
+{% endfor %}
+]
+}

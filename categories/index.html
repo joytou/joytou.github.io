@@ -1,0 +1,42 @@
+---
+layout: default
+nav: category
+permalink: /cn/categories/
+lang: cn
+---
+
+<ul id="myTab" class="nav nav-tabs">
+{% for category in site.categories %}
+	{% capture cn %}{{ category | first }}{% endcapture %}
+	{% if categoryname != cn %}
+		{% assign categoryname = cn %}
+	    <li{% if forloop.first %} class="active"{% endif %}>
+		  <a href="/{{ page.lang }}/categories/#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
+    </li>
+	{% endif %}
+{% endfor %}
+</ul>
+<div id="myTabContent" class="tab-content">
+{% for category in site.categories %}
+	{% capture cn %}{{ category | first }}{% endcapture %}
+	{% if categoryname != cn %}
+		{% assign categoryname = cn %}
+                {% if forloop.first %}{% else %}</div>{% endif %}
+                <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ cn }}">
+	{% endif %}
+	{% for post in category.last %}
+	{% if post.lang contains page.lang %}
+	  <p>
+	  <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+	  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+	  </p>
+	{% endif %}
+	{% endfor %}
+{% endfor %}
+</div>
+</div>
+<script>
+    $(function () {
+        $('#myTab a[href="/{{ page.lang }}/categories/'+window.location.hash+'"]').tab('show');
+    });
+</script>

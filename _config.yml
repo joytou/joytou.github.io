@@ -1,0 +1,70 @@
+# Resources settings
+source:      .
+layouts:     ./_layouts
+timezone:    Asia/Hongkong
+
+# Site settings
+email: 1540294142@qq.com
+author: Joytou Wu
+owner_name: Joytou Wu
+github_username: joytou
+repo: JOYTOU
+
+#Server
+url: http://joytou.nets.hk
+github: https://github.com/joytou/
+coding: https://coding.net/joytou/
+baseurl: ""
+
+#Page settings
+future: true
+show_drafts: nil
+lsi: true
+published: false
+safe: false
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+excerpt_separator: '<!-- more -->'
+
+exclude: ['README.md','Manifest.md']
+include: ['robots.txt']
+
+# Description
+description: "只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog."
+# Keywords
+keywords:
+        - "github"
+        - "bootstrap"
+        - "blog"
+        - "joytou"
+        - "markdown"
+        - "jekyll"
+        - "博客"
+        - "个人博客"
+        - "博客模板"
+        
+#Update configuration
+versioncode: 1
+        #The current versioncode.
+versionname: "1.0.1"
+        #The current versionname.
+#remind: true
+        #Whether to remind you to upgrade the latest version when there is the latest version.
+
+#Others
+#Baidu
+BaiduSiteVerification: "eb6Z6IT34b"
+#Sogou
+SogouSiteVerification: "zrS87SbBu8"
+#360
+360SiteVerification: "24cc2fe4596dc5c6885b587f8db09733"
+#51La
+51la: "19258191"
+51lamb: "1"
+
+coding_comments:
+  owner: 'joytou'
+  repo: 'JOYTOU'
+  oauth:
+    client_id: '624713aab28c44e0555b0e8d5d18dece'
+    client_secret: '5d2d45460648bfbd3b9f77bead1a0ac6aa7c3c95'

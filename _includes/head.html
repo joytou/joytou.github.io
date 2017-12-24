@@ -1,0 +1,66 @@
+{% assign translation = site.data[page.lang] %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}" />
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+    <meta name="author" content="{{ site.author }}">
+	<meta name="owner" content="{{ site.owner_name }}" />
+    <meta name="copyright" content="(c) 2017" />
+	{% if site.BaiduSiteVerification %}
+	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
+    {% endif %}
+    {% if site.SogouSiteVerification %}
+    <meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
+	{% endif %}
+    {% if site.360SiteVerification %}
+    <meta name="360-site-verification" content="{{ site.360SiteVerification }}" />
+	{% endif %}
+    <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}">
+    <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"> 
+    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
+    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+    <script type="text/javascript">
+       var $versioncode = {{ site.versioncode }};//当前版本号，请勿修改
+	   var $lang = "{{ page.lang }}";
+	   function JOYTOUdismiss(){//必须添加JOYTOUdismiss函数，而执行命令可为空
+	       //可选，当没有新版本时所执行的命令
+		   $("#JOYTOUupdate").alert('close');
+	    }
+    </script>
+    <!-- 配置信息 -->
+    <script type="text/javascript" src="//joytou.net.cn/server/server.js"></script>
+    <!-- 引入服务端脚本命令 -->
+    <script src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/cb-search.js' | prepend: site.baseurl }}"></script>
+	  
+    <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
+
+    <!-- pictonic font icon css-->
+    <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}">
+    <!--[if lt IE 8]><script src="{{ '/assets/js/pictonic.min.js' | prepend: site.baseurl }}"></script><![endif]-->
+	
+    <!-- Bootstrap core CSS -->
+    <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
+
+	<!-- search style -->
+    <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}" rel="stylesheet">
+	
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{ '/assets/js/ie-emulation-modes-warning.js' | prepend: site.baseurl }}"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>

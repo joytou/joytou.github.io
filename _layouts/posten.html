@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="blog-post">
+            <h2 class="blog-post-title">{{ page.title }}</h2>
+			{% if page.lastdate %}
+			<p class="blog-post-meta">Finally edited on {{ page.lastdate | date:"%B %d, %Y" }} by <a href="#">{{ site.author }}</a></p>
+			{% else %}
+            <p class="blog-post-meta">{{ page.date | date:"%B %d, %Y" }} by <a href="#">{{ site.author }}</a></p>
+			{% endif %}
+			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ page.categories }}</span></p>
+			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in page.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</p>
+            {{ content }}
+</div>
+<!--include post share-->
+{% include post_share.html %}
+<!--include post comment-->
+{% include comment.html %}
+

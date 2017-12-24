@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="//dn-coding-net-public-file.qbox.me/Coding-Comments/v0.1.0/default.css">
+<script type="text/javascript" src="//dn-coding-net-public-file.qbox.me/Coding-Comments/v0.1.0/gitment.min.js"></script>
+<div id="container"></div>
+<script>
+    var clientId = '{{ site.coding_comments.oauth.client_id }}'
+    var clientSecret = '{{ site.coding_comments.oauth.client_secret }}'
+    var gitment = new Gitment({
+      owner: '{{ site.coding_comments.owner }}',
+      repo: '{{ site.coding_comments.repo }}',
+      oauth: {
+        client_id: clientId,
+        client_secret: clientSecret,
+      },
+	  author: '1540294142@qq.com',
+	  theme: 'JOYTOU'
+    })
+    document.getElementById('container').appendChild(gitment.render())
+</script>

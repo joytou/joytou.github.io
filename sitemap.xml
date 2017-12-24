@@ -1,0 +1,33 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/"> 
+    <url> 
+        <loc>{{ site.url }}{{ site.baseurl }}/index.html</loc> 
+        <mobile:mobile type="pc,mobile"/>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url> 
+{% for post in site.posts %}
+    <url>
+        <loc>{{ post.url| prepend: site.baseurl | prepend: site.url }}</loc>
+        <mobile:mobile type="pc,mobile"/>
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+{% endfor %}
+{% for page in site.pages %}
+  {% if page.layout != 'feed' %}
+    <url>
+        <loc>{{ site.url}}{{ page.url | remove: 'index.html' }}</loc>
+        <mobile:mobile type="pc,mobile"/>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+  {% endif %}
+{% endfor %}
+</urlset>

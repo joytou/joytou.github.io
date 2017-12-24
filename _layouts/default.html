@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html{% if page.lang %}{% assign pgs = site.data.lang[page.lang] %} lang="{{ pgs.code }}"{% endif %}>
+<!--include head-->
+{% include head.html %}
+  <body>
+	<!--include baidu push-->
+	<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+	<!--include 360 push-->
+    <script>
+    (function(){
+      var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?46c5b22d50e91c655840fa7e08751929":"https://jspassport.ssl.qhimg.com/11.0.1.js?46c5b22d50e91c655840fa7e08751929";
+      document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+    </script>
+    <!--include masthead-->
+    {% include masthead.html %}
+    <div class="container">
+      <!--include header-->
+      {% include header.html %}
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <!--include post -->
+          {{ content }}
+        </div><!-- /.blog-main -->
+        <!--include category-->
+        {% include category.html %}
+		<!--include friendlinks-->
+		{% include friendlinks.html %}
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+	<!--include search-->
+	{% include search.html %}
+    <!--include foot-->
+    {% include foot.html %}
+  </body>
+</html>

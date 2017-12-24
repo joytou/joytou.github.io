@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="blog-post">
+            <h2 class="blog-post-title">{{ page.title }}</h2>
+			{% if page.lastdate %}
+            <p class="blog-post-meta">最後由<a href="#">{{ site.author }}</a>編輯于{{ page.lastdate | date:"%Y-%m-%d" }}</p>
+			{% else %}
+            <p class="blog-post-meta">由<a href="#">{{ site.author }}</a>發布于{{ page.date | date:"%Y-%m-%d" }}</p>
+			{% endif %}
+			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ page.categories }}</span></p>
+			<p><span class="glyphicon glyphicon-tags"></span> {% for tag in page.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</p>
+            {{ content }}
+</div>
+<!--include post share-->
+{% include post_share.html %}
+<!--include post comment-->
+{% include comment.html %}
+

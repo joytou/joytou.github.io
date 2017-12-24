@@ -1,0 +1,115 @@
+---
+layout: null
+lang: cn
+---
+<!DOCTYPE html>
+<html>
+  <head>
+	<!--Directly to the area where the user language is located.-->
+	<script src="{{ '/assets/js/languages.js' | prepend: site.baseurl }}"></script>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="JOYTOU - Jekyll Blog Template" />
+	<meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+    <meta name="author" content="{{ site.author }}">
+	<meta name="owner" content="{{ site.owner_name }}" />
+    <meta name="copyright" content="(c) 2017" />
+	{% if site.BaiduSiteVerification %}
+	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
+    {% endif %}
+	{% if site.SogouSiteVerification %}
+    <meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
+	{% endif %}
+	{% if site.360SiteVerification %}
+    <meta name="360-site-verification" content="{{ site.360SiteVerification }}" />
+	{% endif %}
+	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
+    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
+	<title>JOYTOU - Jekyll Blog Template</title>
+	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+  </head>
+  <body>
+
+	<div id="myCarousel" class="carousel slide">
+	  <!-- 轮播（Carousel）指标 -->
+	  <ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+	  </ol>   
+
+	  <!-- 轮播（Carousel）项目 -->
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_cn.png' | prepend: site.baseurl }}" alt="mobile style in Chinese" width="100%">
+		  <div class="carousel-caption"><h4>mobile style in Chinese</h4></div>
+		</div>
+		<div class="item">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_en.png' | prepend: site.baseurl }}" alt="mobile style in English" width="100%">
+		  <div class="carousel-caption"><h4>mobile style in English</h4></div>
+		</div>
+		<div class="item">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_cn.png' | prepend: site.baseurl }}" alt="pc style in Chinese" width="100%">
+		  <div class="carousel-caption"><h4>pc style in Chinese</h4></div>
+		</div>
+		<div class="item">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_en.png' | prepend: site.baseurl }}" alt="pc style in English" width="100%">
+		  <div class="carousel-caption"><h4>pc style in English</h4></div>
+		</div>
+	  </div>
+	  <!-- 轮播（Carousel）导航 -->
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div>
+<div class="jumbotron">
+  	<p><ul class="list-group">
+	  <p>请选择您的语言</p>
+	  <p>Please select your language</p>
+	  <li class="list-group-item"><a href="/cn/">简体中文</a></li>
+	  <li class="list-group-item"><a href="/tw/">繁体中文</a></li>
+	  <li class="list-group-item"><a href="/en/">English</a></li>
+	  </ul>
+	</p>
+	<div class="page-header">
+    <h1>JOYTOU
+        <small><p>由Joytou构建</p><p>build by Joytou</p></small>
+    </h1>
+</div>
+<p>该博客模板为免费模板，不收取任何费用。另外，如若您支持该博客模板，可以向我小额资助。</p>
+<p>This blog template is a free template and does not charge any fees. In addition, if you support the blog template, you can subsidize me a little.</p>
+	  <p>All English translations are provided by Google</p>
+</div>
+<script>
+	$(function(){
+		// 初始化轮播
+			$("#myCarousel").carousel('cycle');
+		// 循环轮播到上一个项目
+		$(".prev-slide").click(function(){
+			$("#myCarousel").carousel('prev');
+		});
+		// 循环轮播到下一个项目
+		$(".next-slide").click(function(){
+			$("#myCarousel").carousel('next');
+		});
+		// 循环轮播到某个特定的帧 
+		$(".slide-one").click(function(){
+			$("#myCarousel").carousel(0);
+		});
+		$(".slide-two").click(function(){
+			$("#myCarousel").carousel(1);
+		});
+		$(".slide-three").click(function(){
+			$("#myCarousel").carousel(2);
+		});
+		$(".slide-four").click(function(){
+			$("#myCarousel").carousel(3);
+		});
+	});
+</script>
+    {% include foot.html %}
+  </body>
+</html>

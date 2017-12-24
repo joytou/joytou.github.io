@@ -1,0 +1,42 @@
+---
+layout: default
+nav: post
+permalink: /en/archives/
+lang: en
+---
+
+<ul id="myTab" class="nav nav-tabs">
+{% for post in site.posts %}
+{% if post.lang contains page.lang %}
+	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
+	{% if yearmonth != ym %}
+		{% assign yearmonth = ym %}
+	    <li{% if forloop.first %} class="active"{% endif %}>
+		  <a href="/{{ page.lang }}/archives/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%B %Y" }}</a>
+    </li>
+	{% endif %}
+{% endif %}
+{% endfor %}
+</ul>
+<div id="myTabContent" class="tab-content">
+  {% for post in site.posts %}
+	{% capture ym %}{{ post.date | date:"%Y%m" }}{% endcapture %}
+	{% if yearmonth != ym %}
+		{% assign yearmonth = ym %}
+                {% if forloop.first %}{% else %}</div>{% endif %}
+                <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ ym }}">
+	{% endif %}
+	{% if post.lang contains page.lang %}
+	<p>
+	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+	</p>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+<script>
+    $(function () {
+        $('#myTab a[href="/{{ page.lang }}/archives/'+window.location.hash+'"]').tab('show');
+    });
+</script>
