@@ -4,14 +4,14 @@ layouts:     ./_layouts
 timezone:    Asia/Hongkong
 
 # Site settings
-email: 1540294142@qq.com
+email: master@joytou.net.cn
 author: Joytou Wu
 owner_name: Joytou Wu
 github_username: joytou
 repo: JOYTOU
 
 #Server
-url: http://joytou.nets.hk
+url: http://joytou.net.cn
 github: https://github.com/joytou/
 coding: https://coding.net/joytou/
 baseurl: ""
