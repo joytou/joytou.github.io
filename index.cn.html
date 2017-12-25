@@ -20,7 +20,7 @@ lang: cn
             {% if post.lastdate %}{{ translation.postupdate | replace: 'author', pauthor | replace: 'date', pdate }}{% else %}{{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}{% endif %}
 	  <p><span class="glyphicon glyphicon-bookmark"></span> <a href="/{{ page.lang }}/categories/#aa{{ post.categories }}"><span class="label label-primary">{{ post.categories }}</span></a></p>
 	  <p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<a href="/{{ page.lang }}/tags/#aa{{ tag }}"><span class="label label-primary">{{ tag }}</span></a> {% endfor %}</p>
-	  <p><span class="glyphicon glyphicon-comment"></span> <span id = "sourceId::{{ post.id }}" class = "cy_cmt_count label label-primary" ></span></p>
+	  <p><span class="glyphicon glyphicon-comment"></span> <span class="label label-primary"><span id = "sourceId::{{ post.id }}" class = "cy_cmt_count" ></span></span></p>
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ site.changyan.appid }}">
   </script>
     </div>
@@ -43,7 +43,7 @@ lang: cn
             {% if post.lastdate %}{{ translation.postupdate | replace: 'author', pauthor | replace: 'date', pdate }}{% else %}{{ translation.postinfo | replace: 'author', pauthor | replace: 'date', pdate }}{% endif %}
 	  <p><span class="glyphicon glyphicon-bookmark"></span> <a href="/{{ page.lang }}/categories/#aa{{ post.categories }}"><span class="label label-default">{{ post.categories }}</span></a></p>
 	  <p><span class="glyphicon glyphicon-tags"></span> {% for tag in post.tags %}<a href="/{{ page.lang }}/tags/#aa{{ tag }}"><span class="label label-default">{{ tag }}</span></a> {% endfor %}</p>
-	  <p><span class="glyphicon glyphicon-comment"></span> <span id = "sourceId::{{ post.id }}" class = "cy_cmt_count label label-default" ></span></p>
+	  <p><span class="glyphicon glyphicon-comment"></span> <span class="label label-default"><span id = "sourceId::{{ post.id }}" class = "cy_cmt_count" ></span></span></p>
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ site.changyan.appid }}">
   </script>
     </div>
