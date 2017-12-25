@@ -62,8 +62,7 @@ SogouSiteVerification: "zrS87SbBu8"
 51la: "19258191"
 51lamb: "1"
 
-#changyan
-changyan: 
-	appid: "cys9CkC15"
-	appconf: "prod_6c14cfe1b9706846e412ddac9bcdb068"
+changyan:
+  appid: "cys9CkC15"
+  appconf: "prod_6c14cfe1b9706846e412ddac9bcdb068"
 
