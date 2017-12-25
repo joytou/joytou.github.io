@@ -17,5 +17,5 @@ tags: [wechat, joytou]
 
 <p>在这里，你可以随时的关注到本博客的最新动态。不用再每天刷着博客，等待又等待。</p>
 <p>手指轻轻一点，即可了解博客的最新信息、访问博客。只要有任何关于本博客的消息，我们都将第一时间发送给您！</p>
-<p>用户可通过搜索“JOYTOU博客”或扫描下方二维码关注！</p>
+<p>用户可通过搜索“<b>JOYTOU博客</b>”或“<b>joytouBlog</b>”，或者直接扫描下方二维码关注！</p>
 <img src="{{ '/assets/qrcode_for_gh_fdcd74bd5633_1280.jpg' | prepend: site.baseurl }}" class="img-responsive"/>

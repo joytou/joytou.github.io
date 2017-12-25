@@ -1,5 +1,5 @@
 # JOYTOU
-JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
+JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
 
 # Content
 
@@ -19,7 +19,7 @@ JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou W
 # en
 
 ## Introduction
-JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
+JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
 
 ## Features
 1. BootStrap style
@@ -39,12 +39,12 @@ Clone from github.com:
 
 - Clone with SSH:
 ```
-git clone git@github.com:joytou/joytou.github.io.git
+git clone git@git.coding.net:joytou/JOYTOU.git
 ```
 
 - Clone with HTTPS:
 ```
-git clone https://github.com/joytou/joytou.github.io.git
+git clone https://git.coding.net/joytou/JOYTOU.git
 ```
 
 ## Configurations
@@ -54,7 +54,7 @@ in _config.yml:
 |:----------:|:----------:|:----------|
 |      email      |      1540294142@qq.com      |       Your e-mail address     |
 |      author      |      Joytou Wu      |      The article author's name      |
-|       url     |     http://joytou.nets.hk       |      Your site address, and do not add  `/`  in the end      |
+|       url     |     http://joytou.net.cn       |      Your site address, and do not add  `/`  in the end      |
 |     github       |      https://github.com/joytou/      |      Your github account address      |
 |      github_username      |      joytou      |       Your github account name     |
 |      repo      |      joytou.github.io      |      Your repository name     |
@@ -120,7 +120,7 @@ By using the Service, you [agree to comply with all the terms of this Agreement]
 # cn
 
 ## 概述
-JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
+JOYTOU(http://joytou.net.cn) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
 
 ## 功能特色
 1. BootStrap样式
@@ -140,12 +140,12 @@ JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基于Bootstrap开发的博�
 
 - 用SSH克隆：
 ```
-git clone git@github.com:joytou/joytou.github.io.git
+git clone git@git.coding.net:joytou/JOYTOU.git
 ```
 
 - 用HTTPS克隆：
 ```
-git clone https://github.com/joytou/joytou.github.io.git
+git clone https://git.coding.net/joytou/JOYTOU.git
 ```
 
 ## 配置
@@ -155,7 +155,7 @@ _config.yml:
 |:----------:|:----------:|:----------|
 |      email      |      1540294142@qq.com      |       您的电子邮件地址     |
 |      author      |      Joytou Wu      |      文章作者名称      |
-|       url     |     http://joytou.nets.hk       |      您的网址，末尾不能加上 `/`       |
+|       url     |     http://joytou.net.cn       |      您的网址，末尾不能加上 `/`       |
 |     github       |      https://github.com/joytou/      |      您的Github用户地址      |
 |      github_username      |      joytou      |       您的Github用户名     |
 |      repo      |      joytou.github.io      |      您的repository名字     |
@@ -220,7 +220,7 @@ Article mainly content
 # tw 
 
 ## 概述 
-JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
+JOYTOU(http://joytou.net.cn) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
 
 ## 功能特色 
 1. BootStrap樣式 
@@ -239,10 +239,10 @@ JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基於Bootstrap開發的博�
 從Github克隆項目： 
 
 - 用SSH克隆： 
-``` git clone git@github.com:joytou/joytou.github.io.git ``` 
+``` git clone git@git.coding.net:joytou/JOYTOU.git ``` 
 
 - 用HTTPS克隆： 
-``` git clone https://github.com/joytou/joytou.github.io.git ``` 
+``` git clone https://git.coding.net/joytou/JOYTOU.git ``` 
 
 ## 配置 
 _config.yml: 
@@ -251,7 +251,7 @@ _config.yml:
 |:----------:|:----------:|:----------| 
 | email | 1540294142@qq.com | 您的電子郵件地址 | 
 | author | Joytou Wu | 文章作者名稱 | 
-| url | http://joytou.nets.hk | 您的網址，末尾不能加上 `/` | 
+| url | http://joytou.netc.cn | 您的網址，末尾不能加上 `/` | 
 | github | https://github.com/joytou/ | 您的Github用戶地址 | 
 | github_username | joytou | 您的Github用戶名 | 
 | repo | joytou.github.io | 您的repository名字 | 
