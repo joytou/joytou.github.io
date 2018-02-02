@@ -1,11 +1,6 @@
-$(document).ready(function(){
-	function pageScroll() {
-		window.scrollBy(0,-10);
-		scrolldelay=setTimeout('pageScroll()',100);
-	};
+$(function(){
 	$("#gotop").click(function(){
-		pageScroll();
+		$("html,body").animate({scrollTop:0},1200);
 	});
-	if(document.documentElement.scrollTop==0)clearTimeout(scrolldelay);
 });
 
