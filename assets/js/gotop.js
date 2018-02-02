@@ -14,4 +14,4 @@ BackTop=function(btnId,DynamicDisplay){
 		if(DynamicDisplay)btn.style.display = d.scrollTop?'block':"none";
 	};
 };
-BackTop('gotop',false);
+BackTop('gotop',true);
