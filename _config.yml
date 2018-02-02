@@ -72,6 +72,7 @@ SogouSiteVerification: "zrS87SbBu8"
 cnzz:
   id: "1272874117"
   show: "pic"
+  HttpsEncryption: false
 
 #ChangYan
 changyan:
