@@ -5,7 +5,7 @@
 	  <h3 class="list-group-item-heading">{{ translation.friendlinks }}</h3>
 	</a>
 	{% for exlinks in site.data.links %}
-	<li class="list-group-item"><a href="{{ exlinks.link }}">{{ exlinks[page.lang] }}</a></li>
+	<li class="list-group-item"><a href="{{ exlinks.link }}" target="_blank">{{ exlinks[page.lang] }}</a></li>
 	{% endfor %}
   </ul>
 </div>
