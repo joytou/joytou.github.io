@@ -1,13 +1,16 @@
 - ##### _data
-  - lang.yml
-  - links.yml
   - cn.yml
   - en.yml
+  - lang.yml
+  - lines.yml
+  - links.yml
+  - metas.yml
   - tw.yml
 - ##### _includes
   - category.html
   - comment.html
   - foot.html
+  - friendlinks.html
   - head.html
   - header.html
   - masthead.html
@@ -26,6 +29,10 @@
   - index.html
   - index.en.html
   - index.tw.html
+- ##### app
+  - category.json
+  - post.json
+  - tag.json
 - ##### archives
   - index.html
   - index.en.html
@@ -77,6 +84,7 @@
   - favicon-48.ico
   - favicon-64.ico
   - logo.png
+  - qrcode(*3)
 - ##### categories
   - index.html
   - index.en.html
@@ -95,6 +103,8 @@
 - index.cn.html
 - index.en.html
 - index.tw.html
+- robots.txt
 - search.json
 - sitemap.xml
 - feed.xml
+- 404.html
