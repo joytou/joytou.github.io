@@ -9,15 +9,9 @@
     <meta name="author" content="{{ site.author }}">
 	<meta name="owner" content="{{ site.owner_name }}" />
     <meta name="copyright" content="(c) 2017 - 2018" />
-	{% if site.BaiduSiteVerification %}
-	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
-    {% endif %}
-    {% if site.SogouSiteVerification %}
-    <meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
-	{% endif %}
-    {% if site.360SiteVerification %}
-    <meta name="360-site-verification" content="{{ site.360SiteVerification }}" />
-	{% endif %}
+	{% for meta in site.data.meta %}
+    <meta name="{{ meta.name }}" content="{{ meta.content }}"/>
+	{% endfor %}
     <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}">
     <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"> 
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>

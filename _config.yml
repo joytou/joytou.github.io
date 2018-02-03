@@ -59,15 +59,6 @@ versionname: "1.0.1"
 
 #Others
 
-#Baidu
-BaiduSiteVerification: "eb6Z6IT34b"
-
-#Sogou
-SogouSiteVerification: "zrS87SbBu8"
-
-#360
-360SiteVerification: "24cc2fe4596dc5c6885b587f8db09733"
-
 #CNZZ
 cnzz:
   id: "1272874117"
