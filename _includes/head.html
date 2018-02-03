@@ -9,7 +9,7 @@
     <meta name="author" content="{{ site.author }}">
 	<meta name="owner" content="{{ site.owner_name }}" />
     <meta name="copyright" content="(c) 2017 - 2018" />
-	{% for meta in site.data.meta %}
+	{% for meta in site.data.metas %}
     <meta name="{{ meta.name }}" content="{{ meta.content }}"/>
 	{% endfor %}
     <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}">
