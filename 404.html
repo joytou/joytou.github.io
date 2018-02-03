@@ -43,7 +43,8 @@ permalink: /404.html
 	  <div class="blog-header"></div>
 	  
 	  <div class="blog-main">
-		<h1>这里已经是废墟了，什么东西都没有<small><p>404-未找到页面</p></small></h1>
+		<h1>您当前访问的是{{ page.path }} </h1>
+		<h1>但这里已经是废墟了，什么东西都没有<small><p>404-未找到页面</p></small></h1>
 		<h1>The page can not be found<small><p>404-Page not found</p></small></h1>
 		<a class="btn btn-default btn-lg btn-block" role="button" href="/">
 		  返回首页/Home</a>
@@ -51,7 +52,7 @@ permalink: /404.html
 	  {% capture builder %}<a href="//joytou.net.cn/">Joytou</a>{% endcapture %}
 	  {% capture style %}<a href="http://getbootstrap.com">Bootstrap</a>{% endcapture %}
 	  <div class="blog-footer">
-		<p>Copyright &copy; 2017 <a href="//joytou.net.cn/">Joytou</a></p>
+		<p>Copyright &copy; 2017 - 2018<a href="//joytou.net.cn/">Joytou</a></p>
 		<p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
 		<p>
 		  <a href="#">{{ translation.backtop }}</a>
