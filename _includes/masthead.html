@@ -74,8 +74,12 @@
 			  <ul class="dropdown-menu">
 				{% for weblangs in site.data.lang %}
 				{% assign weblang = weblangs[1] %}
-				<!--<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="/{{ weblang.lang }}">{{ weblang.language }}</a></li>-->
-				<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="{{ page.url | replace: page.lang,weblang.lang }}">{{ weblang.language }}</a></li>
+				{% capture domainlang %}/{{ page.lang }}/{% endcapture %}
+				{% capture postlang %}-{{ page.lang }}{% endcapture %}
+				{% capture replacedomainlang %}/{{ weblang.lang }}/{% endcapture %}
+				{% capture replacepostlang %}-{{ weblang.lang }}{% endcapture %}
+				<!--<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="{{ page.url | replace: page.lang,weblang.lang }}">{{ weblang.language }}</a></li>-->
+				<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}">{{ weblang.language }}</a></li>
 				{% endfor %}
 			  </ul>
 			</li>
