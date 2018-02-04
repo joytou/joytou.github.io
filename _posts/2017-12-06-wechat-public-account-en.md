@@ -1,6 +1,7 @@
 ---
 layout: posten
 title: "“JOYTOU BLOG”Wechat public account has been published"
+description: "“JOYTOU BLOG” Wechat official account has been published"
 date: 2017-12-06 03:02:00 +0800
 lang: en
 nav: post
@@ -12,8 +13,6 @@ tags: [wechat, joytou]
 * content
 {:toc}
 
-“JOYTOU BLOG” Wechat official account has been published
-<!-- more -->
 
 <p>In here, you can attention to this blogger's latest Dynamic at any time, and needn't to brush the blog every day, waitting and waitting.</p>
 <p>With a little bit of your finger, you can get the latest information about the blog and visit the blog. As long as there is any news about this blog, we will send you in the first time!</p>

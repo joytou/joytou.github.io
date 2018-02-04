@@ -13,7 +13,7 @@ lang: cn
         <h3 class="panel-title"><a href="{{ post.url }}"><span class="label label-primary">{{ translation.top }}</span>{{ post.title }}</a></h3>
     </div>
     <div class="panel-body">
-        {{ post.excerpt | strip_html }}
+        {{ post.description | strip_html }}
         <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
     </div>
     <div class="panel-footer">
@@ -36,7 +36,7 @@ lang: cn
         <h3 class="panel-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
     </div>
     <div class="panel-body">
-        {{ post.excerpt | strip_html }}
+	    {{ post.description | strip_html }}
         <p><a href="{{ post.url }}">{{ translation.readmore }}</a></p>
     </div>
     <div class="panel-footer">

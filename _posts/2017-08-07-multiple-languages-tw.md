@@ -1,6 +1,7 @@
 ---
 layout: posttw
 title: "爲Jekyll網站添加多語言功能"
+description: "如何爲Jekyll網站無插件式的添加多語言功能？"
 date: 2017-08-07 10:08:00 +0800
 lang: tw
 nav: post
@@ -11,8 +12,6 @@ tags: [jekyll, multiple-languages]
 * content
 {:toc}
 
-如何爲Jekyll網站無插件式的添加多語言功能？
-<!-- more -->
 
 - 1.在'_data'文件夾中創建名爲'(語言代碼).yml'的文件
 

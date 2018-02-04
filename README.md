@@ -80,6 +80,9 @@ layout: post
 title:  test       
 #article title 
 
+description: Summary Content
+#Summary content. 
+
 date:   2015-04-05 08:00:00 +0800     
 #publish date 
 
@@ -96,11 +99,6 @@ tags: [log, bootstrap, joytou]    
 --- 
 * content 
 {:toc} 
-
-Summary Content
-#Summary content. 
-
-<!-- more --> 
 
 Article mainly content
 #Writting the article here. 
@@ -176,6 +174,9 @@ layout: post
 title:  test       
 #文章标题 
 
+description: Summary Content
+#摘要内容 
+
 date:   2015-04-05 08:00:00 +0800     
 #发布日期 
 
@@ -192,11 +193,6 @@ tags: [log, bootstrap, joytou]    
 --- 
 * content 
 {:toc} 
-
-Summary Content
-#摘要内容 
-
-<!-- more --> 
 
 Article mainly content
 #在这儿写文章
@@ -266,6 +262,9 @@ layout: post
 title:  test       
 #文章標題
 
+description: Summary Content
+#摘要內容
+
 date:   2015-04-05 08:00:00 +0800     
 #發佈日期
 
@@ -282,11 +281,6 @@ tags: [log, bootstrap, joytou]    
 --- 
 * content 
 {:toc} 
-
-Summary Content
-#摘要內容
-
-<!-- more --> 
 
 Article mainly content
 #在這兒寫文章
