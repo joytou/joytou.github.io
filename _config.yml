@@ -26,21 +26,20 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 
 exclude: ['README.md','Manifest.md']
-include: ['robots.txt']
+include: ['robots.txt','404.html']
 
 # Description
 description: "只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog."
 
 # Keywords
 keywords:
-        - "github"
+        - "git"
         - "bootstrap"
         - "blog"
         - "joytou"
         - "markdown"
         - "jekyll"
         - "博客"
-        - "个人博客"
         - "博客模板"
         
         

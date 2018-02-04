@@ -43,7 +43,9 @@ permalink: /404.html
 	  <div class="blog-header"></div>
 	  
 	  <div class="blog-main">
-		<h1>您当前访问的是{{ page.path }} </h1>
+        <script>
+          document.write('<h1>您当前访问的是'+location.pathname+'</h1>');
+        </script>
 		<h1>但这里已经是废墟了，什么东西都没有<small><p>404-未找到页面</p></small></h1>
 		<h1>The page can not be found<small><p>404-Page not found</p></small></h1>
 		<a class="btn btn-default btn-lg btn-block" role="button" href="/">
