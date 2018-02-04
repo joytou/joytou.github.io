@@ -74,7 +74,8 @@
 			  <ul class="dropdown-menu">
 				{% for weblangs in site.data.lang %}
 				{% assign weblang = weblangs[1] %}
-				<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="/{{ weblang.lang }}">{{ weblang.language }}</a></li>
+				<!--<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="/{{ weblang.lang }}">{{ weblang.language }}</a></li>-->
+				<li class="{% if page.lang == weblang.lang %}active{% endif %}"><a href="{{ page.url | replace: page.lang,weblang.lang }}">{{ weblang.language }}</a></li>
 				{% endfor %}
 			  </ul>
 			</li>
