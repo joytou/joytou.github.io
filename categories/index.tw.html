@@ -4,8 +4,8 @@ nav: category
 permalink: /tw/categories/
 lang: tw
 ---
-
-<ul id="myTab" class="nav nav-tabs">
+{%- assign config = site.data.configuration -%}
+<ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
 {%- for category in site.categories -%}
 	{%- capture cn -%}{{ category | first }}{%- endcapture -%}
 	{%- if categoryname != cn -%}
