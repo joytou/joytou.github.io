@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html{% if page.lang %}{% assign pgs = site.data.lang[page.lang] %} lang="{{ pgs.code }}"{% endif %}>
+<html{%- if page.lang -%}{%- assign pgs = site.data.lang[page.lang] -%} lang="{{ pgs.code }}"{%- endif -%}>
 <!--include head-->
-{% include head.html %}
+{%- include head.html -%}
   <body>
 	<!--include baidu push-->
 	<script>
@@ -26,24 +26,24 @@
     })();
     </script>
     <!--include masthead-->
-    {% include masthead.html %}
+    {%- include masthead.html -%}
     <div class="container">
       <!--include header-->
-      {% include header.html %}
+      {%- include header.html -%}
       <div class="row">
         <div class="col-sm-8 blog-main">
           <!--include post -->
           {{ content }}
         </div><!-- /.blog-main -->
         <!--include category-->
-        {% include category.html %}
+        {%- include category.html -%}
 		<!--include friendlinks-->
-		{% include friendlinks.html %}
+		{%- include friendlinks.html -%}
       </div><!-- /.row -->
     </div><!-- /.container -->
 	<!--include search-->
-	{% include search.html %}
+	{%- include search.html -%}
     <!--include foot-->
-    {% include foot.html %}
+    {%- include foot.html -%}
   </body>
 </html>

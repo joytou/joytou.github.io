@@ -1,19 +1,19 @@
-{% assign translation = site.data[page.lang] %}
-{% capture builder %}<a href="//joytou.net.cn/">Joytou</a>{% endcapture %}
-{% capture style %}<a href="http://getbootstrap.com">Bootstrap</a>{% endcapture %}
+{%- assign translation = site.data[page.lang] -%}
+{%- capture builder -%}<a href="//joytou.net.cn/">Joytou</a>{%- endcapture -%}
+{%- capture style -%}<a href="http://getbootstrap.com">Bootstrap</a>{%- endcapture -%}
 <div class="blog-footer">
       <p>Copyright &copy; 2017 - 2018 <a href="//joytou.net.cn/">Joytou</a></p>
       <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
       <p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
-      {% if site.cnzz.id %}
-      {% if site.cnzz.HttpsEncryption %}
+      {%- if site.cnzz.id -%}
+      {%- if site.cnzz.HttpsEncryption -%}
       <script src="https://s19.cnzz.com/z_stat.php?id={{ site.cnzz.id }}&web_id={{ site.cnzz.id }}" language="JavaScript"></script>
-	  {% endif %}
+	  {%- endif -%}
       <script type="text/javascript">
 	      var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-	      document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz.id }}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D{{ site.cnzz.id }}{% if site.cnzz.show %}%26show%3D{{ site.cnzz.show }}{% endif %}' type='text/javascript'%3E%3C/script%3E"));
+	      document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz.id }}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D{{ site.cnzz.id }}{%- if site.cnzz.show -%}%26show%3D{{ site.cnzz.show }}{%- endif -%}' type='text/javascript'%3E%3C/script%3E"));
       </script>
-      {% endif %}
+      {%- endif -%}
     </div>
 
     <!-- Bootstrap core JavaScript
