@@ -14,12 +14,12 @@ permalink: /test.html
   {% assign year = py %}
   {% assign month == 0 %}
   <li>{{ py }}</li>
+  </ul><ul>
 {% else %}
   {% if pm != month %}
     {% assign month = pm %}
     <li>{{ pm }}</li>
   {% endif %}
-  </ul><ul>
 {% endif %}
 
 {% endfor %}
