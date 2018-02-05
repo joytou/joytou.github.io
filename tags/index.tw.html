@@ -10,7 +10,7 @@ lang: tw
 	{%- capture tn -%}{{ tag | first }}{%- endcapture -%}
 	{%- if tagname != tn -%}
 		{%- assign tagname = tn -%}
-	    <li{%- if forloop.first -%} class="active"{%- endif -%}>
+	    <li{% if forloop.first %} class="active"{% endif %}>
 		  <a href="/{{ page.lang }}/tags/#aa{{ tn }}" data-toggle="tab">{{ tag | first }}</a>
     </li>
 	{%- endif -%}

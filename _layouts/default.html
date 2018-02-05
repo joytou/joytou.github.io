@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html{%- if page.lang -%}{%- assign pgs = site.data.lang[page.lang] -%} lang="{{ pgs.code }}"{%- endif -%}>
+<html{% if page.lang %}{% assign pgs = site.data.lang[page.lang] %} lang="{{ pgs.code }}"{% endif %}>
 <!--include head-->
 {%- include head.html -%}
   <body>

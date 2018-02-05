@@ -10,7 +10,7 @@ lang: en
   {%- capture cn -%}{{ category | first }}{%- endcapture -%}
   {%- if categoryname != cn -%}
   {%- assign categoryname = cn -%}
-  <li{%- if forloop.first -%} class="active"{%- endif -%}>
+  <li{% if forloop.first %} class="active"{% endif %}>
 	<a href="/{{ page.lang }}/categories/#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
   </li>
   {%- endif -%}
