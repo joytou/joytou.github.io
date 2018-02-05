@@ -8,15 +8,18 @@ permalink: /test.html
 
 {% capture py %}{{ post.date | date: "%Y"}}{% endcapture %}
 {% capture pm %}{{ post.date | date: "%m"}}{% endcapture %}
-
+{% if forloop.first %}<ul>{% endif %}
+{% if forloop.last %}</ul>{% endif %}
 {% if py != year %}
   {% assign year = py %}
   {% assign month == 0 %}
+  <li>{{ py }}</li>
 {% else %}
   {% if pm != month %}
     {% assign month = pm %}
-    <p>{{ py }}/{{ pm }}</p>
+    <li>{{ pm }}</li>
   {% endif %}
+  </ul><ul>
 {% endif %}
 
 {% endfor %}
