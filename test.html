@@ -12,7 +12,7 @@ permalink: /test.html
 {% if forloop.last %}</ul> {% endif %}
 {% if py != year %}
   {% assign year = py %}
-  {% if forloop.first %}{% elsif forloop.last %}{% else %}</ul><br/><ul>{% endif %}
+  {% if forloop.first %}{% elsif forloop.last %}{% else %}</ul><br/><br/><ul>{% endif %}
   <li>{{ py }}</li>
 {% endif %}
 {% if pm != month %}
