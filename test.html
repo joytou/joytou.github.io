@@ -28,8 +28,8 @@ permalink: /test.html
 
 <script>
 {% for countpost in site.posts %}
-	  {% capture countpy %}{{ post.date | date: "%Y"}}{% endcapture %}
-	  {% capture countpm %}{{ post.date | date: "%m"}}{% endcapture %}
+	  {% capture countpy %}{{ countpost.date | date: "%Y"}}{% endcapture %}
+	  {% capture countpm %}{{ countpost.date | date: "%m"}}{% endcapture %}
 	  {% if countpy != countyear %}
 		  document.getElementById("y{{ countpy }}").innerHTML = '{{ numy }}';
 	    {% assign countyear = countpy %}
