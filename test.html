@@ -29,6 +29,7 @@ permalink: /test.html
 <script>
 {% for countpost in site.posts %}
 	  {% capture countpy %}{{ countpost.date | date: "%Y"}}{% endcapture %}
+	  {% capture countym %}{{ countpost.date | date: "%Y%m"}}{% endcapture %}
 	  {% if countpy != countyear %}
 	    {% unless forloop.first %}
 		  document.getElementById("y{{ countyear }}").innerHTML = '{{ numy }}';
@@ -40,6 +41,19 @@ permalink: /test.html
 	  {% endif %}
 	  {% if forloop.last %}
 	      document.getElementById("y{{ countyear }}").innerHTML = '{{ numy }}';
+	  {% endif %}
+	  
+	  {% if countym != countyearmonth %}
+	    {% unless forloop.first %}
+		  document.getElementById("m{{ countyearmonth }}").innerHTML = '{{ numm }}';
+		{% endunless %}
+		{% assign countyearmonth = countym %}
+		{% assign numm = 1 %}
+	  {% else %}
+	    {% assign numm = numm | plus: 1 %}
+	  {% endif %}
+	  {% if forloop.last %}
+	      document.getElementById("m{{ countyearmonth }}").innerHTML = '{{ numm }}';
 	  {% endif %}
 {% endfor %}
 </script>
