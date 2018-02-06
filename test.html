@@ -19,14 +19,14 @@ permalink: /test.html
     </ul>
     <ul class="list-group">
   {% endif %}
-  <li class="list-group-item active">{{ py }}</li>
+  <li class="list-group-item active">{{ py }}<span id="y{{ py }}" class="badge"></span></li>
 {% else %}
   {% assign numy = numy | plus: 1 %}
 {% endif %}
 {% if pm != month %}
   {% assign month = pm %}
   {% assign numm = 1 %}
-  <li class="list-group-item">{{ pm }}</li>
+  <li class="list-group-item">{{ pm }}<span id="m{{ pm }}" class="badge"></span></li>
 {% else %}
   {% assign numm = numm | plus: 1 %}
 {% endif %}
