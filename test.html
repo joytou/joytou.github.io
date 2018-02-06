@@ -27,23 +27,23 @@ permalink: /test.html
 {%- endfor -%}
 
 <script>
-{%- for count_post in site.posts -%}
-	  {%- capture count_py -%}{{ post.date | date: "%Y"}}{%- endcapture -%}
-	  {%- capture count_pm -%}{{ post.date | date: "%m"}}{%- endcapture -%}
-	  {%- if count_py != count_year -%}
+{%- for countpost in site.posts -%}
+	  {%- capture countpy -%}{{ post.date | date: "%Y"}}{%- endcapture -%}
+	  {%- capture countpm -%}{{ post.date | date: "%m"}}{%- endcapture -%}
+	  {%- if countpy != countyear -%}
 	  	{% unless forloop.first %}
-		  document.getElementById("y{{ count_py }}").innerHTML = '{{ numy }}';
+		  document.getElementById("y{{ countpy }}").innerHTML = '{{ numy }}';
 		{% endunless %}
-	    {%- assign count_year = count_py -%}
+	    {%- assign countyear = countpy -%}
 	    {% assign numy = 1 %}
 	  {%- else -%}
 	    {% assign numy = numy | plus: 1 %}
 	  {%- endif -%}
-	  {%- if count_pm != count_month -%}
+	  {%- if countpm != countmonth -%}
 	  	{% unless forloop.first %}
-		  document.getElementById("m{{ count_py }}{{ count_pm }}").innerHTML = '{{ numm }}';
+		  document.getElementById("m{{ countpy }}{{ countpm }}").innerHTML = '{{ numm }}';
 		{% endunless %}
-	    {%- assign count_month = count_pm -%}
+	    {%- assign countmonth = countpm -%}
 	    {% assign numm = 1 %}
 	  {%- else -%}
 	    {% assign numm = numm | plus: 1 %}
