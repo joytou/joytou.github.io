@@ -12,7 +12,6 @@ permalink: /test.html
 {% if forloop.last %}</ul> {% endif %}
 {% if py != year %}
   {% assign year = py %}
-  {% assign numy = 1 %}
   {% if forloop.first %}
   {% elsif forloop.last %}
   {% else %}
@@ -20,15 +19,35 @@ permalink: /test.html
     <ul class="list-group">
   {% endif %}
   <li class="list-group-item active">{{ py }}<span id="y{{ py }}" class="badge"></span></li>
-{% else %}
-  {% assign numy = numy | plus: 1 %}
 {% endif %}
 {% if pm != month %}
   {% assign month = pm %}
-  {% assign numm = 1 %}
-  <li class="list-group-item">{{ pm }}<span id="m{{ pm }}" class="badge"></span></li>
-{% else %}
-  {% assign numm = numm | plus: 1 %}
+  <li class="list-group-item">{{ pm }}<span id="m{{ py }}{{ pm }}" class="badge"></span></li>
 {% endif %}
-
 {%- endfor -%}
+
+<script>
+{%- for count_post in site.posts -%}
+	  {%- capture count_py -%}{{ post.date | date: "%Y"}}{%- endcapture -%}
+	  {%- capture count_pm -%}{{ post.date | date: "%m"}}{%- endcapture -%}
+	  {%- if count_py != count_year -%}
+	  	{% unless forloop.first %}
+		  document.getElementById("y{{ count_py }}").innerHTML = '{{ numy }}';
+		{% endunless %}
+	    {%- assign count_year = count_py -%}
+	    {% assign numy = 1 %}
+	  {%- else -%}
+	    {% assign numy = numy | plus: 1 %}
+	  {%- endif -%}
+	  {%- if count_pm != count_month -%}
+	  	{% unless forloop.first %}
+		  document.getElementById("m{{ count_py }}{{ count_pm }}").innerHTML = '{{ numm }}';
+		{% endunless %}
+	    {%- assign count_month = count_pm -%}
+	    {% assign numm = 1 %}
+	  {%- else -%}
+	    {% assign numm = numm | plus: 1 %}
+	  {%- endif -%}
+{%- endfor -%}
+</script>
+
