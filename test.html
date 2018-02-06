@@ -26,7 +26,7 @@ permalink: /test.html
 {% endif %}
 {%- endfor -%}
 
-<!--<script>-->
+<script>
 {% for countpost in site.posts %}
 	  {% capture countpy %}{{ countpost.date | date: "%Y"}}{% endcapture %}
 	  {% capture countpm %}{{ countpost.date | date: "%m"}}{% endcapture %}
@@ -37,14 +37,10 @@ permalink: /test.html
 	  {% else %}
 	    {% assign numy = numy | plus: 1 %}
 	  {% endif %}
-	  
-	  {% if countpm != countmonth %}
-		  document.getElementById("m{{ countyear }}{{ countmonth }}").innerHTML = '{{ numm }}';
-	    {% assign countmonth = countpm %}
-	    {% assign numm = 1 %}
-	  {% else %}
-	    {% assign numm = numm | plus: 1 %}
+	  {% if forloop.last %}
+	      document.getElementById("y{{ countyear }}").innerHTML = '{{ numy }}';
 	  {% endif %}
+	  
 {% endfor %}
-<!--</script>-->
+</script>
 
