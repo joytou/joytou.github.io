@@ -32,7 +32,7 @@ permalink: /test.html
 	  {%- capture countym -%}{{ countpost.date | date: "%Y%m"}}{%- endcapture -%}
 	  {%- if countpy != countyear -%}
 	    {%- unless forloop.first -%}
-		  document.getElementById("y{{ countyear }}").innerHTML = '{{ numy }}';
+		  document.getElementById("y{{ countyear }}").innerHTML = "{{ numy }}";
 		{%- endunless -%}
 	    {%- assign countyear = countpy -%}
 	    {%- assign numy = 1 -%}
@@ -40,12 +40,12 @@ permalink: /test.html
 	    {%- assign numy = numy | plus: 1 -%}
 	  {%- endif -%}
 	  {%- if forloop.last -%}
-	      document.getElementById("y{{ countyear }}").innerHTML = '{{ numy }}';
+	      document.getElementById("y{{ countyear }}").innerHTML = "{{ numy }}";
 	  {%- endif -%}
 	  
 	  {%- if countym != countyearmonth -%}
 	    {%- unless forloop.first -%}
-		  document.getElementById("m{{ countyearmonth }}").innerHTML = '{{ numm }}';
+		  document.getElementById("m{{ countyearmonth }}").innerHTML = "{{ numm }}";
 		{%- endunless -%}
 		{%- assign countyearmonth = countym -%}
 		{%- assign numm = 1 -%}
@@ -53,7 +53,7 @@ permalink: /test.html
 	    {%- assign numm = numm | plus: 1 -%}
 	  {%- endif -%}
 	  {%- if forloop.last -%}
-	      document.getElementById("m{{ countyearmonth }}").innerHTML = '{{ numm }}';
+	      document.getElementById("m{{ countyearmonth }}").innerHTML = "{{ numm }}";
 	  {%- endif -%}
 {%- endfor -%}
 </script>
