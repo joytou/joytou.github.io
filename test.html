@@ -12,7 +12,7 @@ permalink: /test.html
 {% if forloop.last %}</ul> {% endif %}
 {% if py != year %}
   {% assign year = py %}
-  {% assign numy = 0 %}
+  {% assign numy = 1 %}
   {% if forloop.first %}
   {% elsif forloop.last %}
   {% else %}
@@ -22,7 +22,6 @@ permalink: /test.html
   <li class="list-group-item active">{{ py }}</li>
 {% else %}
   {% assign numy = numy | plus: 1 %}
-  {{ numy }}
 {% endif %}
 {% if pm != month %}
   {% assign month = pm %}
