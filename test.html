@@ -25,7 +25,10 @@ permalink: /test.html
 {% endif %}
 {% if pm != month %}
   {% assign month = pm %}
+  {% assign numm = 1 %}
   <li class="list-group-item">{{ pm }}</li>
+{% else %}
+  {% assign numm = numm | plus: 1 %}
 {% endif %}
 
 {%- endfor -%}
