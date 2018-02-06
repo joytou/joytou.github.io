@@ -27,27 +27,23 @@ permalink: /test.html
 {%- endfor -%}
 
 <script>
-{%- for countpost in site.posts -%}
-	  {%- capture countpy -%}{{ post.date | date: "%Y"}}{%- endcapture -%}
-	  {%- capture countpm -%}{{ post.date | date: "%m"}}{%- endcapture -%}
-	  {%- if countpy != countyear -%}
-	  	{% unless forloop.first %}
+{% for countpost in site.posts %}
+	  {% capture countpy %}{{ post.date | date: "%Y"}}{% endcapture %}
+	  {% capture countpm %}{{ post.date | date: "%m"}}{% endcapture %}
+	  {% if countpy != countyear %}
 		  document.getElementById("y{{ countpy }}").innerHTML = '{{ numy }}';
-		{% endunless %}
-	    {%- assign countyear = countpy -%}
+	    {% assign countyear = countpy %}
 	    {% assign numy = 1 %}
-	  {%- else -%}
+	  {% else %}
 	    {% assign numy = numy | plus: 1 %}
-	  {%- endif -%}
-	  {%- if countpm != countmonth -%}
-	  	{% unless forloop.first %}
+	  {% endif %}
+	  {% if countpm != countmonth %}
 		  document.getElementById("m{{ countpy }}{{ countpm }}").innerHTML = '{{ numm }}';
-		{% endunless %}
-	    {%- assign countmonth = countpm -%}
+	    {% assign countmonth = countpm %}
 	    {% assign numm = 1 %}
-	  {%- else -%}
+	  {% else %}
 	    {% assign numm = numm | plus: 1 %}
-	  {%- endif -%}
-{%- endfor -%}
+	  {% endif %}
+{% endfor %}
 </script>
 
