@@ -21,7 +21,7 @@ permalink: /test.html
   {% endif %}
   <li class="list-group-item active">{{ py }}</li>
 {% else %}
-  {% assign numy | plus: 1 %}
+  {% assign numy = numy | plus: 1 %}
   {{ numy }}
 {% endif %}
 {% if pm != month %}
