@@ -37,8 +37,9 @@ permalink: /test.html
 	  {% else %}
 	    {% assign numy = numy | plus: 1 %}
 	  {% endif %}
+	  
 	  {% if countpm != countmonth %}
-		  document.getElementById("m{{ countpy }}{{ countmonth }}").innerHTML = '{{ numm }}';
+		  document.getElementById("m{{ countyear }}{{ countmonth }}").innerHTML = '{{ numm }}';
 	    {% assign countmonth = countpm %}
 	    {% assign numm = 1 %}
 	  {% else %}
