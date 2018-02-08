@@ -4,21 +4,6 @@ nav: dashboard
 permalink: /cn/dashboard/
 lang: cn
 ---
-<!--
-  #site.time
-  #jekyll.environment
-  #site.pages
-  #site.posts
-  #site.static_files
-    ##path
-	##modified_time
-	##extname
-  #site.html_pages
-  #site.html_files
-  #site.collections
-  #site.data
-  #site.documents
-  -->
 {%- assign translation = site.data[page.lang] -%}
 <h1 class="page-header">{{ translation.dashboard }}</h1>
 <div class="well">当前时间：{{ site.time }}</div>
@@ -36,9 +21,11 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-{%- for sitepage in site.pages -%}
+	  {%- assign pageindex = 0 -%}
+	  {%- for sitepage in site.pages | sort -%}
+	  {%- assign pageindex = pageindex | plus: 1 -%}
 <tr>
-  <td>{{ sitepage.index }}</td>
+  <td>{{ pageindex }}</td>
   <td>{{ sitepage.url }}</td>
   <td>{{ sitepage.path }}</td>
   <td>{{ sitepage.date }}</td>
@@ -60,9 +47,11 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-{%- for sitestaticfile in site.related_posts -%}
+	  {%- assign staticfileindex = 0 -%}
+      {%- for sitestaticfile in site.static_files | sort -%}
+	  {%- assign staticfileindex = staticfileindex | plus: 1 -%}
 <tr>
-  <td>{{ sitestaticfile.index }}</td>
+  <td>{{ staticfileindex }}</td>
   <td>{{ sitestaticfile.path }}</td>
   <td>{{ sitestaticfile.extname }}</td>
   <td>{{ sitestaticfile.modified_time }}</td>
@@ -84,9 +73,11 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-{%- for sitecollection in site.collections -%}
+	  {%- assign collectionindex = 0 -%}
+      {%- for sitecollection in site.collections | sort -%}
+	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
-  <td>{{ sitecollection.index }}</td>
+  <td>{{ collectionindex }}</td>
   <td>{{ sitecollection.title }}</td>
   <td>{{ sitecollection.name }}</td>
   <td>{{ sitecollection.path }}</td>
@@ -102,17 +93,119 @@ lang: cn
 	<thead>
 	  <tr>
 		<th>#</th>
+		<th>归属</th>
 		<th>内容</th>
 	  </tr>
 	</thead>
 	<tbody>
-{%- for sitedata in site.data -%}
+	  {%- assign dataindex = 0 -%}
+      {%- for sitedata in site.data | sort -%}
+	  {%- assign dataindex = dataindex | plus: 1 -%}
 <tr>
-  <td>{{ sitedata.index }}</td>
-  <td>{{ sitedata }}</td>
+  <td>{{ dataindex }}</td>
+  <td>{{ sitedata | first }}</td>
+  <td>{{ sitedata | last }}</td>
 </tr>
 {%- endfor -%}
 	</tbody>
   </table>
 </div>
-
+<!--语言清单-->
+<h2 class="sub-header">语言清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>语言</th>
+		<th>代码</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign languagesindex = 0 -%}
+      {%- for languages in site.data.lang | sort -%}
+	  {%- assign languagesindex = languagesindex | plus: 1 -%}
+	  <tr>
+		<td>{{ languagesindex }}</td>
+		<td>{{ languages.language }}</td>
+		<td>{{ languages.code }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--文章清单-->
+<h2 class="sub-header">语言清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>标题</th>
+		<th>日期</th>
+		<th>语言</th>
+		<th>置顶</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign postsindex = 0 -%}
+      {%- for posts in site.posts | sort -%}
+	  {%- assign postsindex = postsindex | plus: 1 -%}
+	  <tr>
+		<td>{{ postsindex }}</td>
+		<td>{{ posts.title }}</td>
+		<td>{{ posts.date }}</td>
+		<td>{% if posts.stickie %}<span class="glyphicon glyphicon-ok"></span>{% endif %}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--分类清单-->
+<h2 class="sub-header">文章分类清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>类别</th>
+		<th>文章数量</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign categoryindex = 0 -%}
+      {%- for category in site.categories | sort -%}
+	  {%- assign categoryindex = categoryindex | plus: 1 -%}
+	  <tr>
+		<td>{{ categoryindex }}</td>
+		<td>{{ category | first }}</td>
+		<td>{% category.last.size %}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--标签清单-->
+<h2 class="sub-header">文章标签清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>标签</th>
+		<th>文章数量</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign tagindex = 0 -%}
+      {%- for tag in site.tags | sort -%}
+	  {%- assign tagindex = tagindex | plus: 1 -%}
+	  <tr>
+		<td>{{ tagindex }}</td>
+		<td>{{ tag | first }}</td>
+		<td>{% tag.last.size %}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
