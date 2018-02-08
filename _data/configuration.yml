@@ -14,7 +14,7 @@
     Stacked: "false"
       
   Developer:
-  	Indebug: "true"
+  	Inbug: "true"
   	  
   	ForNil: "nil"
 
