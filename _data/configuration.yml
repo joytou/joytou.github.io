@@ -10,7 +10,3 @@
     Style: "tabs"
     Stacked: "false"
       
-  Developer:
-  	ShowDashboard: "true"
-  	ForNil: "nil"
-
