@@ -101,7 +101,7 @@ lang: cn
 	  {%- assign dataindex = 0 -%}
       {%- for sitedata in site.data | sort -%}
 	  {%- assign dataindex = dataindex | plus: 1 -%}
-<tr onclick="appendTable({{ dataindex }});">
+	  <tr onclick="appendTable('{{ sitedata | first }}',{{ sitedata | last }})">
   <td>{{ dataindex }}</td>
   <td>{{ sitedata | first }}</td>
   <td>{{ sitedata | last }}</td>
