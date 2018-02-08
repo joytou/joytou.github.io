@@ -1,7 +1,8 @@
 # Resources settings
 source:      .
-layouts:     ./_layouts
+layouts_dir:     ./_layouts
 timezone:    Asia/Hongkong
+--incremental
 
 # Site settings
 email: master@joytou.net.cn

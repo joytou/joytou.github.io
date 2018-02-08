@@ -15,7 +15,7 @@
 		<div class="collapse navbar-collapse" id="example-navbar-collapse">
 		  <ul class="nav navbar-nav">
             <li class="{%- if page.nav == "index" -%} active{%- endif -%}"><a href="/{{ page.lang }}/"><span class="glyphicon glyphicon-home"></span>{{ translation.home }}</a></li>
-			{%- if config.Develop.Debug == "true" | default: "false" -%}
+			{%- if config.Develop.Indebug == "true" | default: "false" -%}
 			<li class="{%- if page.nav == "debug" -%} active{%- endif -%}"><a href="/{{ page.lang }}/dashboard/"><span class="glyphicon glyphicon-dashboard"></span>{{ translation.dashboard }}</a></li>
 			{%- endif -%}
             <li class="{%- if page.nav == "about" -%} active{%- endif -%}"><a href="/{{ page.lang }}/about/"><span class="glyphicon glyphicon-user"></span>{{ translation.about }}</a></li>
