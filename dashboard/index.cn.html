@@ -179,7 +179,7 @@ lang: cn
 	  <tr>
 		<td>{{ categoryindex }}</td>
 		<td>{{ category | first }}</td>
-		<td>{% category.last.size %}</td>
+		<td>{{ category.last.size }}</td>
 	  </tr>
 	  {%- endfor -%}
 	</tbody>
@@ -203,7 +203,7 @@ lang: cn
 	  <tr>
 		<td>{{ tagindex }}</td>
 		<td>{{ tag | first }}</td>
-		<td>{% tag.last.size %}</td>
+		<td>{{ tag.last.size }}</td>
 	  </tr>
 	  {%- endfor -%}
 	</tbody>
