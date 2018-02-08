@@ -1,0 +1,118 @@
+---
+layout: dashboard
+nav: debug
+permalink: /cn/dashboard/
+lang: cn
+---
+<!--
+  #site.time
+  #jekyll.environment
+  #site.pages
+  #site.posts
+  #site.static_files
+    ##path
+	##modified_time
+	##extname
+  #site.html_pages
+  #site.html_files
+  #site.collections
+  #site.data
+  #site.documents
+  -->
+{%- assign translation = site.data[page.lang] -%}
+<h1 class="page-header">{{ translation.dashboard }}</h1>
+<div class="well">当前时间：{{ site.time }}</div>
+<div class="well">生产环境：{{ jekyll.environment }}</div>
+<!--Pages清单-->
+<h2 class="sub-header">页面清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>相对路径</th>
+		<th>源文件地址</th>
+		<th>日期</th>
+	  </tr>
+	</thead>
+	<tbody>
+{%- for sitepage in site.pages -%}
+<tr>
+  <td>{{ sitepage.index }}</td>
+  <td>{{ sitepage.url }}</td>
+  <td>{{ sitepage.path }}</td>
+  <td>{{ sitepage.date }}</td>
+</tr>
+{%- endfor -%}
+    </tbody>
+  </table>
+</div>
+<!--静态文件清单-->
+<h2 class="sub-header">静态文件清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>路径</th>
+		<th>扩展名</th>
+		<th>日期</th>
+	  </tr>
+	</thead>
+	<tbody>
+{%- for sitestaticfile in site.related_posts -%}
+<tr>
+  <td>{{ sitestaticfile.index }}</td>
+  <td>{{ sitestaticfile.path }}</td>
+  <td>{{ sitestaticfile.extname }}</td>
+  <td>{{ sitestaticfile.modified_time }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--collections集合清单-->
+<h2 class="sub-header">集合清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>标题</th>
+		<th>文档名</th>
+		<th>相对路径</th>
+	  </tr>
+	</thead>
+	<tbody>
+{%- for sitecollection in site.collections -%}
+<tr>
+  <td>{{ sitecollection.index }}</td>
+  <td>{{ sitecollection.title }}</td>
+  <td>{{ sitecollection.name }}</td>
+  <td>{{ sitecollection.path }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--data数据清单-->
+<h2 class="sub-header">数据清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>内容</th>
+	  </tr>
+	</thead>
+	<tbody>
+{%- for sitedata in site.data -%}
+<tr>
+  <td>{{ sitedata.index }}</td>
+  <td>{{ sitedata }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+
