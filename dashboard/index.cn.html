@@ -28,7 +28,7 @@ lang: cn
   <td>{{ pageindex }}</td>
   <td>{{ sitepage.url }}</td>
   <td>{{ sitepage.path }}</td>
-  <td>{{ sitepage.date }}</td>
+  <td>{{ sitepage.modified_time }}</td>
 </tr>
 {%- endfor -%}
     </tbody>
@@ -67,9 +67,10 @@ lang: cn
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>标题</th>
+		<th>内容</th>
+		<!--<th>标题</th>
 		<th>文档名</th>
-		<th>相对路径</th>
+		<th>相对路径</th>-->
 	  </tr>
 	</thead>
 	<tbody>
@@ -78,9 +79,10 @@ lang: cn
 	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
   <td>{{ collectionindex }}</td>
-  <td>{{ sitecollection.title }}</td>
+  <td>{{ sitecollection }}</td>
+  <!--<td>{{ sitecollection.title }}</td>
   <td>{{ sitecollection.name }}</td>
-  <td>{{ sitecollection.path }}</td>
+  <td>{{ sitecollection.path }}</td>-->
 </tr>
 {%- endfor -%}
 	</tbody>
@@ -127,8 +129,8 @@ lang: cn
 	  {%- assign languagesindex = languagesindex | plus: 1 -%}
 	  <tr>
 		<td>{{ languagesindex }}</td>
-		<td>{{ languages.language }}</td>
-		<td>{{ languages.code }}</td>
+		<td>{{ languages[1].language }}</td>
+		<td>{{ languages[1].code }}</td>
 	  </tr>
 	  {%- endfor -%}
 	</tbody>
@@ -155,6 +157,7 @@ lang: cn
 		<td>{{ postsindex }}</td>
 		<td>{{ posts.title }}</td>
 		<td>{{ posts.date }}</td>
+		<td>{{ site.data.lang[posts.lang].language }}</td>
 		<td>{% if posts.stickie %}<span class="glyphicon glyphicon-ok"></span>{% endif %}</td>
 	  </tr>
 	  {%- endfor -%}
