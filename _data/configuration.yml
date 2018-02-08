@@ -1,28 +1,16 @@
   Navbar:
     Fixed: "fixed-top"
-      
     Background: "inverse"
       
   Panel:
     Top: "primary"
-      
     NonTop: "default"
       
   Nav:
     Style: "tabs"
-      
     Stacked: "false"
       
   Developer:
-  	Inbug: "true"
-  	  
+  	ShowDashboard: "true"
   	ForNil: "nil"
 
-  Formark:  
-  	-remark: "导航栏固定情况。可选选项：fixed-top,fixed-bottom,static-top，分别对应：固定到顶部，固定到底部，静态顶部。"
-	-remark: "导航栏色彩。可选选项：default,inverse，分别对应：灰色背景黑色字体，黑色背景白色字体。"
-	-remark: "首页文章-置顶-面板色彩。可选选项：primary, success, info, warning, danger, default，分别对应：深蓝，浅绿，浅蓝，浅黄，浅红，浅灰。"
-	-remark: "首页文章-非置顶-面板色彩。可选选项：primary, success, info, warning, danger, default，分别对应：深蓝，浅绿，浅蓝，浅黄，浅红，浅灰。"
-	-remark: "标签页样式。可选选项：tabs, pills，分别对应：选项卡，胶囊式。"
-	-remark: "标签页的标签是否以垂直方向堆叠排列。可选选项：true, false，分别对应：是（垂直），否（横向）。"
-	-remark: "是否在导航栏显示进入仪表盘的链接。可选选项：true, false，分别对应：是（显示），否（隐藏）。"
