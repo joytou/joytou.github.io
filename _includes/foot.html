@@ -2,7 +2,7 @@
 {%- capture builder -%}<a href="//joytou.net.cn/">Joytou</a>{%- endcapture -%}
 {%- capture style -%}<a href="http://getbootstrap.com">Bootstrap</a>{%- endcapture -%}
 <div class="blog-footer">
-      <p>Copyright &copy; 2017 - 2018 <a href="//joytou.net.cn/">Joytou</a></p>
+      <p>Copyright &copy; 2017 - 2018 <a href="//joytou.net/">{{ translation.sitename }}</a></p>
       <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
       <p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
       {%- if site.cnzz.id -%}
