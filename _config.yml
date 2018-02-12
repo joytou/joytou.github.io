@@ -1,7 +1,7 @@
 # Resources settings
 source:      .
 destination:      ./_site
-plugins:     ./_plugins
+plugins_dir:     ./_plugins
 layouts_dir:     ./_layouts
 timezone:    Asia/Hongkong
 gems:        []
