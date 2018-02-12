@@ -1,7 +1,11 @@
 # Resources settings
 source:      .
+destination:      ./_site
+plugins:     ./_plugins
 layouts_dir:     ./_layouts
 timezone:    Asia/Hongkong
+gems:        []
+pygments:     true
 
 # Site settings
 email: master@joytou.net.cn
