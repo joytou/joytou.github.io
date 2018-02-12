@@ -5,7 +5,7 @@ plugins_dir:     ./_plugins
 layouts_dir:     ./_layouts
 timezone:    Asia/Hongkong
 gems:        []
-pygments:     true
+highlighter:     rouge
 
 # Site settings
 email: master@joytou.net.cn
