@@ -29,16 +29,19 @@
 {%- assign rindex = 1 -%}
 {%- assign pindex = index | plus: 1 -%}
 {%- for rpost in site.posts | sort -%}
-  {%- if rpost.lang contains page.lang -%}
+  {%- if rpost.lang == page.lang -%}
     {%- assign rindex = rindex | plus: 1 -%}
     {%- if mindex == rindex -%}
       {%- assign postprevious = rpost -%}
+      {{ midex }}
     {%- endif -%}
     {%- if index == rindex -%}
       {%- assign postcurrent = rpost -%}
+      {{ index }}
     {%- endif -%}
     {%- if pindex == rindex -%}
       {%- assign postnext = rpost -%}
+      {{ pindex }}
     {%- endif -%}
   {%- endif-%}
 {%- endfor -%}
