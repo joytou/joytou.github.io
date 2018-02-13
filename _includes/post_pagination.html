@@ -15,7 +15,7 @@
   </ul>
 </div>
 <hr>-->
-{%- assign findex = 0 -%}
+{%- assign findex = 1 -%}
 {%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
     {%- if post.id contains page.id -%}
@@ -23,25 +23,23 @@
     {%- else -%}
       {%- assign findex = findex | plus: 1 -%}
     {%- endif -%}
-    {{ index }}|{{ post.id }}|{{ page.id }}<br/>
   {%- endif -%}
 {%- endfor -%}
 {%- assign mindex = index | minus: 1 -%}
-{%- assign rindex = 0 -%}
+{%- assign rindex = 1 -%}
 {%- assign pindex = index | plus: 1 -%}
-{%- for post in site.posts | sort -%}
-  {%- if post.lang contains page.lang -%}
+{%- for rpost in site.posts | sort -%}
+  {%- if rpost.lang contains page.lang -%}
     {%- assign rindex = rindex | plus: 1 -%}
     {%- if mindex == rindex -%}
-      {%- assign postprevious = post -%}
+      {%- assign postprevious = rpost -%}
     {%- endif -%}
     {%- if index == rindex -%}
-      {%- assign postcurrent = post -%}
+      {%- assign postcurrent = rpost -%}
     {%- endif -%}
     {%- if pindex == rindex -%}
-      {%- assign postnext = post -%}
+      {%- assign postnext = rpost -%}
     {%- endif -%}
-    {{ rindex }}
   {%- endif-%}
 {%- endfor -%}
 <hr>
