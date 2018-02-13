@@ -1,0 +1,17 @@
+{% assign translation = site.data[page.lang] %}
+<hr>
+<div class="pagination">
+  <ul>
+  {% if page.previous %}
+    <li class="prev"><a href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; {{ translation.previouspost }}</a></li>
+  {% else %}
+    <li class="prev disabled"><a>&larr; {{ translation.previouspost }}</a></li>
+  {% endif %}
+  {% if page.next %}
+    <li class="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}">{{ translation.nextpost }} &rarr;</a></li>
+  {% else %}
+    <li class="next disabled"><a>{{ translation.nextpost }} &rarr;</a>
+  {% endif %}
+  </ul>
+</div>
+<hr>

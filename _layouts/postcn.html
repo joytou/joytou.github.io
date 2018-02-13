@@ -11,6 +11,7 @@ layout: default
 			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">{{ page.categories }}</span></p>
 			<p><span class="glyphicon glyphicon-tags"></span> {%- for tag in page.tags -%}<span class="label label-default">{{ tag }}</span> {%- endfor -%}</p>
             {{ content }}
+            {%- include post_pagination.html -%}
 </div>
 <!--include post share-->
 {%- include post_share.html -%}
