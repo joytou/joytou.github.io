@@ -18,7 +18,7 @@
 {%- assign findex = 0 -%}
 {%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
-    {%- if post.url contains page.next.url -%}
+    {%- if post.id contains page.id -%}
       {%- assign index = findex -%}
     {%- else -%}
       {%- assign findex = findex | plus: 1 -%}
