@@ -19,7 +19,7 @@
 {%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
     {%- if post.id contains page.next.id -%}
-      {% break %}
+      {%- break -%}
     {%- else -%}
       {%- assign index = index | plus: 1 -%}
     {%- endif -%}
