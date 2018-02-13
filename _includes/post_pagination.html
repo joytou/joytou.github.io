@@ -23,7 +23,7 @@
     {%- else -%}
       {%- assign findex = findex | plus: 1 -%}
     {%- endif -%}
-    {{ index }}
+    {{ index }}|{{ post.id }}|{{ page.id }}<br/>
   {%- endif -%}
 {%- endfor -%}
 {%- assign mindex = index | minus: 1 -%}
