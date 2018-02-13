@@ -1,16 +1,59 @@
 {% assign translation = site.data[page.lang] %}
-<hr>
+<!--<hr>
 <div class="pagination">
   <ul>
   {% if page.previous %}
-    <li class="prev"><a href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; {{ translation.previouspost }}</a></li>
+    <li class="prev"><a href="{{ page.previous.url }}">&larr; {{ translation.previouspost }}</a></li>
   {% else %}
-    <li class="prev disabled"><a>&larr; {{ translation.previouspost }}</a></li>
+    <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
   {% endif %}
   {% if page.next %}
-    <li class="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}">{{ translation.nextpost }} &rarr;</a></li>
+    <li class="next"><a href="{{ page.next.url }}">{{ translation.nextpost }} &rarr;</a></li>
   {% else %}
-    <li class="next disabled"><a>{{ translation.nextpost }} &rarr;</a>
+    <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
+  {% endif %}
+  </ul>
+</div>
+<hr>-->
+{%- assign index = 0 -%}
+{%- for post in site.posts -%}
+  {%- if post.lang contains page.lang -%}
+    {%- if post.id contains page.next.id -%}
+      {% break %}
+    {%- else -%}
+      {%- assign index = index | plus: 1 -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign mindex = index | minus: 1 -%}
+{%- assign rindex = 0 -%}
+{%- assign pindex = index | plus: 1 -%}
+{%- for post in site.posts -%}
+  {%- if post.lang contains page.lang -%}
+    {%- assign rindex = rindex | plus: 1 -%}
+    {%- if mindex == rindex-%}
+      {%- assign postprevious = post -%}
+    {%- endif-%}
+    {%- if index == rindex -%}
+      {%- assign postcurrent = post -%}
+    {%- endif -%}
+    {%- if pindex == rindex -%}
+      {%- assign postnext = post -%}
+    {%- endif -%}
+  {%- endif-%}
+{%- endfor -%}
+<hr>
+<div class="pagination">
+  <ul>
+  {% if postprevious %}
+    <li class="prev"><a href="{{ postprevious.url }}">&larr; {{ translation.previouspost }}</a></li>
+  {% else %}
+    <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
+  {% endif %}
+  {% if postnext %}
+    <li class="next"><a href="{{ postnext.url }}">{{ translation.nextpost }} &rarr;</a></li>
+  {% else %}
+    <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
   {% endif %}
   </ul>
 </div>
