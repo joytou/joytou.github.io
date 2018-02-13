@@ -18,11 +18,12 @@
 {%- assign index = 0 -%}
 {%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
-    {%- if post.id contains page.next.id -%}
+    {%- if post.url contains page.next.url -%}
       {%- break -%}
     {%- else -%}
       {%- assign index = index | plus: 1 -%}
     {%- endif -%}
+    {{ index }}
   {%- endif -%}
 {%- endfor -%}
 {%- assign mindex = index | minus: 1 -%}
@@ -40,6 +41,7 @@
     {%- if pindex == rindex -%}
       {%- assign postnext = post -%}
     {%- endif -%}
+    {{ rindex }}
   {%- endif-%}
 {%- endfor -%}
 <hr>
@@ -50,7 +52,6 @@
   {% else %}
     <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
   {% endif %}
-  {{ postprivious }}-{{ postcurrent }}-{{ postnext }}
   {% if postnext %}
     <li class="next"><a href="{{ postnext.url }}">{{ translation.nextpost }} &rarr;</a></li>
   {% else %}
