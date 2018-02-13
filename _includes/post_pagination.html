@@ -16,7 +16,7 @@
 </div>
 <hr>-->
 {%- assign index = 0 -%}
-{%- for post in site.posts -%}
+{%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
     {%- if post.id contains page.next.id -%}
       {% break %}
@@ -28,12 +28,12 @@
 {%- assign mindex = index | minus: 1 -%}
 {%- assign rindex = 0 -%}
 {%- assign pindex = index | plus: 1 -%}
-{%- for post in site.posts -%}
+{%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
     {%- assign rindex = rindex | plus: 1 -%}
-    {%- if mindex == rindex-%}
+    {%- if mindex == rindex -%}
       {%- assign postprevious = post -%}
-    {%- endif-%}
+    {%- endif -%}
     {%- if index == rindex -%}
       {%- assign postcurrent = post -%}
     {%- endif -%}
@@ -44,7 +44,7 @@
 {%- endfor -%}
 <hr>
 <div class="pagination">
-  <ul>
+  <ul class="pager">
   {% if postprevious %}
     <li class="prev"><a href="{{ postprevious.url }}">&larr; {{ translation.previouspost }}</a></li>
   {% else %}
