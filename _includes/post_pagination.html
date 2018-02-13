@@ -33,18 +33,22 @@
     {%- assign rindex = rindex | plus: 1 -%}
     {%- if mindex == rindex -%}
       {%- assign postprevious = rpost -%}
-      {{ midex }}
+      {{ midex | append: "|" }}
     {%- endif -%}
     {%- if index == rindex -%}
       {%- assign postcurrent = rpost -%}
-      {{ index }}
+      {{ index | append: "|" }}
     {%- endif -%}
     {%- if pindex == rindex -%}
       {%- assign postnext = rpost -%}
-      {{ pindex }}
+      {{ pindex | append: "|" }}
     {%- endif -%}
   {%- endif-%}
 {%- endfor -%}
+<br/>
+{{ postprevious | jsonify }}<br/>
+{{ postcurrent | jsonify }}<br/>
+{{ postnext | jsonify }}<br/>
 <hr>
 <div class="pagination">
   <ul class="pager">
