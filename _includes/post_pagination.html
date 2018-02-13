@@ -14,7 +14,7 @@
   {% endif %}
   </ul>
 </div>
-<hr>-->
+<hr>--><!--
 {%- assign findex = 1 -%}
 {%- for post in site.posts | sort -%}
   {%- if post.lang contains page.lang -%}
@@ -45,10 +45,6 @@
     {%- endif -%}
   {%- endif-%}
 {%- endfor -%}
-<br/>
-{{ postprevious | jsonify }}<br/>
-{{ postcurrent | jsonify }}<br/>
-{{ postnext | jsonify }}<br/>
 <hr>
 <div class="pagination">
   <ul class="pager">
@@ -64,4 +60,4 @@
   {% endif %}
   </ul>
 </div>
-<hr>
+<hr>-->
