@@ -19,29 +19,41 @@
 {%- for firstpost in site.posts | sort -%}
   {%- if firstpost.lang contains page.lang -%}
     {%- if page.url contains firstpost.url -%}
-      current:{{ findex }}<br/>
       {%- break -%}
     {%- else -%}
       {%- assign findex = findex | plus: 1 -%}
-      not:{{ findex }}<br/>
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
-
 {%- assign secondindex = 1 -%}
 {%- assign previousindex = findex | minus: 1 -%}
 {%- assign nextindex = findex | plus: 1 -%}
 {%- for secondpost in site.posts | sort -%}
   {%- if secondpost.lang contains page.lang -%}
     {%- if previousindex == secondindex -%}
-      previous:{{ secondpost.url }}<br/>
+      {%- capture previouspost -%}{{ secondpost.url }}{%- endcapture -%}
     {%- elsif findex == secondindex -%}
-      current:{{ secondpost.url }}<br/>
+      {%- capture currentpost -%}{{ secondpost.url }}{%- endcapture -%}
     {%- elsif nextindex == secondindex -%}
-      next:{{ secondpost.url }}<br/>
+      {%- capture nextpost -%}{{ secondpost.url }}{%- endcapture -%}
     {%- else -%}
-      error:{{ secondpost.url }}<br/>
     {%- endif -%}
     {%- assign secondindex = secondindex | plus: 1 -%}
   {%- endif -%}
 {%- endfor -%}
+<hr>
+<div class="pagination">
+  <ul>
+  {% if previouspost %}
+    <li class="prev"><a href="{{ previouspost }}">&larr; {{ translation.previouspost }}</a></li>
+  {% else %}
+    <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
+  {% endif %}
+  {% if nextpost %}
+    <li class="next"><a href="{{ nextpost }}">{{ translation.nextpost }} &rarr;</a></li>
+  {% else %}
+    <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
+  {% endif %}
+  </ul>
+</div>
+<hr>
