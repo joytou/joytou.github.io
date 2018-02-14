@@ -15,13 +15,15 @@
   </ul>
 </div>
 <hr>-->
-{%- assign firstindex = 1 -%}
+{%- assign findex = 1 -%}
 {%- for firstpost in site.posts | sort -%}
   {%- if firstpost.lang contains page.lang -%}
     {%- if page.next.id contains post.id -%}
-      {%- assign findex = firstindex | plus: 1 -%}
+      current:{{ findex }}<br/>
+      {%- break -%}
     {%- else -%}
-      {%- assign firstindex = firstindex | plus: 1 -%}
+      {%- assign findex = findex | plus: 1 -%}
+      not:{{ findex }}<br/>
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
