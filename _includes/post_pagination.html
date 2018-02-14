@@ -31,11 +31,14 @@
 {%- for secondpost in site.posts | sort -%}
   {%- if secondpost.lang contains page.lang -%}
     {%- if previousindex == secondindex -%}
-      {%- capture previouspost -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture previousurl -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture previoustitle-%}{{ secondpost.title }}{%- endcapture -%}
     {%- elsif findex == secondindex -%}
-      {%- capture currentpost -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture currenturl -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture currenttitle -%}{{ secondpost.title }}{%- endcapture -%}
     {%- elsif nextindex == secondindex -%}
-      {%- capture nextpost -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture nexturl -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture nexttitle -%}{{ secondpost.title }}{%- endcapture -%}
     {%- else -%}
     {%- endif -%}
     {%- assign secondindex = secondindex | plus: 1 -%}
@@ -43,13 +46,13 @@
 {%- endfor -%}
 <hr>
   <ul class="pager">
-  {%- if previouspost -%}
-    <li class="previous"><a href="{{ previouspost }}">&larr; {{ translation.previouspost }}</a></li>
+  {%- if previousurl -%}
+    <li class="previous"><a href="{{ previousurl }}" title="{{ previoustitle }}">&larr; {{ translation.previouspost }}</a></li>
   {%- else -%}
     <li class="previous disabled">&larr; {{ translation.previouspost }}</li>
   {%- endif -%}
-  {%- if nextpost -%}
-    <li class="next"><a href="{{ nextpost }}">{{ translation.nextpost }} &rarr;</a></li>
+  {%- if nexturl -%}
+    <li class="next"><a href="{{ nexturl }}" title="{{ nexttitle }}">{{ translation.nextpost }} &rarr;</a></li>
   {%- else -%}
     <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
   {%- endif -%}
