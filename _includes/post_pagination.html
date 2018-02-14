@@ -1,7 +1,7 @@
 {% assign translation = site.data[page.lang] %}
 <!--<hr>
 <div class="pagination">
-  <ul>
+  <ul class="pager">
   {% if page.previous %}
     <li class="prev"><a href="{{ page.previous.url }}">&larr; {{ translation.previouspost }}</a></li>
   {% else %}
@@ -43,7 +43,7 @@
 {%- endfor -%}
 <hr>
 <div class="pagination">
-  <ul>
+  <ul class="pager">
   {% if previouspost %}
     <li class="prev"><a href="{{ previouspost }}">&larr; {{ translation.previouspost }}</a></li>
   {% else %}
