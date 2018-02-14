@@ -3,9 +3,9 @@
 <div class="pagination">
   <ul class="pager">
   {% if page.previous %}
-    <li class="prev"><a href="{{ page.previous.url }}">&larr; {{ translation.previouspost }}</a></li>
+    <li class="previous"><a href="{{ page.previous.url }}">&larr; {{ translation.previouspost }}</a></li>
   {% else %}
-    <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
+    <li class="previous disabled">&larr; {{ translation.previouspost }}</li>
   {% endif %}
   {% if page.next %}
     <li class="next"><a href="{{ page.next.url }}">{{ translation.nextpost }} &rarr;</a></li>
@@ -42,18 +42,16 @@
   {%- endif -%}
 {%- endfor -%}
 <hr>
-<div class="pagination">
   <ul class="pager">
-  {% if previouspost %}
-    <li class="prev"><a href="{{ previouspost }}">&larr; {{ translation.previouspost }}</a></li>
-  {% else %}
-    <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
-  {% endif %}
-  {% if nextpost %}
+  {%- if previouspost -%}
+    <li class="previous"><a href="{{ previouspost }}">&larr; {{ translation.previouspost }}</a></li>
+  {%- else -%}
+    <li class="previous disabled">&larr; {{ translation.previouspost }}</li>
+  {%- endif -%}
+  {%- if nextpost -%}
     <li class="next"><a href="{{ nextpost }}">{{ translation.nextpost }} &rarr;</a></li>
-  {% else %}
+  {%- else -%}
     <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
-  {% endif %}
+  {%- endif -%}
   </ul>
-</div>
 <hr>
