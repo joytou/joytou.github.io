@@ -18,7 +18,7 @@
 {%- assign findex = 1 -%}
 {%- for firstpost in site.posts | sort -%}
   {%- if firstpost.lang contains page.lang -%}
-    {%- if page.next.id contains post.id -%}
+    {%- if page.next.url contains post.url -%}
       current:{{ findex }}<br/>
       {%- break -%}
     {%- else -%}
