@@ -30,13 +30,15 @@
 {%- assign previousindex = findex | minus: 1 -%}
 {%- assign nextindex = findex | plus: 1 -%}
 {%- for secondpost in site.posts | sort -%}
-  {%- if firstpost.lang contains page.lang -%}
+  {%- if secondpost.lang contains page.lang -%}
     {%- if previousindex == secondindex -%}
-      {{ secondpost.url }}<br/>
+      previous:{{ secondpost.url }}<br/>
     {%- elsif findex == secondindex -%}
-      {{ secondpost.url }}<br/>
+      current:{{ secondpost.url }}<br/>
     {%- elsif nextindex == secondindex -%}
-      {{ secondpost.url }}<br/>
+      next:{{ secondpost.url }}<br/>
+    {%- else -%}
+      error:{{ secondpost.url }}<br/>
     {%- endif -%}
     {%- assign secondindex = secondindex | plus: 1 -%}
   {%- endif -%}
