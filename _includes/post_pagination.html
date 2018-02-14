@@ -32,7 +32,7 @@
   {%- if rpost.lang == page.lang -%}
     {%- assign rindex = rindex | plus: 1 -%}
     {%- if mindex == rindex -%}
-      {%- assign postprevious = rpost -%}
+      {%- assign postprevious = rpost.url -%}
       {{ midex | append: "|" }}
     {%- endif -%}
     {%- if index == rindex -%}
