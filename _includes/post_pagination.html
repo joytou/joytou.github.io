@@ -14,50 +14,30 @@
   {% endif %}
   </ul>
 </div>
-<hr>--><!--
-{%- assign findex = 1 -%}
-{%- for post in site.posts | sort -%}
-  {%- if post.lang contains page.lang -%}
-    {%- if post.id contains page.id -%}
-      {%- assign index = findex -%}
+<hr>-->
+{%- assign firstindex = 1 -%}
+{%- for firstpost in site.posts | sort -%}
+  {%- if firstpost.lang contains page.lang -%}
+    {%- if page.next.id contains post.id -%}
+      {%- assign findex = firstindex | plus: 1 -%}
     {%- else -%}
-      {%- assign findex = findex | plus: 1 -%}
+      {%- assign firstindex = firstindex | plus: 1 -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
-{%- assign mindex = index | minus: 1 -%}
-{%- assign rindex = 1 -%}
-{%- assign pindex = index | plus: 1 -%}
-{%- for rpost in site.posts | sort -%}
-  {%- if rpost.lang == page.lang -%}
-    {%- assign rindex = rindex | plus: 1 -%}
-    {%- if mindex == rindex -%}
-      {%- assign postprevious = rpost.url -%}
-      {{ midex | append: "|" }}
+
+{%- assign secondindex = 1 -%}
+{%- assign previousindex = findex | minus: 1 -%}
+{%- assign nextindex = findex | plus: 1 -%}
+{%- for secondpost in site.posts | sort -%}
+  {%- if firstpost.lang contains page.lang -%}
+    {%- if previousindex == secondindex -%}
+      {{ secondpost.url }}<br/>
+    {%- elsif findex == secondindex -%}
+      {{ secondpost.url }}<br/>
+    {%- elsif nextindex == secondindex -%}
+      {{ secondpost.url }}<br/>
     {%- endif -%}
-    {%- if index == rindex -%}
-      {%- assign postcurrent = rpost.url -%}
-      {{ index | append: "|" }}
-    {%- endif -%}
-    {%- if pindex == rindex -%}
-      {%- assign postnext = rpost.url -%}
-      {{ pindex | append: "|" }}
-    {%- endif -%}
-  {%- endif-%}
+    {%- assign secondindex = secondindex | plus: 1 -%}
+  {%- endif -%}
 {%- endfor -%}
-<hr>
-<div class="pagination">
-  <ul class="pager">
-  {% if postprevious %}
-    <li class="prev"><a href="{{ postprevious }}">&larr; {{ translation.previouspost }}</a></li>
-  {% else %}
-    <li class="prev disabled">&larr; {{ translation.previouspost }}</li>
-  {% endif %}
-  {% if postnext %}
-    <li class="next"><a href="{{ postnext }}">{{ translation.nextpost }} &rarr;</a></li>
-  {% else %}
-    <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
-  {% endif %}
-  </ul>
-</div>
-<hr>-->
