@@ -1,4 +1,4 @@
-{%- assign translation = site.data[page.lang] -%}
+{%- assign translation = site.data.language[page.lang] -%}
 {%- assign config = site.data.configuration -%}
 <nav class="navbar navbar-{{ config.Navbar.Background | default: "inverse" }} navbar-{{ config.Navbar.Fixed | default: "fixed-top" }}" role="navigation">
 	  <div class="container-fluid">

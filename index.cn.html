@@ -4,7 +4,7 @@ nav: index
 permalink: /cn/
 lang: cn
 ---
-{%- assign translation = site.data[page.lang] -%}
+{%- assign translation = site.data.language[page.lang] -%}
 {%- assign config = site.data.configuration -%}
 {%- for post in site.posts -%}
 {%- if post.lastdate -%}{%- capture pdate -%}<span class="text-muted">{{ post.lastdate | date:"%Y-%m-%d" }}</span>{%- endcapture -%}{%- capture pauthor -%}<a class="text-muted" href="#">{{ site.author }}</a>{%- endcapture -%}{%- else -%}{%- capture pdate -%}<span class="text-muted">{{ post.date | date:"%Y-%m-%d" }}</span>{%- endcapture -%}{%- capture pauthor -%}<a class="text-muted" href="#">{{ site.author }}</a>{%- endcapture -%}{%- endif -%}

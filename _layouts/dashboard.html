@@ -1,4 +1,4 @@
-{%- assign translation = site.data[page.lang] -%}
+{%- assign translation = site.data.language[page.lang] -%}
 <!DOCTYPE html>
 <html{% if page.lang %}{% assign pgs = site.data.lang[page.lang] %} lang="{{ pgs.code }}"{% endif %}>
   <head>
