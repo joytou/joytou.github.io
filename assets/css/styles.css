@@ -6,6 +6,7 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  padding-top: 30px;
 }
 
 h1, .h1,
@@ -80,7 +81,7 @@ h6, .h6 {
  */
 
 .blog-header {
-  padding-top: 30px;
+/*  padding-top: 30px;*/
   padding-bottom: 10px;
 }
 .blog-title {
