@@ -4,7 +4,7 @@ nav: dashboard
 permalink: /cn/dashboard/
 lang: cn
 ---
-{%- assign translation = site.data[page.lang] -%}
+{%- assign translation = site.data.language[page.lang] -%}
 <h1 class="page-header">{{ translation.dashboard }}</h1>
 <div class="well">当前时间：{{ site.time }}</div>
 <div class="well">生产环境：{{ jekyll.environment }}</div>
