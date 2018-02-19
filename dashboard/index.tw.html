@@ -1,21 +1,235 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
 ---
 layout: dashboard
 nav: dashboard
-permalink: /cn/dashboard/
-lang: cn
+permalink: /tw/dashboard/
+lang: tw
 ---
 {%- assign translation = site.data.language[page.lang] -%}
 <h1 class="page-header">{{ translation.dashboard }}</h1>
-<div class="well">当前时间：{{ site.time }}</div>
-<div class="well">生产环境：{{ jekyll.environment }}</div>
-<!--Pages清单-->
-<h2 class="sub-header">页面清单</h2>
+<div class="well">當前時間：{{ site.time }}</div>
+<div class="well">生產環境：{{ jekyll.environment }}</div>
+<!--Pages清單-->
+<h2 class="sub-header">頁面清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>相对路径</th>
+		<th>相對路徑</th>
 		<th>源文件地址</th>
 	  </tr>
 	</thead>
@@ -32,15 +246,15 @@ lang: cn
     </tbody>
   </table>
 </div>
-<!--静态文件清单-->
-<h2 class="sub-header">静态文件清单</h2>
+<!--靜態文件清單-->
+<h2 class="sub-header">靜態文件清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>路径</th>
-		<th>扩展名</th>
+		<th>路徑</th>
+		<th>擴展名</th>
 		<th>日期</th>
 	  </tr>
 	</thead>
@@ -58,17 +272,17 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--collections集合清单-->
-<h2 class="sub-header">集合清单</h2>
+<!--collections集合清單-->
+<h2 class="sub-header">集合清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>内容</th>
-		<!--<th>标题</th>
-		<th>文档名</th>
-		<th>相对路径</th>-->
+		<th>內容</th>
+		<!--<th>標題</th>
+		<th>文檔名</th>
+		<th>相對路徑</th>-->
 	  </tr>
 	</thead>
 	<tbody>
@@ -86,15 +300,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--data数据清单-->
-<h2 class="sub-header">数据清单</h2>
+<!--data數據清單-->
+<h2 class="sub-header">數據清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>归属</th>
-		<th>内容</th>
+		<th>歸屬</th>
+		<th>內容</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -110,15 +324,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--语言清单-->
-<h2 class="sub-header">语言清单</h2>
+<!--語言清單-->
+<h2 class="sub-header">語言清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>语言</th>
-		<th>代码</th>
+		<th>語言</th>
+		<th>代碼</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -134,17 +348,17 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--文章清单-->
-<h2 class="sub-header">文章清单</h2>
+<!--文章清單-->
+<h2 class="sub-header">文章清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>标题</th>
+		<th>標題</th>
 		<th>日期</th>
-		<th>语言</th>
-		<th>置顶</th>
+		<th>語言</th>
+		<th>置頂</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -162,15 +376,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--分类清单-->
-<h2 class="sub-header">文章分类清单</h2>
+<!--分類清單-->
+<h2 class="sub-header">文章分類清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>类别</th>
-		<th>文章数量</th>
+		<th>類別</th>
+		<th>文章數量</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -186,15 +400,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--标签清单-->
-<h2 class="sub-header">文章标签清单</h2>
+<!--標簽清單-->
+<h2 class="sub-header">文章標簽清單</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>标签</th>
-		<th>文章数量</th>
+		<th>標簽</th>
+		<th>文章數量</th>
 	  </tr>
 	</thead>
 	<tbody>

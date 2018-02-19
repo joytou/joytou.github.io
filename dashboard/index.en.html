@@ -1,22 +1,22 @@
 ---
 layout: dashboard
 nav: dashboard
-permalink: /cn/dashboard/
-lang: cn
+permalink: /en/dashboard/
+lang: en
 ---
 {%- assign translation = site.data.language[page.lang] -%}
 <h1 class="page-header">{{ translation.dashboard }}</h1>
-<div class="well">当前时间：{{ site.time }}</div>
-<div class="well">生产环境：{{ jekyll.environment }}</div>
-<!--Pages清单-->
-<h2 class="sub-header">页面清单</h2>
+<div class="well">Current time:{{ site.time }}</div>
+<div class="well">Production environment:{{ jekyll.environment }}</div>
+<!--Pages list-->
+<h2 class="sub-header">Pages list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>相对路径</th>
-		<th>源文件地址</th>
+		<th>Relative path</th>
+		<th>Source file address</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -32,16 +32,16 @@ lang: cn
     </tbody>
   </table>
 </div>
-<!--静态文件清单-->
-<h2 class="sub-header">静态文件清单</h2>
+<!--Static files list-->
+<h2 class="sub-header">Static files list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>路径</th>
-		<th>扩展名</th>
-		<th>日期</th>
+		<th>Path</th>
+		<th>Suffix</th>
+		<th>Date</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -58,17 +58,17 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--collections集合清单-->
-<h2 class="sub-header">集合清单</h2>
+<!--collections collection list-->
+<h2 class="sub-header">Collections list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>内容</th>
-		<!--<th>标题</th>
-		<th>文档名</th>
-		<th>相对路径</th>-->
+		<th>Content</th>
+		<!--<th>Title</th>
+		<th>File name</th>
+		<th>Relative path</th>-->
 	  </tr>
 	</thead>
 	<tbody>
@@ -86,15 +86,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--data数据清单-->
-<h2 class="sub-header">数据清单</h2>
+<!--data data list-->
+<h2 class="sub-header">Datas list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>归属</th>
-		<th>内容</th>
+		<th>Attribution</th>
+		<th>Content</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -110,15 +110,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--语言清单-->
-<h2 class="sub-header">语言清单</h2>
+<!--language list-->
+<h2 class="sub-header">Languages list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>语言</th>
-		<th>代码</th>
+		<th>Language</th>
+		<th>Code</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -134,17 +134,17 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--文章清单-->
-<h2 class="sub-header">文章清单</h2>
+<!--Articles list-->
+<h2 class="sub-header">Articles list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>标题</th>
-		<th>日期</th>
-		<th>语言</th>
-		<th>置顶</th>
+		<th>Title</th>
+		<th>Date</th>
+		<th>Language</th>
+		<th>Top</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -162,15 +162,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--分类清单-->
-<h2 class="sub-header">文章分类清单</h2>
+<!--Category list-->
+<h2 class="sub-header">Categories list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>类别</th>
-		<th>文章数量</th>
+		<th>Category</th>
+		<th>Number of articles</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -186,15 +186,15 @@ lang: cn
 	</tbody>
   </table>
 </div>
-<!--标签清单-->
-<h2 class="sub-header">文章标签清单</h2>
+<!--Tag list-->
+<h2 class="sub-header">Tags list</h2>
 <div class="table-responsive">
   <table class="table table-striped">
 	<thead>
 	  <tr>
 		<th>#</th>
-		<th>标签</th>
-		<th>文章数量</th>
+		<th>Tag</th>
+		<th>Number of article</th>
 	  </tr>
 	</thead>
 	<tbody>
