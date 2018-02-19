@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1
 2
 3
@@ -409,6 +410,205 @@ lang: tw
 		<th>#</th>
 		<th>妯欑敖</th>
 		<th>鏂囩珷鏁搁噺</th>
+=======
+---
+layout: dashboard
+nav: dashboard
+permalink: /tw/dashboard/
+lang: tw
+---
+{%- assign translation = site.data.language[page.lang] -%}
+<h1 class="page-header">{{ translation.dashboard }}</h1>
+<div class="well">當前時間：{{ site.time }}</div>
+<div class="well">生產環境：{{ jekyll.environment }}</div>
+<!--Pages清單-->
+<h2 class="sub-header">頁面清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>相對路徑</th>
+		<th>源文件地址</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign pageindex = 0 -%}
+	  {%- for sitepage in site.pages | sort -%}
+	  {%- assign pageindex = pageindex | plus: 1 -%}
+<tr>
+  <td>{{ pageindex }}</td>
+  <td>{{ sitepage.url }}</td>
+  <td>{{ sitepage.path }}</td>
+</tr>
+{%- endfor -%}
+    </tbody>
+  </table>
+</div>
+<!--靜態文件清單-->
+<h2 class="sub-header">靜態文件清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>路徑</th>
+		<th>擴展名</th>
+		<th>日期</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign staticfileindex = 0 -%}
+      {%- for sitestaticfile in site.static_files | sort -%}
+	  {%- assign staticfileindex = staticfileindex | plus: 1 -%}
+<tr>
+  <td>{{ staticfileindex }}</td>
+  <td>{{ sitestaticfile.path }}</td>
+  <td>{{ sitestaticfile.extname }}</td>
+  <td>{{ sitestaticfile.modified_time }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--collections集合清單-->
+<h2 class="sub-header">集合清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>內容</th>
+		<!--<th>標題</th>
+		<th>文檔名</th>
+		<th>相對路徑</th>-->
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign collectionindex = 0 -%}
+      {%- for sitecollection in site.collections | sort -%}
+	  {%- assign collectionindex = collectionindex | plus: 1 -%}
+<tr>
+  <td>{{ collectionindex }}</td>
+  <td>{{ sitecollection }}</td>
+  <!--<td>{{ sitecollection.title }}</td>
+  <td>{{ sitecollection.name }}</td>
+  <td>{{ sitecollection.path }}</td>-->
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--data數據清單-->
+<h2 class="sub-header">數據清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>歸屬</th>
+		<th>內容</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign dataindex = 0 -%}
+      {%- for sitedata in site.data | sort -%}
+	  {%- assign dataindex = dataindex | plus: 1 -%}
+<tr>
+  <td>{{ dataindex }}</td>
+  <td>{{ sitedata | first }}</td>
+  <td>{{ sitedata | last | jsonify }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--語言清單-->
+<h2 class="sub-header">語言清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>語言</th>
+		<th>代碼</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign languagesindex = 0 -%}
+      {%- for languages in site.data.lang | sort -%}
+	  {%- assign languagesindex = languagesindex | plus: 1 -%}
+	  <tr>
+		<td>{{ languagesindex }}</td>
+		<td>{{ languages[1].language }}</td>
+		<td>{{ languages[1].code }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--文章清單-->
+<h2 class="sub-header">文章清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>標題</th>
+		<th>日期</th>
+		<th>語言</th>
+		<th>置頂</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign postsindex = 0 -%}
+      {%- for posts in site.posts | sort -%}
+	  {%- assign postsindex = postsindex | plus: 1 -%}
+	  <tr>
+		<td>{{ postsindex }}</td>
+		<td>{{ posts.title }}</td>
+		<td>{{ posts.date }}</td>
+		<td>{{ site.data.lang[posts.lang].language }}</td>
+		<td>{% if posts.stickie %}<span class="glyphicon glyphicon-ok"></span>{% endif %}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--分類清單-->
+<h2 class="sub-header">文章分類清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>類別</th>
+		<th>文章數量</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign categoryindex = 0 -%}
+      {%- for category in site.categories | sort -%}
+	  {%- assign categoryindex = categoryindex | plus: 1 -%}
+	  <tr>
+		<td>{{ categoryindex }}</td>
+		<td>{{ category | first }}</td>
+		<td>{{ category.last.size }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--標簽清單-->
+<h2 class="sub-header">文章標簽清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>標簽</th>
+		<th>文章數量</th>
+>>>>>>> branch 'master' of https://github.com/joytou/JOYTOU.git
 	  </tr>
 	</thead>
 	<tbody>
