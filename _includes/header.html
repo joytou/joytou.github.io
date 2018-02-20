@@ -1,7 +1,7 @@
 {% assign translation = site.data.language[page.lang] %}
 {% assign announce = site.data.announcement[0] %}
 <div class="blog-header">
-  <br/><div class="alert alert-{{ announce.type }}">{{ announce.msg[page.lang] }}<p class="text-right">{{ announce.date }}</p><p class="text-right">{{ announce.promulgator }}</p></div>
+  <br/><div class="well"><marquee direction="{{ announce.direction }}" behavior="{{ announce.behavior }}" scrollAmount="{{ announce.scrollamount }}">{{ announce.date }}:{{ announce.msg[page.lang] }}</marquee></div>
         <h1 class="blog-title">{{ translation.sitename }}</h1>
         <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>
 </div>

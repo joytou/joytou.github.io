@@ -1,6 +1,7 @@
- - type: info
+ - scrollamount: "2"
+   direction: "right"
+   behavior: "scroll"
    date: "2018-02-20"
-   promulgator: "Joytou"
    msg: 
      cn: "添加公告功能。"
      en: "Add announcement function."
