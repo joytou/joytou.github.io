@@ -1,5 +1,5 @@
  - scrollamount: "2"
-   direction: "right"
+   direction: "left"
    behavior: "scroll"
    date: "2018-02-20"
    msg: 
