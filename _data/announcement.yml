@@ -1,0 +1,8 @@
+ - type: info
+   dismissable: true
+   date: "2018-02-20"
+   promulgator: "Joytou"
+   msg: 
+     cn: "添加公告功能。"
+     en: "Add announcement function."
+     tw: "添加公告功能。"
