@@ -1,10 +1,7 @@
 {% assign translation = site.data.language[page.lang] %}
 {% assign announce = site.data.announcement[0] %}
 <div class="blog-header">
-  <div class="alert alert-{{ announce.type }}{% if announce.dismissable %} alert-dismissable"><button type="button" class="close" data-dismiss="alert"
-			aria-hidden="true">
-		&times;
-	</button>{% else %}">{% endif %}{{ announce.msg[page.lang] }}<p class="text-right">{{ announce.date }}</p><p class="text-right">{{ announce.promulgator }}</p></div>
+  <br/><div class="alert alert-{{ announce.type }}">{{ announce.msg[page.lang] }}<p class="text-right">{{ announce.date }}</p><p class="text-right">{{ announce.promulgator }}</p></div>
         <h1 class="blog-title">{{ translation.sitename }}</h1>
         <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>
 </div>
