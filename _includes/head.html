@@ -9,16 +9,14 @@
     <meta name="author" content="{{ site.author }}">
 	<meta name="owner" content="{{ site.owner_name }}" />
     <meta name="copyright" content="(c) 2017 - 2018" />
-	{% for meta in site.data.metas %}
-    <meta name="{{ meta.name }}" content="{{ meta.content }}"/>
-	{% endfor %}
+	{% for meta in site.data.metas %}<meta name="{{ meta.name }}" content="{{ meta.content }}"/>{% endfor %}
     <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}">
     <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"> 
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
-    <script async src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-    <script async src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
     <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
