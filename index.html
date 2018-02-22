@@ -21,7 +21,7 @@ lang: cn
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
-	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<link rel="preload" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
 	<script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -51,8 +51,8 @@ lang: cn
   }
 }
 </script>
-	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+	<script async src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+	<script async src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
   </head>
   <body>
 
