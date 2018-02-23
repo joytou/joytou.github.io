@@ -4,7 +4,7 @@ destination:      ./_site
 plugins_dir:     ./_plugins
 layouts_dir:     ./_layouts
 timezone:    Asia/Hongkong
-gems:        []
+gems:        [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
 highlighter:     rouge
 
 # Site settings
@@ -28,6 +28,10 @@ published: false
 safe: false
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+
+#Pagination settings
+paginate:5
+paginatepath: ['cn/page/:num','en/page/:num','tw/page/:num']
 
 exclude: ['README.md','Manifest.md']
 include: ['robots.txt','404.html']
