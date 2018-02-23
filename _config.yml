@@ -4,7 +4,7 @@ destination:      ./_site
 plugins_dir:     ./_plugins
 layouts_dir:     ./_layouts
 timezone:    Asia/Hongkong
-gems:        [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
+gems:        [jekyll-pagination]
 highlighter:     rouge
 
 # Site settings
@@ -30,11 +30,12 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 
 #Pagination settings
-paginate: 3
-paginate_path: "/page:num"
-paginate_per_lang: true
-default_lang: "cn"
-
+paginate: 2
+ paginate_files:
+ - cn/index.html
+ - en/index.html
+ - tw/index.html
+ 
 exclude: ['README.md','Manifest.md']
 include: ['robots.txt','404.html']
 
