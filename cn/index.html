@@ -27,7 +27,7 @@ lang: cn
 {%- endif -%}
 {%- endif -%}
 {%- endfor -%}
-{%- for post in paginator.posts -%}
+{%- for post in site.posts -%}
 {%- if post.lastdate -%}{%- capture pdate -%}<span class="text-muted">{{ post.lastdate | date:"%Y-%m-%d" }}</span>{%- endcapture -%}{%- capture pauthor -%}<a class="text-muted" href="#">{{ site.author }}</a>{%- endcapture -%}{%- else -%}{%- capture pdate -%}<span class="text-muted">{{ post.date | date:"%Y-%m-%d" }}</span>{%- endcapture -%}{%- capture pauthor -%}<a class="text-muted" href="#">{{ site.author }}</a>{%- endcapture -%}{%- endif -%}
 {%- if post.lang contains 'cn' -%}
 <div class="panel panel-{{ config.Panel.NonTop | default: "default" }}">
