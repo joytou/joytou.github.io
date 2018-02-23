@@ -17,11 +17,11 @@ module Jekyll
       #                   "previous_page" => <Number>,
       #                   "next_page" => <Number> }}
       def paginate(site, page)
-        # If we defined a default category, base pagination should be the one
-        # of the default category.
-        category = site.config['default_category']
-        if site.config['paginate_per_category'] && category != ""
-          all_posts = site.site_payload['site']['categories'][category]
+        # If we defined a default lang, base pagination should be the one
+        # of the default lang.
+        lang = site.config['default_lang']
+        if site.config['paginate_per_lang'] && lang != ""
+          all_posts = site.site_payload['site']['langs'][lang]
         else
           all_posts = site.site_payload['site']['posts']
         end
@@ -41,7 +41,7 @@ module Jekyll
       end
     end
 
-    class CategoryPagination < Generator
+    class LangPagination < Generator
       # This generator is safe from arbitrary code execution.
       safe true
 
@@ -51,20 +51,20 @@ module Jekyll
       #
       # Returns nothing.
       def generate(site)
-        if site.config['paginate_per_category']
-          for category in site.categories.keys
-            paginate_categories(site, "/#{category}", "/#{category}/index.html", site.categories[category])
+        if site.config['paginate_per_lang']
+          for lang in site.langs.keys
+            paginate_langs(site, "/#{lang}", "/#{lang}/index.html", site.langs[lang])
           end
         end
       end
 
-      # Actually do the blog's posts pagination per category. Renders the index.html file
-      # into paginated directories for these categories, e.g.: /category/page2/index.html,
-      # /category/page3/index.html, etc and adds more site-wide data.
+      # Actually do the blog's posts pagination per lang. Renders the index.html file
+      # into paginated directories for these langs, e.g.: /lang/page2/index.html,
+      # /lang/page3/index.html, etc and adds more site-wide data.
       #
       # site - The Site.
       # page - The index.html Page that requires pagination.
-      # category - The category to paginate.
+      # lang - The lang to paginate.
       #
       # {"paginator" => { "page" => <Number>,
       #                   "per_page" => <Number>,
@@ -73,15 +73,15 @@ module Jekyll
       #                   "total_pages" => <Number>,
       #                   "previous_page" => <Number>,
       #                   "next_page" => <Number> }}
-      def paginate(site, page, category)
-        # Retrieve posts from that specific category.
-        all_posts = site.site_payload['site']['categories'][category]
+      def paginate(site, page, lang)
+        # Retrieve posts from that specific lang.
+        all_posts = site.site_payload['site']['langs'][lang]
 
         pages = Pager.calculate_pages(all_posts, site.config['paginate'].to_i)
         (1..pages).each do |num_page|
           pager = Pager.new(site, num_page, all_posts, pages)
           if num_page > 1
-            paginate_path = '/' + category + site.config['paginate_path']
+            paginate_path = '/' + lang + site.config['paginate_path']
             newpage = Page.new(site, site.source, page.dir, page.name)
             newpage.pager = pager
             newpage.dir = Pager.paginate_path(site, num_page, paginate_path)
@@ -92,32 +92,32 @@ module Jekyll
         end
       end
 
-      # Paginates the blog's posts per category. Get the category layout and posts
+      # Paginates the blog's posts per lang. Get the lang layout and posts
       # to generate paginations.
       #
       # site - The Site.
-      # category_path - The path of the category.
-      # category_layout - The path of the category pagination template.
+      # lang_path - The path of the lang.
+      # lang_layout - The path of the lang pagination template.
       # posts - List of posts to paginate.
       #
       # Returns nothing.
-      def paginate_categories(site, category_path, category_layout, posts)
-        categories = []
-        restricted_categories = []
+      def paginate_langs(site, lang_path, lang_layout, posts)
+        langs = []
+        restricted_langs = []
 
         for post in posts
-          for post_category in post.categories
-            categories.push(post_category) unless restricted_categories.include? post_category
+          for post_lang in post.langs
+            langs.push(post_lang) unless restricted_langs.include? post_lang
           end
         end
 
-        categories.sort!.uniq!
+        langs.sort!.uniq!
 
-        for category in categories
-          paginate_path = '/' + category + site.config['paginate_path']
+        for lang in langs
+          paginate_path = '/' + lang + site.config['paginate_path']
           page = template_page(site, paginate_path)
 
-          paginate(site, page, category)
+          paginate(site, page, lang)
         end
       end
 
