@@ -31,7 +31,7 @@ markdown: kramdown
 
 #Pagination settings
 paginate: 2
- paginate_files:
+paginate_files:
  - cn/index.html
  - en/index.html
  - tw/index.html
