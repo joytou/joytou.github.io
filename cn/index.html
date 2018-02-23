@@ -47,4 +47,12 @@ lang: cn
 </div>
 {%- endif -%}
 {%- endfor -%}
+ {% if paginator.previous_page %}
+                <a class="timeline__prev" href="/cn/{% if paginator.previous_page != 1 %}page{{paginator.previous_page}}{% endif %}">
+                    Plus récents
+                </a>
+        {% endif %}
+        {% if paginator.next_page %}
+                <a class="timeline__next" href="/cn/page{{paginator.next_page}}">Plus anciens</a>
+        {% endif %}
 <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ site.changyan.appid }}"></script>
