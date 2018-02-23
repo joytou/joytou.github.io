@@ -30,8 +30,7 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 
 #Pagination settings
-paginate: 5
-paginatepath: ['cn/page/:num','en/page/:num','tw/page/:num']
+paginate_per_category: true
 
 exclude: ['README.md','Manifest.md']
 include: ['robots.txt','404.html']
