@@ -46,44 +46,4 @@ lang: cn
 </div>
 {%- endif -%}
 {%- endfor -%}
- {% if paginator.previous_page %}
-                <a class="timeline__prev" href="/cn/{% if paginator.previous_page != 1 %}page{{paginator.previous_page}}{% endif %}">
-                    Plus récents
-                </a>
-        {% endif %}
-        {% if paginator.next_page %}
-                <a class="timeline__next" href="/cn/page{{paginator.next_page}}">Plus anciens</a>
-        {% endif %}
 <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ site.changyan.appid }}"></script>
-{{ paginator.page }}
-
-当前页码
-
-{{ paginator.per_page }}
-
-每页帖子数
-
-{{ paginator.total_posts }}
-
-网站中的帖子总数
-
-{{ paginator.total_pages }}
-
-分页页数
-
-{{ paginator.previous_page }}
-
-先前分页页面的页码，或者nil如果没有先前页面存在
-
-{{ paginator.previous_page_path }}
-
-先前的分页页面的路径，或者nil如果没有先前的页面存在
-
-{{ paginator.next_page }}
-
-下一个分页页面的页码，或者nil如果没有后续页面存在
-
-{{ paginator.next_page_path }}
-
-下一个分页页面的路径，或者nil如果没有后续页面存在
-{{ site.paginate_path }}
