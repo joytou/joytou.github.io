@@ -8,7 +8,7 @@ permalink: /test.html
 {%- assign post_total_num = 0 -%}
 {%- assign post_num = 1 -%}
 {%- assign pagenum = 1 -%}
-<div class="tab-pane fade" id="page{{ pagenum }} in active">
+<div class="tab-pane fade in active" id="page{{ pagenum }}">
 {%- for post in site.posts -%}
 {%- if post.lang contains page.lang -%}
   {%- assign post_total_num = post_total_num | plus: 1 -%}
