@@ -15,7 +15,7 @@ permalink: /test.html
   {%- if forloop.first -%}
 <div class="tab-pane fade" id="page{{ pagenum }}">
   {%- endif -%}
-
+<a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
   {%- if post_num == site.paginatenum -%}
     {%- assign post_num = 0 -%}
     {%- assign pagenum = pagenum | plus: 1 -%}
@@ -33,9 +33,11 @@ permalink: /test.html
 {%- endif -%}
 {%- endfor -%}
 </div>
+<ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
 {%- for countnum in (1..pagenum) -%}
-  <a href="#page{{ countnum }}" data-toggle="tab">{{ countnum }}</a>
+  <li{% if forloop.first %} class="active"{% endif %}><a href="#page{{ countnum }}" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
+</div>
 <script>
     $(function () {
         $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
