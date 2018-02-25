@@ -1,3 +1,4 @@
     $(function () {
-        $('#myTab a[href="'+location.pathname.replace("index.html","")+window.location.hash+'"]').tab('show');
+        $('#myTab a[href="'+permalink+window.location.hash+'"]').tab('show');
     });
+    
