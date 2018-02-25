@@ -28,6 +28,9 @@ published: false
 safe: false
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+
+#Pagination setting
+paginatenum: 2
  
 exclude: ['README.md','Manifest.md']
 include: ['robots.txt','404.html']

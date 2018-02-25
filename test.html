@@ -4,57 +4,40 @@ lang: cn
 permalink: /test.html
 ---
 
+<div id="myTabContent" class="tab-content">
+{%- assign post_total_num = 0 -%}
+{%- assign post_num = 0 -%}
+{%- assign pagenum = 1 -%}
 {%- for post in site.posts -%}
+{%- if post.lang contains page.lang -%}
+  {%- assign post_total_num = post_total_num | plus: 1 -%}
 
-{%- capture py -%}{{ post.date | date: "%Y"}}{%- endcapture -%}
-{%- capture pm -%}{{ post.date | date: "%m"}}{%- endcapture -%}
-{%- if forloop.first -%}<ul class="list-group"> {%- endif -%}
-{%- if forloop.last -%}</ul> {%- endif -%}
-{%- if py != year -%}
-  {%- assign year = py -%}
-  {%- if forloop.first -%}
-  {%- elsif forloop.last -%}
-  {%- else -%}
-    </ul>
-    <ul class="list-group">
-  {%- endif -%}
-  <li class="list-group-item active">{{ py }}<span id="y{{ py }}" class="badge"></span></li>
-{%- endif -%}
-{%- if pm != month -%}
-  {%- assign month = pm -%}
-  <li class="list-group-item">{{ pm }}<span id="m{{ py }}{{ pm }}" class="badge"></span></li>
+  {%- if forloop.first -%}
+<div class="tab-pane fade" id="page{{ pagenum }}">
+  {%- endif -%}
+
+  {%- if post_num == site.paginatenum -%}
+    {%- assign post_num = 0 -%}
+    {%- assign pagenum = pagenum | plus: 1 -%}
+</div>
+    {%- unless forloop.last -%}
+<div class="tab-pane fade" id="page{{ pagenum }}">
+    {%- endunless -%}
+  {%- else -%}
+    {%- assign post_num = post_num | plus: 1 -%}
+    {%- if forloop.last -%}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
 {%- endif -%}
 {%- endfor -%}
-
+</div>
+{%- for countnum in (1..pagenum) -%}
+  <a href="#page{{ countnum }}" data-toggle="tab">{{ countnum }}</a>
+{%- endfor -%}
 <script>
-{%- for countpost in site.posts -%}
-	  {%- capture countpy -%}{{ countpost.date | date: "%Y"}}{%- endcapture -%}
-	  {%- capture countym -%}{{ countpost.date | date: "%Y%m"}}{%- endcapture -%}
-	  {%- if countpy != countyear -%}
-	    {%- unless forloop.first -%}
-		  document.getElementById("y{{ countyear }}").innerHTML = "{{ numy }}";
-		{%- endunless -%}
-	    {%- assign countyear = countpy -%}
-	    {%- assign numy = 1 -%}
-	  {%- else -%}
-	    {%- assign numy = numy | plus: 1 -%}
-	  {%- endif -%}
-	  {%- if forloop.last -%}
-	      document.getElementById("y{{ countyear }}").innerHTML = "{{ numy }}";
-	  {%- endif -%}
-	  
-	  {%- if countym != countyearmonth -%}
-	    {%- unless forloop.first -%}
-		  document.getElementById("m{{ countyearmonth }}").innerHTML = "{{ numm }}";
-		{%- endunless -%}
-		{%- assign countyearmonth = countym -%}
-		{%- assign numm = 1 -%}
-	  {%- else -%}
-	    {%- assign numm = numm | plus: 1 -%}
-	  {%- endif -%}
-	  {%- if forloop.last -%}
-	      document.getElementById("m{{ countyearmonth }}").innerHTML = "{{ numm }}";
-	  {%- endif -%}
-{%- endfor -%}
+    $(function () {
+        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+    });
 </script>
-
