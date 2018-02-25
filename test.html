@@ -25,7 +25,7 @@ permalink: /test.html
 {%- endfor -%}
 </div>
 </div>
-<ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
+<ul id="myTab" class="pagination">
 {%- for countnum in (1..pagenum) -%}
   <li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
