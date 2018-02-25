@@ -59,16 +59,6 @@
                 {%- endfor -%}
                           </ul>
             </li>
-			<!--<li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				  <span class="glyphicon glyphicon-hdd"></span>{{ translation.webline }} <b class="caret"></b>
-				  </a>
-				  <ul class="dropdown-menu">
-				  {%- for webline in site.data.lines -%}
-					<li><a href="{{ webline.link }}">{{ webline[page.lang] }}</a></li>
-				  {%- endfor -%}
-				  </ul>
-			</li>-->
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<span class="glyphicon glyphicon-transfer"></span>{{ translation.selectlang }} <b class="caret"></b>
@@ -80,7 +70,6 @@
 				{%- capture postlang -%}-{{ page.lang }}{%- endcapture -%}
 				{%- capture replacedomainlang -%}/{{ weblang.lang }}/{%- endcapture -%}
 				{%- capture replacepostlang -%}-{{ weblang.lang }}{%- endcapture -%}
-				<!--<li class="{%- if page.lang == weblang.lang -%}active{%- endif -%}"><a href="{{ page.url | replace: page.lang,weblang.lang }}">{{ weblang.language }}</a></li>-->
 				<li class="{%- if page.lang == weblang.lang -%}active{%- endif -%}"><a href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}">{{ weblang.language }}</a></li>
 				{%- endfor -%}
 			  </ul>

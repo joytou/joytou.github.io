@@ -10,9 +10,6 @@
 	<link href="{{ '/assets/css/dashboard.css' | prepend: site.baseurl }}" rel="stylesheet">
 	<link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
     <title>{{translation.dashboard }} - {{ translation.sitename }}</title>
-	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
-	<script src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script> 
   </head>
 
   <body>
@@ -24,7 +21,9 @@
 		{{ content }}
 	  </div>
     </div>
-
+	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script> 
   </body>
 </html>
 

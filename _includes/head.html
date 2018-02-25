@@ -15,8 +15,7 @@
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
-    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+    
     <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -46,20 +45,7 @@
   }
 }
 </script>
-    <script type="text/javascript">
-       var $versioncode = {{ site.versioncode }};//当前版本号，请勿修改
-	   var $lang = "{{ page.lang }}";
-	   function JOYTOUdismiss(){//必须添加JOYTOUdismiss函数，而执行命令可为空
-	       //可选，当没有新版本时所执行的命令
-		   $("#JOYTOUupdate").alert('close');
-	    }
-    </script>
-    <!-- 配置信息 -->
-    <script async type="text/javascript" src="//joytou.net.cn/server/server.js"></script>
-    <!-- 引入服务端脚本命令 -->
-    <script async src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script>
-    <script async src="{{ '/assets/js/cb-search.js' | prepend: site.baseurl }}"></script>
-    <script async src="{{ '/assets/js/gotop.js' | prepend: site.baseurl }}"></script>
+    
 	  
     <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
 
@@ -75,7 +61,9 @@
 	
   <!-- Custom styles for this template -->
   <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
-	
+	{%- for css in page.css -%}
+	<link href="{{ css }}" rel="stylesheet" type="text/css" />
+	{%- endfor -%}
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!--<script src="{{ '/assets/js/ie-emulation-modes-warning.js' | prepend: site.baseurl }}"></script>-->

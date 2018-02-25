@@ -1,20 +1,4 @@
 {% assign translation = site.data.language[page.lang] %}
-<!--<hr>
-<div class="pagination">
-  <ul class="pager">
-  {% if page.previous %}
-    <li class="previous"><a href="{{ page.previous.url }}">&larr; {{ translation.previouspost }}</a></li>
-  {% else %}
-    <li class="previous disabled">&larr; {{ translation.previouspost }}</li>
-  {% endif %}
-  {% if page.next %}
-    <li class="next"><a href="{{ page.next.url }}">{{ translation.nextpost }} &rarr;</a></li>
-  {% else %}
-    <li class="next disabled">{{ translation.nextpost }} &rarr;</li>
-  {% endif %}
-  </ul>
-</div>
-<hr>-->
 {%- assign findex = 1 -%}
 {%- for firstpost in site.posts | sort -%}
   {%- if firstpost.lang contains page.lang -%}
