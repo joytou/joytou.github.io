@@ -3,6 +3,8 @@ layout: default
 nav: post
 permalink: /cn/archives/
 lang: cn
+javascript:
+  - /assets/js/tab-ctrl.js
 ---
 {%- assign config = site.data.configuration -%}
 <ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
@@ -35,8 +37,3 @@ lang: cn
 {%- endfor -%}
 </div>
 </div>
-<script>
-    $(function () {
-        $('#myTab a[href="/{{ page.lang }}/archives/'+window.location.hash+'"]').tab('show');
-    });
-</script>
