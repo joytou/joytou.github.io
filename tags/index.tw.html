@@ -37,6 +37,6 @@ lang: tw
 </div>
 <script>
     $(function () {
-        $('#myTab a[href="/{{ page.lang }}/tags/'+window.location.hash+'"]').tab('show');
+        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
     });
 </script>
