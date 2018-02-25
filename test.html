@@ -6,13 +6,13 @@ permalink: /test.html
 
 <div id="myTabContent" class="tab-content">
 {%- assign post_total_num = 0 -%}
-{%- assign post_num = 0 -%}
+{%- assign post_num = 1 -%}
 {%- assign pagenum = 1 -%}
-{%- for post in site.posts -%}
+{%- for post in site.posts | where: post.lang, page.lang -%}
   {%- if forloop.first -%}
 <div class="tab-pane fade" id="page{{ pagenum }}">
   {%- endif -%}
-  {%- if post.lang contains page.lang -%}
+
   {%- assign post_total_num = post_total_num | plus: 1 -%}
 <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
   {%- if post_num == site.paginatenum -%}
@@ -29,7 +29,6 @@ permalink: /test.html
     {%- endif -%}
   {%- endif -%}
 
-{%- endif -%}
 {%- endfor -%}
 </div>
 <ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
