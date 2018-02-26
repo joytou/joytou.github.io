@@ -26,17 +26,17 @@ permalink: /test.html
 </div>
 </div>
 <ul id="myTab" class="pagination">
-<li><a id="pre_btn" href="#" onclick="siqi();">&laquo;</a></li>
+<li><a id="pre_btn" href="#" onclick="window.location.replace(this.href);return false;">&laquo;</a></li>
 {%- for countnum in (1..pagenum) -%}
 <li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
-<li><a id="next_btn" href="#" onclick="siqi();">&raquo;</a></li>
+<li><a id="next_btn" href="#" onclick="window.location.replace(this.href);return false;">&raquo;</a></li>
 </ul>
 <script>
     $(function () {
 //      $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
       siqi();
-      $('#myTab a').click(function (e) {
+      $('#myTab a').click(function(e) {
         siqi();
       });
       function siqi(){
@@ -48,31 +48,15 @@ permalink: /test.html
         preindex = currentindex - 1;
         if(preindex<1){
           pre_btn.href = '#page1';
-//          pre_btn.onclick = 'window.location.replace("{{ page.permalink }}#page1");';
-          pre_btn.onclick(function(){
-            window.location.replace("{{ page.permalink }}#page1");
-          });
         }else{
           pre_btn.href = '#page' + preindex;
-//          pre_btn.onclick = 'window.location.replace("{{ page.permalink }}#page' + preindex'");';
-          pre_btn.onclick(function(){
-            window.location.replace("{{ page.permalink }}#page"+preindex);
-          });
         }
         //next
         nextindex = currentindex + 1;
         if(nextindex>{{ pagenum }}){
           next_btn.href = '#page{{ pagenum }}';
-//          next_btn.onclick = 'window.location.replace("{{ page.permalink }}#page{{ pagenum }}");';
-          next_btn.onclick(function(){
-            window.location.replace("{{ page.permalink }}#page{{ pagenum }}");
-          });
         }else{
           next_btn.href = '#page' + nextindex;
-//          next_btn.onclick = 'window.location.replace("{{ page.permalink }}#page' + nextindex'");';
-          next_btn.onclick(function(){
-            window.location.replace("{{ page.permalink }}#page"+nextindex);
-          });
         }
       }
     });
