@@ -26,45 +26,38 @@ permalink: /test.html
 </div>
 </div>
 <ul id="myTab" class="pagination">
-<li><a id="pre_btn" href="#">&laquo;</a></li>
+<li><a id="pre_btn" href="#" onclick="window.location.replace(this.href);">&laquo;</a></li>
 {%- for countnum in (1..pagenum) -%}
 <li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
-<li><a id="next_btn" href="#">&raquo;</a></li>
+<li><a id="next_btn" href="#" onclick="window.location.replace(this.href);">&raquo;</a></li>
 </ul>
-<div id="showpage"></div>
 <script>
     $(function () {
-      $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
-      di();
+//      $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+      siqi();
       $('#myTab a').click(function (e) {
-        di();
+        siqi();
       });
-      function di(){
-        var showpage = document.getElementById("showpage");
+      function siqi(){
+        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
         var pre_btn = document.getElementById("pre_btn");
         var next_btn = document.getElementById("next_btn");
         var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
-        var val = currentindex + '<br/>';
         //previous
         preindex = currentindex - 1;
         if(preindex<1){
-          val = val + '{{ page.permalink }}#page1<br/>';
-          pre_btn.href='{{ page.permalink }}#page1';
+          pre_btn.href = '{{ page.permalink }}#page1';
         }else{
-          val = val + '{{ page.permalink }}#page' + preindex + '<br/>';
-          pre_btn.href='{{ page.permalink }}#page'+preindex;
+          pre_btn.href = '{{ page.permalink }}#page' + preindex;
         }
         //next
         nextindex = currentindex + 1;
         if(nextindex>{{ pagenum }}){
-          val = val + '{{ page.permalink }}#page{{ pagenum }}<br/>';
-          next_btn.href='{{ page.permalink }}#page{{ pagenum }}';
+          next_btn.href = '{{ page.permalink }}#page{{ pagenum }}';
         }else{
-          val = val + '{{ page.permalink }}#page' + nextindex + '<br/>';
-          next_btn.href='{{ page.permalink }}#page' + nextindex;
+          next_btn.href = '{{ page.permalink }}#page' + nextindex;
         }
-        showpage.innerHTML = val;
       }
     });
 </script>
