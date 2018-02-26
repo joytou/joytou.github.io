@@ -26,33 +26,22 @@ permalink: /test.html
 </div>
 </div>
 <ul id="myTab" class="pagination">
-<li><a id="prepage" onclick="change_page(index-1);">&laquo;</a></li>
+<li><a href="javascript:void(0);" onclick="previous();">&laquo;</a></li>
 {%- for countnum in (1..pagenum) -%}
 <li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
-<li><a id="nextpage" onclick="change_page(index+1);">&raquo;</a></li>
+<li><a href="javascript:void(0);" onclick="next();">&raquo;</a></li>
 </ul>
 <script>
     $(function () {
         $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
-        });
-        var index = parseInt(window.location.hash?"1":window.location.hash.replace("#page",""));
-//        var pre_btn = document.getElementById("prepage");
-//        var next_btn = document.getElementById("nextpage");
-//        pre_btn.click(function(){
-//          change_page(index-1);
-//        })
-//        next_btn.click(function(){
-//          change_page(index+1);
-//        })
-    function change_page(indexx){
-      if(indexx<1){
-        var val = "{{ page.permalink }}#page1";
-      }else if(indexx>{{ pagenum }}){
-        var val = "{{ page.permalink }}#page{{ pagenum }}";
-      }else{
-        var val = "{{ page.permalink }}#page"+indexx;
-      }
-      window.location.replace(val);
+    });
+    function previous(){
+     var index = parseInt(window.location.hash?1:window.location.hash.replace("#page",""))-1;
+     window.location.replace('{{ page.permalink }}#page'+(index<1?1:index));
+    }
+    function next(){
+     var index = parseInt(window.location.hash?1:window.location.hash.replace("#page",""))+1;
+     window.location.replace('{{ page.permalink }}#page'+(index>{{ pagenum }}?{{ pagenum }}:index));
     }
 </script>
