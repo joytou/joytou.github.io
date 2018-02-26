@@ -46,7 +46,9 @@ permalink: /test.html
         var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
         //previous
         preindex = currentindex - 1;
-        if(preindex<1){
+        if(preindex>{{ pagenum }}){
+          pre_btn.href = '#page{{ pagenum }}';
+        }else if(preindex<1){
           pre_btn.href = '#page1';
         }else{
           pre_btn.href = '#page' + preindex;
@@ -55,6 +57,8 @@ permalink: /test.html
         nextindex = currentindex + 1;
         if(nextindex>{{ pagenum }}){
           next_btn.href = '#page{{ pagenum }}';
+        }else if(nextindex<1){
+          next_btn.href = '#page1';
         }else{
           next_btn.href = '#page' + nextindex;
         }
