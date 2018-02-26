@@ -35,8 +35,8 @@ permalink: /test.html
     $(function () {
         $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
         var showpage = document.getElementById("showpage");
-        var val;
-        var currentindex = parseInt(window.location.hash?1:window.location.hash.replace("#page",""));
+        var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
+        var val = currentindex;
         //previous
         preindex = currentindex - 1;
         if(preindex<1){
