@@ -47,16 +47,16 @@ permalink: /test.html
         //previous
         preindex = currentindex - 1;
         if(preindex<1){
-          pre_btn.href = '{{ page.permalink }}#page1';
+          pre_btn.href = '#page1';
         }else{
-          pre_btn.href = '{{ page.permalink }}#page' + preindex;
+          pre_btn.href = '#page' + preindex;
         }
         //next
         nextindex = currentindex + 1;
         if(nextindex>{{ pagenum }}){
-          next_btn.href = '{{ page.permalink }}#page{{ pagenum }}';
+          next_btn.href = '#page{{ pagenum }}';
         }else{
-          next_btn.href = '{{ page.permalink }}#page' + nextindex;
+          next_btn.href = '#page' + nextindex;
         }
       }
     });
