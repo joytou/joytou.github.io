@@ -27,7 +27,7 @@ permalink: /test.html
 </div>
 <ul id="myTab" class="pagination">
 {%- for countnum in (1..pagenum) -%}
-  <li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" data-toggle="tab">{{ countnum }}</a></li>
+  <li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
 </ul>
 <script>
