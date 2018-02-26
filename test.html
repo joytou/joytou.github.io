@@ -34,7 +34,11 @@ permalink: /test.html
 <script>
     $(function () {
       $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+      di();
       $('#myTab a').click(function (e) {
+        di();
+      });
+      function di(){
         var showpage = document.getElementById("showpage");
         var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
         var val = currentindex + '<br/>';
@@ -53,6 +57,6 @@ permalink: /test.html
           val = val + '{{ page.permalink }}#page' + nextindex + '<br/>';
         }
         showpage.innerHTML = val;
-      })
+      }
     });
 </script>
