@@ -44,7 +44,6 @@ permalink: /test.html
         next_btn.click(function(){
           change_page(index+1);
         })
-    });
     function change_page(index){
       if(index<1){
         window.location.replace("{{ page.permalink }}#page1");
@@ -54,4 +53,5 @@ permalink: /test.html
   window.location.replace("{{ page.permalink }}#page"+index);
       }
     }
+    });
 </script>
