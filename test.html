@@ -33,10 +33,11 @@ permalink: /test.html
 <div id="showpage"></div>
 <script>
     $(function () {
-        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+      $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+      $('#myTab a').click(function (e) {
         var showpage = document.getElementById("showpage");
         var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
-        var val = currentindex;
+        var val = currentindex + '<br/>';
         //previous
         preindex = currentindex - 1;
         if(preindex<1){
@@ -52,5 +53,6 @@ permalink: /test.html
           val = val + '{{ page.permalink }}#page' + nextindex + '<br/>';
         }
         showpage.innerHTML = val;
+      })
     });
 </script>
