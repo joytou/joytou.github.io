@@ -46,12 +46,13 @@ permalink: /test.html
         })
     function change_page(index){
       if(index<1){
-        window.location.replace("{{ page.permalink }}#page1");
+        var val = "{{ page.permalink }}#page1";
       }else if(index>{{ pagenum }}){
-        window.location.replace("{{ page.permalink }}#page{{ pagenum }}");
+        var val = "{{ page.permalink }}#page{{ pagenum }}";
       }else{
-  window.location.replace("{{ page.permalink }}#page"+index);
+        var val = "{{ page.permalink }}#page"+index;
       }
+      window.location.replace(val);
     }
     });
 </script>
