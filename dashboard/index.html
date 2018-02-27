@@ -146,15 +146,13 @@ lang: cn
 	<thead>
 	  <tr>
 		<th>#</th>
-		{%- for langkey in site.data.language.cn -%}
+		{%- for langkey in site.data.language[page.lang] -%}
 		<th>{{ langkey[0] }}</th>
 		{%- endfor -%}
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign translationsindex = 0 -%}
 	  {%- for translations in site.data.language -%}
-	  {%- assign translationsindex = translationsindex | plus: 1 -%}
 	  {%- assign kkey = translations[0] -%}
 	  <tr>
 	  <td>{{ site.data.lang[kkey].language }}</td>

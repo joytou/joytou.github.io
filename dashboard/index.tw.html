@@ -140,6 +140,30 @@ lang: tw
   </table>
 </div>
 <!--翻譯清單-->
+<h2 class="sub-header">翻譯清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		{%- for langkey in site.data.language[page.lang] -%}
+		<th>{{ langkey[0] }}</th>
+		{%- endfor -%}
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- for translations in site.data.language -%}
+	  {%- assign kkey = translations[0] -%}
+	  <tr>
+	  <td>{{ site.data.lang[kkey].language }}</td>
+	  {%- for trans in translations[1] -%}
+	  <td>{{ trans[1] }}</td>
+	  {%- endfor -%}
+	  </tr>
+	  {%- endfor -%}
+</tbody>
+  </table>
+</div>
 <!--文章清單-->
 <h2 class="sub-header">文章清單</h2>
 <div class="table-responsive">
