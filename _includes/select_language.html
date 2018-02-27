@@ -1,0 +1,16 @@
+{%- assign translation = site.data.language[page.lang] -%}
+{%- assign languages = site.data.lang -%}
+<div class="dropdown">
+<span class="text-muted">{{ translation.selectlanguage }}</span><button type="button" class="btn dropdown-toggle" id="dropdownMenulang" 
+			data-toggle="dropdown">
+		{{ languages[page.lang].language }}
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenulang">
+	{%- for ll in languages -%}
+	 <li role="presentation">
+	  <a role="menuitem" tabindex="-1" href="/{{ ll[1].lang }}/" onclick="window.location.replace('/{{ ll[1].lang }}/');return false;">{{ ll[1].language }}</a>
+	 </li>
+	{%- endfor -%}
+	</ul>
+</div>
