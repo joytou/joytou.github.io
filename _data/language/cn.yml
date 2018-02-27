@@ -24,6 +24,7 @@
      searchtip: "文章标题 标签 分类"
      webline: "网站线路"
      selectlang: "选择语言"
+     currentlang: "当前语言："
      friendlinks: "友情链接"
      rank: "排名"
      dashboard: "仪表盘"
