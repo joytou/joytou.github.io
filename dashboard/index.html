@@ -74,7 +74,7 @@ lang: cn
 	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
   <td>{{ collectionindex }}</td>
-  <td>{{ sitecollection | jsonify }}</td>
+  <td>{{ sitecollection | xml_escape }}</td>
 </tr>
 {%- endfor -%}
 	</tbody>
