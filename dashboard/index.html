@@ -100,12 +100,17 @@ lang: cn
 	<tbody>
 	  {%- assign dataindex = 0 -%}
       {%- for sitedata in site.data | sort -%}
+      {%- assign pd = sitedata | first -%}
+      {%- if pd == "language" -%}
+      {%- continue -%}
+      {%- else -%}
 	  {%- assign dataindex = dataindex | plus: 1 -%}
 <tr>
   <td>{{ dataindex }}</td>
   <td>{{ sitedata | first }}</td>
   <td>{{ sitedata | last | jsonify }}</td>
 </tr>
+{%- endif -%}
 {%- endfor -%}
 	</tbody>
   </table>
@@ -132,6 +137,30 @@ lang: cn
 	  </tr>
 	  {%- endfor -%}
 	</tbody>
+  </table>
+</div>
+<!--翻译清单-->
+<h2 class="sub-header">翻译清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th>#</th>
+		{%- for langlist in site.data.lang | sort -%}
+		<th>{{ langlist[1].language }}</th>
+		{%- endfor -%}
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- assign translationsindex = 0 -%}
+	  {%- for translations in site.data.language -%}
+	  {%- assign translationsindex = translationsindex | plus: 1 -%}
+	  {%- assign thekey = translations.cn | first -%}
+	  {%- for langl in site.data.lang | sort | first -%}
+	  {{ translations[langl] | last }}
+	  {%- endfor -%}
+	  {%- endfor -%}
+</tbody>
   </table>
 </div>
 <!--文章清单-->

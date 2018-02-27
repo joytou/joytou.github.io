@@ -100,12 +100,17 @@ lang: tw
 	<tbody>
 	  {%- assign dataindex = 0 -%}
       {%- for sitedata in site.data | sort -%}
+      {%- assign pd = sitedata | first -%}
+      {%- if pd == "language" -%}
+      {%- continue -%}
+      {%- else -%}
 	  {%- assign dataindex = dataindex | plus: 1 -%}
 <tr>
   <td>{{ dataindex }}</td>
   <td>{{ sitedata | first }}</td>
   <td>{{ sitedata | last | jsonify }}</td>
 </tr>
+{%- endif -%}
 {%- endfor -%}
 	</tbody>
   </table>
@@ -134,6 +139,7 @@ lang: tw
 	</tbody>
   </table>
 </div>
+<!--翻譯清單-->
 <!--文章清單-->
 <h2 class="sub-header">文章清單</h2>
 <div class="table-responsive">
