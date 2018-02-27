@@ -74,7 +74,7 @@ lang: tw
 	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
   <td>{{ collectionindex }}</td>
-  <td>{{ sitecollection | uri_escape }}</td>
+  <td>{{ sitecollection | jsonify }}</td>
 </tr>
 {%- endfor -%}
 	</tbody>
