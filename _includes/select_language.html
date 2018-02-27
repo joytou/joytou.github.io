@@ -14,7 +14,7 @@
 				{%- capture replacedomainlang -%}/{{ weblang.lang }}/{%- endcapture -%}
 				{%- capture replacepostlang -%}-{{ weblang.lang }}{%- endcapture -%}
 	 <li role="presentation">
-	  <a role="menuitem" tabindex="-1" href="/{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}/" onclick="window.location.replace('/{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}/');return false;">{{ weblang.language }}</a>
+	  <a role="menuitem" tabindex="-1" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}" onclick="window.location.replace('{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}');return false;">{{ weblang.language }}</a>
 	 </li>
 	{%- endfor -%}
 	</ul>
