@@ -66,9 +66,6 @@ lang: en
 	  <tr>
 		<th>#</th>
 		<th>Content</th>
-		<!--<th>Title</th>
-		<th>File name</th>
-		<th>Relative path</th>-->
 	  </tr>
 	</thead>
 	<tbody>
@@ -77,10 +74,7 @@ lang: en
 	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
   <td>{{ collectionindex }}</td>
-  <td>{{ sitecollection }}</td>
-  <!--<td>{{ sitecollection.title }}</td>
-  <td>{{ sitecollection.name }}</td>
-  <td>{{ sitecollection.path }}</td>-->
+  <td>{{ sitecollection | uri_escape }}</td>
 </tr>
 {%- endfor -%}
 	</tbody>

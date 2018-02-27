@@ -66,9 +66,6 @@ lang: cn
 	  <tr>
 		<th>#</th>
 		<th>内容</th>
-		<!--<th>标题</th>
-		<th>文档名</th>
-		<th>相对路径</th>-->
 	  </tr>
 	</thead>
 	<tbody>
@@ -77,10 +74,7 @@ lang: cn
 	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
   <td>{{ collectionindex }}</td>
-  <td>{{ sitecollection }}</td>
-  <!--<td>{{ sitecollection.title }}</td>
-  <td>{{ sitecollection.name }}</td>
-  <td>{{ sitecollection.path }}</td>-->
+  <td>{{ sitecollection | uri_escape }}</td>
 </tr>
 {%- endfor -%}
 	</tbody>
