@@ -146,8 +146,8 @@ lang: cn
 	<thead>
 	  <tr>
 		<th>#</th>
-		{%- for langlist in site.data.lang | sort -%}
-		<th>{{ langlist[1].language }}</th>
+		{%- for langkey in site.data.language.cn -%}
+		<th>{{ langkey[0] }}</th>
 		{%- endfor -%}
 	  </tr>
 	</thead>
@@ -155,11 +155,13 @@ lang: cn
 	  {%- assign translationsindex = 0 -%}
 	  {%- for translations in site.data.language -%}
 	  {%- assign translationsindex = translationsindex | plus: 1 -%}
-	  {{ translations[0] }}<br/>
+	  {%- assign kkey = translations[0] -%}
+	  <tr>
+	  <td>{{ site.data.lang[kkey].language }}</td>
 	  {%- for trans in translations[1] -%}
-	  {{ trans[0] }}<br/>
-	  {{ trans[1] }}<br/>
+	  <td>{{ trans[1] }}</td>
 	  {%- endfor -%}
+	  </tr>
 	  {%- endfor -%}
 </tbody>
   </table>
