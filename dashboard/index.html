@@ -155,10 +155,7 @@ lang: cn
 	  {%- assign translationsindex = 0 -%}
 	  {%- for translations in site.data.language -%}
 	  {%- assign translationsindex = translationsindex | plus: 1 -%}
-	  {%- assign thekey = translations.cn | first -%}
-	  {%- for langl in site.data.lang | sort | first -%}
-	  {{ translations[langl] | last }}
-	  {%- endfor -%}
+	  {{ translations.cn | first }}
 	  {%- endfor -%}
 </tbody>
   </table>
