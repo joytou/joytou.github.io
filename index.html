@@ -15,13 +15,18 @@ lang: cn
     <meta name="author" content="{{ site.author }}">
 	<meta name="owner" content="{{ site.owner_name }}" />
     <meta name="copyright" content="(c) 2017" />
-	{% for meta in site.data.metas %}
+	{%- for meta in site.data.metas -%}
     <meta name="{{ meta.name }}" content="{{ meta.content }}"/>
-	{% endfor %}
+	{%- endfor -%}
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
 	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}" />
+	<link rel="alternate" hreflang="x-default" href="{{ site.url | append: '/' }}" />
+{%- for lang in site.data.lang -%}
+	<link rel="alternate" hreflang="{{ lang[1].code }}" href="/{{ lang[1].lang }}/" />
+{%- endfor -%}
 	<script type="application/ld+json">
 {
   "@context" : "http://schema.org",
