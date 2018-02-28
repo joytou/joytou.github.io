@@ -15,7 +15,7 @@ git_username: joytou
 repo: JOYTOU
 
 #Server
-url: https://www.joytou.net/
+url: https://www.joytou.net
 github: https://github.com/joytou/
 coding: https://coding.net/joytou/
 baseurl: ""
