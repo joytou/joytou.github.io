@@ -19,9 +19,9 @@
 {%- for lang in site.data.lang -%}
 				{%- capture domainlang -%}/{{ page.lang }}/{%- endcapture -%}
 				{%- capture postlang -%}-{{ page.lang }}{%- endcapture -%}
-				{%- capture replacedomainlang -%}/{{ lang[1].lang }}/{%- endcapture -%}
+				{%- capture replacedomainlang -%}{{ lang[1].lang }}/{%- endcapture -%}
 				{%- capture replacepostlang -%}-{{ lang[1].lang }}{%- endcapture -%}
-	   <link rel="alternate" hreflang="{{ lang[1].code }}" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}" />
+	   <link rel="alternate" hreflang="{{ lang[1].code }}" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang | prepend: site.url }}" />
 {%- endfor -%}
     <script type="application/ld+json">
 {
