@@ -18,6 +18,13 @@ lang: cn
 	{%- for meta in site.data.metas -%}
     <meta name="{{ meta.name }}" content="{{ meta.content }}"/>
 	{%- endfor -%}
+	<!--Rich preview-->
+	<meta property="og:site_name" content="JOYTOU - Jekyll Blog Template" />
+<meta property="og:title" content="Home page" />
+<meta property="og:description" content="{{ site.description }}" />
+<meta property="og:image" content="{{ site.url }}/assets/logo.png" />
+<meta property="og:url" content="{{ site.url }}/">
+<!-- End rich preview-->
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
