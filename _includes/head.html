@@ -22,7 +22,7 @@
 				{%- capture replacedomainlang -%}/{{ lang[1].lang }}/{%- endcapture -%}
 				{%- capture replacepostlang -%}-{{ lang[1].lang }}{%- endcapture -%}
 				{%- for countries in lang[1].country -%}
-	   <link rel="alternate" hreflang="{{ countries }}" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang | prepend: site.url }}" />
+	   <link rel="alternate" hreflang="{{ lang[1].simplecode }} {{ countries }}" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang | prepend: site.url }}" />
 	   {%- endfor -%}
 {%- endfor -%}
     <script type="application/ld+json">
