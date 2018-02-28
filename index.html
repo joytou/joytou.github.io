@@ -21,7 +21,7 @@ lang: cn
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
-	<link rel="preload" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
 	<script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -51,8 +51,6 @@ lang: cn
   }
 }
 </script>
-	<script async src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-	<script async src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
   </head>
   <body>
 
@@ -106,6 +104,8 @@ lang: cn
 <p>This blog template is a free template and does not charge any fees. In addition, if you support the blog template, you can subsidize me a little.</p>
 	  <p>All English translations are provided by Google</p>
 </div>
+<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 <script>
 	$(function(){
 		// 初始化轮播
