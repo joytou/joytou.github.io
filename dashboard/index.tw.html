@@ -117,7 +117,8 @@ lang: tw
 	  <tr>
 		<th>#</th>
 		<th>語言</th>
-		<th>代碼</th>
+		<th>語言代碼</th>
+		<th>國家/地區代碼</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -128,6 +129,7 @@ lang: tw
 		<td>{{ languagesindex }}</td>
 		<td>{{ languages[1].language }}</td>
 		<td>{{ languages[1].code }}</td>
+		<td>{{ languages[1].country | join: "," }}</td>
 	  </tr>
 	  {%- endfor -%}
 	</tbody>

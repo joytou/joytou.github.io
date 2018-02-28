@@ -24,8 +24,10 @@ lang: cn
 	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}" />
 	<link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
-{%- for lang in site.data.lang -%}
-	<link rel="alternate" hreflang="{{ lang[1].code }}" href="{{ lang[1].lang | prepend: '/' | prepend: site.url }}/" />
+{%- for langs in site.data.lang -%}
+{%- for countries in langs[1].country -%}
+	<link rel="alternate" hreflang="{{ langs[1].code }}" href="{{ countries | prepend: '/' | prepend: site.url }}/" />
+{%- endfor -%}
 {%- endfor -%}
 	<script type="application/ld+json">
 {

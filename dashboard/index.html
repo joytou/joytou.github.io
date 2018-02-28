@@ -117,7 +117,8 @@ lang: cn
 	  <tr>
 		<th>#</th>
 		<th>语言</th>
-		<th>代码</th>
+		<th>语言代码</th>
+		<th>国家/地区代码</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -128,6 +129,7 @@ lang: cn
 		<td>{{ languagesindex }}</td>
 		<td>{{ languages[1].language }}</td>
 		<td>{{ languages[1].code }}</td>
+		<td>{{ languages[1].country | join: "," }}</td>
 	  </tr>
 	  {%- endfor -%}
 	</tbody>
