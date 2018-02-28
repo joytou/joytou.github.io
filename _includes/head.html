@@ -11,10 +11,10 @@
     <meta name="copyright" content="(c) 2017 - 2018" />
 	{% for meta in site.data.metas %}<meta name="{{ meta.name }}" content="{{ meta.content }}"/>{% endfor %}
 <!--Rich preview-->
-<meta property="og:site_name" content="{{ translation.sitename }}{% unless page.title%} - {{ translation.sitesubname }}{% endunless %}" />
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %}" />
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/logo.png{% endif %}" />
+<meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}" />
+<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 {%- if page.nav == "post" -%}
 <meta property="og:type" content="article" />
