@@ -30,3 +30,5 @@
      dashboard: "Dashboard"
      previouspost: "Previous"
      nextpost: "Next"
+     noscript: "Sorry, your browser does not support JavaScript! The page may not work properly."
+
