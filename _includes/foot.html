@@ -3,10 +3,10 @@
 {%- capture style -%}<a href="http://getbootstrap.com">Bootstrap</a>{%- endcapture -%}
 <div class="blog-footer">
 {% include select_language.html %}
-      <p><a href="http://www.alexa.cn">ALEXA</a>&nbsp;|&nbsp;<a href="http://icp.alexa.cn">ICP</a>&nbsp;|&nbsp;<a href="http://www.wenming.cn/" target="_blank">中国文明网</a>&nbsp;|&nbsp;<a href="http://www.12377.cn/" target="_blank">中国互联网举报中心</a></p>
-      <p>Copyright &copy; 2017 - 2018 <a href="{{ site.url }}">{{ translation.sitename }}</a></p>
-      <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-      <p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
+      <p class="text-justify">><a href="http://www.alexa.cn">ALEXA</a>&nbsp;|&nbsp;<a href="http://icp.alexa.cn">ICP</a>&nbsp;|&nbsp;<a href="http://www.wenming.cn/" target="_blank">中国文明网</a>&nbsp;|&nbsp;<a href="http://www.12377.cn/" target="_blank">中国互联网举报中心</a></p>
+      <p class="text-justify">>Copyright &copy; 2017 - 2018 <a href="{{ site.url }}">{{ translation.sitename }}</a></p>
+      <p class="text-justify">>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+      <p class="text-justify">>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
       {%- if site.cnzz.id -%}
       {%- if site.cnzz.HttpsEncryption -%}
       <script src="https://s19.cnzz.com/z_stat.php?id={{ site.cnzz.id }}&web_id={{ site.cnzz.id }}" language="JavaScript"></script>
