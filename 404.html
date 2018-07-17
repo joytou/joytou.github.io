@@ -13,7 +13,7 @@ permalink: /404.html
     <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
     <meta name="author" content="{{ site.author }}">
 	<meta name="owner" content="{{ site.owner_name }}" />
-    <meta name="copyright" content="(c) 2017" />
+    <meta name="copyright" content="(c) 2017 - 2018" />
 	{% if site.BaiduSiteVerification %}
 	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
     {% endif %}
@@ -47,7 +47,7 @@ permalink: /404.html
           document.write('<h3>您当前访问的是'+location.pathname+'</h3><p><h3>The page you are currently visiting is'+location.pathname+'</h3></p>');
         </script>
 		<h3>但这里已经是废墟了，什么东西都没有<small><p>404-未找到页面</p></small></h3>
-		<h1>The page can not be found<small><p>404-Page not found</p></small></h1>
+		<h3>The page can not be found<small><p>404-Page not found</p></small></h3>
 		<a class="btn btn-default btn-lg btn-block" role="button" href="/">
 		  返回首页/Home</a>
 	  </div>
