@@ -7,8 +7,7 @@ lang: cn
 {%- assign cn = lang.cn -%}
 {%- assign en = lang.en -%}
 {%- assign tw = lang.tw -%}
-{%- assign allth = cn | concat: en | concat: tw -%}
-{%- for item in allth -%}
+{%- for item in cn -%}
 <p>{{ item[0] }}<span>:</span>{{ item[1] }}</p>
 {%- endfor -%}
 {%- unless forloop.last -%}
