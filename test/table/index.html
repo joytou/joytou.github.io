@@ -1,0 +1,17 @@
+---
+layout: default
+nav: index
+lang: cn
+---
+{%- for lang in site.data.language -%}
+{%- assign cn in lang.cn -%}
+{%- assign en in lang.en -%}
+{%- assign tw in lang.tw -%}
+{%- assign allth in cn | concat: en | concat: tw -%}
+{%- for item in allth -%}
+<p>{{ item[0] }}{{ item[1] }}</p>
+{%- endfor -%}
+{%- unless forloop.last -%}
+<p>----------------</p>
+{%- endunless -%}
+{%- endfor -%}
