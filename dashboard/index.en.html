@@ -11,7 +11,7 @@ lang: en
 <!--Pages list-->
 <h2 class="sub-header">Pages list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -35,7 +35,7 @@ lang: en
 <!--Static files list-->
 <h2 class="sub-header">Static files list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -61,7 +61,7 @@ lang: en
 <!--collections collection list-->
 <h2 class="sub-header">Collections list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -83,7 +83,7 @@ lang: en
 <!--data data list-->
 <h2 class="sub-header">Datas list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -112,7 +112,7 @@ lang: en
 <!--language list-->
 <h2 class="sub-header">Languages list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -138,32 +138,36 @@ lang: en
 <!--Translations list-->
 <h2 class="sub-header">Translations list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
-		{%- for langkey in site.data.language[page.lang] -%}
-		<th>{{ langkey[0] }}</th>
+		{%- for lang in site.data.lang -%}
+		<th>{{ lang[1].language }}</th>
 		{%- endfor -%}
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- for translations in site.data.language -%}
-	  {%- assign kkey = translations[0] -%}
-	  <tr>
-	  <td>{{ site.data.lang[kkey].language }}</td>
-	  {%- for trans in translations[1] -%}
-	  <td>{{ trans[1] }}</td>
-	  {%- endfor -%}
-	  </tr>
-	  {%- endfor -%}
+{%- for langkey in site.data.language.cn -%}
+<tr>
+{%- unless foeloop.first -%}
+<td>{{ langkey[0] }}</td>
+{%- endunless -%}
+{%- for langs in site.data.lang -%}
+{%- assign lang = langs[1].lang -%}
+{%- assign keys = langkey[0] -%}
+{%- assign key = site.data.language[lang] -%}
+<td>{{ key[keys] }}</td>
+{%- endfor -%}
+</tr>
+{%- endfor -%}
 </tbody>
   </table>
 </div>
 <!--Articles list-->
 <h2 class="sub-header">Articles list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -191,7 +195,7 @@ lang: en
 <!--Category list-->
 <h2 class="sub-header">Categories list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
@@ -215,7 +219,7 @@ lang: en
 <!--Tag list-->
 <h2 class="sub-header">Tags list</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
 	<thead>
 	  <tr>
 		<th>#</th>
