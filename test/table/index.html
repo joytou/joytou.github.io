@@ -9,7 +9,7 @@ lang: cn
 {%- assign tw in lang.tw -%}
 {%- assign allth = cn | concat: en | concat: tw -%}
 {%- for item in allth -%}
-<p>{{ item[0] }}{{ item[1] }}</p>
+<p>{{ item[0] }}<span>:</span>{{ item[1] }}</p>
 {%- endfor -%}
 {%- unless forloop.last -%}
 <p>----------------</p>
