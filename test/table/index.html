@@ -13,8 +13,8 @@ lang: cn
 {%- endunless -%}
 {%- endfor -%}
 
-{%- for langkey in site.data.language.cn[0] -%}
+{%- for langkey in site.data.language[cn] -%}
 {%- for langs in site.data.lang -%}
 {%- endfor -%}
-{{ langkey }}
+{{ langkey[0] }}:{{ langkey[1] }}
 {%- endfor -%}
