@@ -12,3 +12,9 @@ lang: cn
 <p>////////////////</p>
 {%- endunless -%}
 {%- endfor -%}
+
+{%- for langkey in site.data.language.cn[0] -%}
+{%- for langs in site.data.lang -%}
+{%- endfor -%}
+{{ langkey }}
+{%- endfor -%}
