@@ -15,8 +15,8 @@ lang: cn
 
 <p>@@@@@@@@@@@@@@@@</p>
 
-{%- for langs in site.data.lang -%}
 {%- for langkey in site.data.language.cn -%}
+{%- for langs in site.data.lang -%}
 {%- assign lang = langs[1].lang -%}
 {%- assign keys = langkey[0] -%}
 {%- assign key = site.data.language[lang] -%}
