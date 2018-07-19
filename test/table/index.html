@@ -3,14 +3,12 @@ layout: default
 nav: index
 lang: cn
 ---
-{%- for lang in site.data.language -%}
-{%- assign cn = lang.cn -%}
-{%- assign en = lang.en -%}
-{%- assign tw = lang.tw -%}
-{%- for item in cn -%}
-<p>{{ item[0] }}<span>:</span>{{ item[1] }}</p>
+{%- for langs in site.data.lang -%}
+{%- assign lang = langs[1].lang -%}
+{%- for langkey in site.data.language[lang] -%}
+<p>{{ langkey[0] }}<span>:</span>{{ langkey[1] }}</p>
 {%- endfor -%}
 {%- unless forloop.last -%}
-<p>----------------</p>
+<p>////////////////</p>
 {%- endunless -%}
 {%- endfor -%}
