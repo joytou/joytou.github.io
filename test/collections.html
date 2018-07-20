@@ -25,18 +25,16 @@ permalink: /test/collections.html
   <td>{{ sitedata | first }}</td>
   <td>{{ sitedata | last | jsonify }}</td>
   <td>
-  <div class="table-responsive">
-  <table class="table table-striped table-hover">
+  <table>
   <tbody>
   {%- for datas in dl -%}
   <tr>
   <td>{{ datas | first }}</td>
-  <td>{{ datas | last | jsonify }}</td>
+  <td>{{ datas | last | xml_escape }}</td>
   </tr>
   {%- endfor -%}
   </tbody>
   </table>
-  </div>
   </td>
 </tr>
 {%- endif -%}
