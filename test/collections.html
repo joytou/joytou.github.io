@@ -14,9 +14,10 @@ permalink: /test/collections.html
 	</thead>
 	<tbody>
       {%- for sitedata in site.data | sort -%}
-      {%- if sitedata | first == "language" -%}
+      {%- assign df = sitedata | first -%}
+      {%- if df == "language" -%}
       {%- continue -%}
-      {%- endif -%}
+      {%- else -%}
 <tr>
   <td>{{ dataindex }}</td>
   <td>{{ sitedata | first }}</td>
@@ -36,6 +37,7 @@ permalink: /test/collections.html
   </div>
   </td>
 </tr>
+{%- endif -%}
 {%- endfor -%}
 	</tbody>
   </table>
