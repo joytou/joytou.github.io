@@ -14,6 +14,9 @@ permalink: /test/collections.html
 	</thead>
 	<tbody>
       {%- for sitedata in site.data | sort -%}
+      {%- if sitedata | first == "language" -%}
+      {%- continue -%}
+      {%- endif -%}
 <tr>
   <td>{{ dataindex }}</td>
   <td>{{ sitedata | first }}</td>
