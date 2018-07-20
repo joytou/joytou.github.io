@@ -4,4 +4,4 @@ nav: index
 lang: cn
 permalink: /test/collections.html
 ---
-{{ site.collections | jsonify }}
+{{ site.collections | jsonify | cgi_escape }}
