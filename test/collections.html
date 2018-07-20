@@ -42,3 +42,27 @@ permalink: /test/collections.html
 	</tbody>
   </table>
 </div>
+
+<span>----------------</span>
+
+{%- for sitedata in site.data | sort -%}
+      {%- assign df = sitedata | first -%}
+      {%- assign dl = sitedata | last -%}
+      {%- if df == "language" -%}
+      {%- continue -%}
+      {%- else -%}
+<h2 class="sub-header">{{ sitedata | first }}</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<tbody>
+	<tr>
+	{%- for datas in dl -%}
+	<td>{{ datas | first }}</td>
+	<td>{{ datas | last | xml_escape }}</td>
+	{%- endfor -%}
+	</tr>
+	</tbody>
+	</table>
+	<div>
+	{%- endif -%}
+	{%- endfor -%}
