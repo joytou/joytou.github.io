@@ -21,7 +21,7 @@ permalink: /test/collections.html
       {%- continue -%}
       {%- else -%}
 <tr>
-  <td>{{ dataindex }}</td>
+  <td>{% increment sitedata %}@{% decrement sitedata %}</td>
   <td>{{ sitedata | first }}</td>
   <td>{{ sitedata | last | jsonify }}</td>
   <td>
