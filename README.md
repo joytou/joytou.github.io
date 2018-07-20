@@ -4,7 +4,7 @@
 <p><a href="http://www.qingbloger.com">氢客</a></p>
 <p></p>
 # JOYTOU
-JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
+JOYTOU(http://joytou.net) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
 
 # Content
 
@@ -24,7 +24,7 @@ JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu
 # en
 
 ## Introduction
-JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
+JOYTOU(http://joytou.net) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
 
 ## Features
 1. BootStrap style
@@ -59,7 +59,7 @@ in _config.yml:
 |:----------:|:----------:|:----------|
 |      email      |      1540294142@qq.com      |       Your e-mail address     |
 |      author      |      Joytou Wu      |      The article author's name      |
-|       url     |     http://joytou.net.cn       |      Your site address, and do not add  `/`  in the end      |
+|       url     |     http://joytou.net       |      Your site address, and do not add  `/`  in the end      |
 |      git_username      |      joytou      |       Your git account name     |
 |      repo      |      JOYTOU      |      Your repository name     |
 |      owner_name      |      joytou      |      The site owner name      |
@@ -118,7 +118,7 @@ By using the Service, you [agree to comply with all the terms of this Agreement]
 # cn
 
 ## 概述
-JOYTOU(http://joytou.net.cn) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
+JOYTOU(http://joytou.net) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
 
 ## 功能特色
 1. BootStrap样式
@@ -153,7 +153,7 @@ _config.yml:
 |:----------:|:----------:|:----------|
 |      email      |      1540294142@qq.com      |       您的电子邮件地址     |
 |      author      |      Joytou Wu      |      文章作者名称      |
-|       url     |     http://joytou.net.cn       |      您的网址，末尾不能加上 `/`       |
+|       url     |     http://joytou.net       |      您的网址，末尾不能加上 `/`       |
 |      git_username      |      joytou      |       您的Git用户名     |
 |      repo      |      JOYTOU      |      您的repository名字     |
 |      owner_name      |      joytou      |      网站所有者名字      |
@@ -211,7 +211,7 @@ Article mainly content
 # tw 
 
 ## 概述tw 
-JOYTOU(http://joytou.net.cn) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
+JOYTOU(http://joytou.net) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
 
 ## 功能特色tw 
 1. BootStrap樣式 
@@ -242,7 +242,7 @@ _config.yml:
 |:----------:|:----------:|:----------| 
 | email | 1540294142@qq.com | 您的電子郵件地址 | 
 | author | Joytou Wu | 文章作者名稱 | 
-| url | http://joytou.netc.cn | 您的網址，末尾不能加上 `/` | 
+| url | http://joytou.net | 您的網址，末尾不能加上 `/` | 
 | git_username | joytou | 您的Git用戶名 | 
 | repo | JOYTOU | 您的repository名字 | 
 | owner_name | joytou | 網站所有者名字 | 
