@@ -15,6 +15,7 @@ permalink: /test/collections.html
 	<tbody>
       {%- for sitedata in site.data | sort -%}
       {%- assign df = sitedata | first -%}
+      {%- assign dl = sitedata | last -%}
       {%- if df == "language" -%}
       {%- continue -%}
       {%- else -%}
@@ -26,7 +27,7 @@ permalink: /test/collections.html
   <div class="table-responsive">
   <table class="table table-striped table-hover">
   <tbody>
-  {%- for datas in sitedata | last -%}
+  {%- for datas in dl -%}
   <tr>
   <td>{{ datas | first }}</td>
   <td>{{ datas | last }}</td>
