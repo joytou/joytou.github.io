@@ -1,3 +1,8 @@
+<p><a href="https://jekyll-themes.com">
+<img src="https://img.shields.io/badge/featured%20on-JT-red.svg"height="20" alt="Jekyll Themes Shield" ></a></p>
+<p><a href="http://jekyllthemes.org">Jekyll Themes</a></p>
+<p><a href="http://www.qingbloger.com">氢客</a></p>
+<p></p>
 # JOYTOU
 JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
 
