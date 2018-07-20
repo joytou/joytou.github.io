@@ -20,11 +20,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign pageindex = 0 -%}
 	  {%- for sitepage in site.pages | sort -%}
-	  {%- assign pageindex = pageindex | plus: 1 -%}
 <tr>
-  <td>{{ pageindex }}</td>
+  <td>{{ forloop.index }}</td>
   <td>{{ sitepage.url }}</td>
   <td>{{ sitepage.path }}</td>
 </tr>
@@ -45,11 +43,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign staticfileindex = 0 -%}
       {%- for sitestaticfile in site.static_files | sort -%}
-	  {%- assign staticfileindex = staticfileindex | plus: 1 -%}
 <tr>
-  <td>{{ staticfileindex }}</td>
+  <td>{{ forloop.index }}</td>
   <td>{{ sitestaticfile.path }}</td>
   <td>{{ sitestaticfile.extname }}</td>
   <td>{{ sitestaticfile.modified_time }}</td>
@@ -69,11 +65,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign collectionindex = 0 -%}
       {%- for sitecollection in site.collections | sort -%}
-	  {%- assign collectionindex = collectionindex | plus: 1 -%}
 <tr>
-  <td>{{ collectionindex }}</td>
+  <td>{{ forloop.index }}</td>
   <td>{{ sitecollection | xml_escape }}</td>
 </tr>
 {%- endfor -%}
@@ -92,15 +86,13 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign dataindex = 0 -%}
       {%- for sitedata in site.data | sort -%}
       {%- assign pd = sitedata | first -%}
       {%- if pd == "language" -%}
       {%- continue -%}
       {%- else -%}
-	  {%- assign dataindex = dataindex | plus: 1 -%}
 <tr>
-  <td>{{ dataindex }}</td>
+  <td>{{ forloop.index }}</td>
   <td>{{ sitedata | first }}</td>
   <td>{{ sitedata | last | jsonify }}</td>
 </tr>
@@ -122,11 +114,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign languagesindex = 0 -%}
       {%- for languages in site.data.lang | sort -%}
-	  {%- assign languagesindex = languagesindex | plus: 1 -%}
 	  <tr>
-		<td>{{ languagesindex }}</td>
+		<td>{{ forloop.index }}</td>
 		<td>{{ languages[1].language }}</td>
 		<td>{{ languages[1].code }}</td>
 		<td>{{ languages[1].country | join: "," }}</td>
@@ -178,11 +168,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign postsindex = 0 -%}
       {%- for posts in site.posts | sort -%}
-	  {%- assign postsindex = postsindex | plus: 1 -%}
 	  <tr>
-		<td>{{ postsindex }}</td>
+		<td>{{ forloop.index }}</td>
 		<td>{{ posts.title }}</td>
 		<td>{{ posts.date }}</td>
 		<td>{{ site.data.lang[posts.lang].language }}</td>
@@ -204,11 +192,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign categoryindex = 0 -%}
       {%- for category in site.categories | sort -%}
-	  {%- assign categoryindex = categoryindex | plus: 1 -%}
 	  <tr>
-		<td>{{ categoryindex }}</td>
+		<td>{{ forloop.index }}</td>
 		<td>{{ category | first }}</td>
 		<td>{{ category.last.size }}</td>
 	  </tr>
@@ -228,11 +214,9 @@ lang: cn
 	  </tr>
 	</thead>
 	<tbody>
-	  {%- assign tagindex = 0 -%}
       {%- for tag in site.tags | sort -%}
-	  {%- assign tagindex = tagindex | plus: 1 -%}
 	  <tr>
-		<td>{{ tagindex }}</td>
+		<td>{{ forloop.index }}</td>
 		<td>{{ tag | first }}</td>
 		<td>{{ tag.last.size }}</td>
 	  </tr>
