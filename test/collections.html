@@ -17,9 +17,10 @@ permalink: /test/collections.html
 <tr>
   <td>{{ dataindex }}</td>
   <td>{{ sitedata | first }}</td>
-  <td>{{ sitedata | last | jsonify }}</td>
+  <!--<td>{{ sitedata | last | jsonify }}</td>-->
   <td>
-  <table>
+  <div class="table-responsive">
+  <table class="table table-striped table-hover">
   <tbody>
   {%- for datas in sitedata | last -%}
   <tr>
@@ -29,6 +30,7 @@ permalink: /test/collections.html
   {%- endfor -%}
   </tbody>
   </table>
+  </div>
   </td>
 </tr>
 {%- endfor -%}
