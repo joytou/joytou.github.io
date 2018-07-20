@@ -1,5 +1,5 @@
 ---
 layout: null
-permalink: /test/collections.xml
+permalink: /test/collections.html
 ---
-{{ site.collections | xml_escape }}
+{{ site.collections | xml_escape | jsonify }}
