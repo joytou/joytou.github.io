@@ -1,5 +1,37 @@
 ---
-layout: null
+layout: default
 permalink: /test/collections.html
 ---
-{{ site.collections | sort | xml_escape }}
+<h2 class="sub-header">数据清单</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>归属</th>
+		<th>内容</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitedata in site.data | sort -%}
+<tr>
+  <td>{{ dataindex }}</td>
+  <td>{{ sitedata | first }}</td>
+  <td>{{ sitedata | last | jsonify }}</td>
+  <td>
+  <table>
+  <tbody>
+  {%- for datas in sitedata | last -%}
+  <tr>
+  <td>{{ datas | first }}</td>
+  <td>{{ datas | last }}</td>
+  </tr>
+  {%- endfor -%}
+  </tbody>
+  </table>
+  </td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
