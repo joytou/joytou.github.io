@@ -1,6 +1,10 @@
 {% assign translation = site.data.language[page.lang] %}
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-dns-prefetch-control" content="{%- if dnsPrefetch -%}on{%- else -%}off{%- endif -%}">
+    {%- for dns in site.dns -%}
+    <link rel="dns-prefetch" href="{{ dns }}">
+    {%- endfor -%}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="title" content="{% if page.title %}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}" />

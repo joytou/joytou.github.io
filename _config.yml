@@ -19,6 +19,10 @@ url: https://www.joytou.net
 github: https://github.com/joytou/
 coding: https://coding.net/joytou/
 baseurl: ""
+dnsPrefetch: true
+dns:
+      -"//dns17.hichina.com"
+      -"//dns18.hichina.com"
 
 #Page settings
 future: true
