@@ -31,4 +31,9 @@
      previouspost: "Previous"
      nextpost: "Next"
      noscript: "Sorry, your browser does not support JavaScript! The page may not work properly."
-
+     name: "Name"
+     email: "Email"
+     content: "Content"
+     required: "Required"
+     submit: "Submit"
+     contact: "Contact"

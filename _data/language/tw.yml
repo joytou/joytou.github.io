@@ -31,5 +31,9 @@
      previouspost: "上一篇"
      nextpost: "下一篇"
      noscript: "很抱歉，你的瀏覽器不支持JavaScript！頁面可能無法正常工作。"
-    
-
+     name: "姓名"
+     email: "電子郵件"
+     content: "內容"
+     required: "必填"
+     submit: "提交"
+     contact: "聯繫"
