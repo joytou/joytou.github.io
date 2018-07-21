@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="/{{ page.lang }}/"><span><img src="{{ '/assets/logo.png' | prepend: site.baseurl }}" width="32px" alt="JOYTOU" style="margin-top: -6px"/> {{ translation.sitename }}</span></a>
+		  <a class="navbar-brand" href="/{{ page.lang }}/"><span><img src="{{ '/assets/logo.png' | prepend: site.baseurl }}" width="32px" alt="JOYTOU" style="margin-top: -6px"/><strong> {{ translation.sitename }}</strong></span></a>
 		</div>
 		<div class="collapse navbar-collapse" id="example-navbar-collapse">
 		  <ul class="nav navbar-nav">
@@ -61,7 +61,7 @@
             </li>
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-transfer"></span>{{ translation.selectlang }} <b class="caret"></b>
+				<span class="glyphicon glyphicon-font"></span>{{ translation.selectlang }} <b class="caret"></b>
 			  </a>
 			  <ul class="dropdown-menu">
 				{%- for weblangs in site.data.lang -%}
