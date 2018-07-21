@@ -20,7 +20,7 @@ function check(str,elementid)
       str = str.replace(" ","");
     }
     if(str.length == 0){
-      //alert("Input cannot be all empty");
+      alert("Input cannot be all empty");
       document.getElementById(elementid).addClass("has-warning");
     }else{
     document.getElementById(elementid).removeClass("has-warning");
@@ -32,17 +32,17 @@ function check(str,elementid)
 
 <div class="form-group" id="formname">
 		<label for="named" class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
-		<input type="text" name="name" value="" class="name form-control"  required aria-required="true" onkeyup="check(this.value,'formname')" id="named"/>
+		<input type="text" name="name" value="" class="name form-control"  required aria-required="true" onkeyup="check(this.value,this.id)" id="named"/>
 	</div>
 
 <div class="form-group" id="formemail">
 		<label for="emaild" class="grunion-field-label email">{{ translation.email }}<span>（{{ translation.required }}）</span></label>
-		<input type="email" name="_replyto" value="" class="email form-control"  required aria-required="true" onkeyup="check(this.value,'formemail')" id="emaild"/>
+		<input type="email" name="_replyto" value="" class="email form-control"  required aria-required="true" onkeyup="check(this.value,this.id)" id="emaild"/>
 	</div>
 
 <div class="form-group" id="formcontent">
 		<label for="contentd" class="grunion-field-label textarea">{{ translation.content }}<span>（{{ translation.required }}）</span></label>
-		<textarea name="content" rows="20" class="textarea form-control"  required aria-required="true" onkeyup="check(this.value,'formcontent')" id="contentd"></textarea>
+		<textarea name="content" rows="20" class="textarea form-control"  required aria-required="true" onkeyup="check(this.value,this.id)" id="contentd"></textarea>
 	</div>
 	
 	<div class="checkbox" id="formconfirm">
