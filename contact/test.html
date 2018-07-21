@@ -4,6 +4,7 @@ nav: contact
 permalink: /cn/contact/test/
 lang: cn
 ---
+{%- assign translation = site.data.language[page.lang] -%}
 <script>
 function tochecksubmit(){
 if(document.getElementById("checkconfirm").checked==false && document.getElementById("submitbutton").hasClass("disabled")==false){//未验证，不可提交
