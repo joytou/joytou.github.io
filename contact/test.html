@@ -5,8 +5,7 @@ permalink: /cn/contact/test/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<iframe id="iframepage" name="submitframe" src="about:blank" allowtransparency="true" style="background-color=transparent display:none" height="0%" frameborder="0" sandbox="allow-same-origin allow-top-navigation	allow-forms allow-scripts" seamless></iframe>
-<form id="contactform" name="myform" method="post" target="submitframe" enctype="multipart/form-data" action="http://login.liuyanbao.net/index.php?action=savecontent" accept-charset="GB2312" onsubmit="if(isIE)document.charset='GB2312'">
+<form id="contactform" name="myform" method="post" target="_blank" enctype="multipart/form-data" action="http://login.liuyanbao.net/index.php?action=savecontent" accept-charset="GB2312" onsubmit="if(isIE)document.charset='GB2312'">
 <div class="form-group">
 		<label class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
 		<input type="text" name="content[0]" value="" class="name form-control"  required aria-required="true"/>
@@ -21,11 +20,13 @@ lang: cn
 </div>
 <p class="contact-submit form-group">
 		<input type="submit" name="submitcontent" value="{{ translation.submit }} »" class="btn btn-default btn-block form-control"/>
-		<input type="hidden" name="fid" value="15964" />
-		<input type="hidden" name="guishu" value="11197" />
+		<input type="hidden" name="fid" value="" id="fid"/>
+		<input type="hidden" name="guishu" value="" id="guishu"/>
 		<input type="hidden" name="url" value="" id="url"/>
 </p>
 </form>
 <script type="text/javascript">
    document.getElementById('url').value=window.location.host;
+   document.getElementById('fid').value='15964';
+   document.getElementById('guishu').value='11197';
 </script>
