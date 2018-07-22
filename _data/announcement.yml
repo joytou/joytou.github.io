@@ -1,8 +1,8 @@
  - scrollamount: "2"
    direction: "left"
    behavior: "scroll"
-   date: "2018-02-20"
+   date: "2018-07-22"
    msg: 
-     cn: "添加公告功能。"
-     en: "Add announcement function."
-     tw: "添加公告功能。"
+     cn: "添加在线留言联系功能。"
+     en: "Add online message contact function."
+     tw: "添加在線留言聯繫功能。"
