@@ -5,37 +5,28 @@ permalink: /cn/contact/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<script>
-function check(str)
-{
-    while(str.lastIndexOf(" ")>=0){
-      str = str.replace(" ","");
-    }
-    if(str.length == 0){
-      alert("输入不能全为空");
-    }
-}
-</script>
-<form action='https://joytou8.wordpress.com/contact/#contact-form-2' method='post' class='contact-form commentsblock' role="form">
-
+<form id="contactform" name="myform" method="post" target="_blank" enctype="multipart/form-data" action="http://login.liuyanbao.net/index.php?action=savecontent" accept-charset="GB2312" onsubmit="if(isIE)document.charset='GB2312'">
 <div class="form-group">
-		<label for='g2-name' class='grunion-field-label name'>{{ translation.name }}<span>（{{ translation.required }}）</span></label>
-		<input type='text' name='g2-name' id='g2-name' value='' class='name form-control'  required aria-required='true' onkeyup='check(this.value)'/>
-	</div>
-
+		<label class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
+		<input type="text" name="content[0]" value="" class="name form-control"  required aria-required="true"/>
+</div>
 <div class="form-group">
-		<label for='g2-email' class='grunion-field-label email'>{{ translation.email }}<span>（{{ translation.required }}）</span></label>
-		<input type='email' name='g2-email' id='g2-email' value='' class='email form-control'  required aria-required='true' onkeyup='check(this.value)'/>
-	</div>
-
+		<label class="grunion-field-label email">{{ translation.email }}<span>（{{ translation.required }}）</span></label>
+		<input type="email" name="content[1]" value="" class="email form-control"  required aria-required="true"/>
+</div>
 <div class="form-group">
-		<label for='contact-form-comment-g2-comment' class='grunion-field-label textarea'>{{ translation.content }}<span>（{{ translation.required }}）</span></label>
-		<textarea name='g2-comment' id='contact-form-comment-g2-comment' rows='20' class='textarea form-control'  required aria-required='true' onkeyup='check(this.value)'></textarea>
-	</div>
-	<p class='contact-submit form-group'>
-		<input type='submit' value='{{ translation.submit }} »' class='pushbutton-wide form-control'/>
-		<input type='hidden' name='contact-form-id' value='2' />
-		<input type='hidden' name='action' value='grunion-contact-form' />
-		<input type='hidden' name='contact-form-hash' value='d19880efda6c951cf284409705cf9fd7503e0938' />
-	</p>
+		<label class="grunion-field-label textarea">{{ translation.content }}<span>（{{ translation.required }}）</span></label>
+		<textarea name="content[2]" rows="20" class="textarea form-control"  required aria-required="true"></textarea>
+</div>
+<p class="contact-submit form-group">
+		<input type="submit" name="submitcontent" value="{{ translation.submit }} »" class="btn btn-default btn-block form-control"/>
+		<input type="hidden" name="fid" value="" id="fid"/>
+		<input type="hidden" name="guishu" value="" id="guishu"/>
+		<input type="hidden" name="url" value="" id="url"/>
+</p>
 </form>
+<script type="text/javascript">
+   document.getElementById('url').value=window.location.host;
+   document.getElementById('fid').value='15964';
+   document.getElementById('guishu').value='11197';
+</script>
