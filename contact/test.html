@@ -5,8 +5,8 @@ permalink: /cn/contact/test/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<iframe id="iframepage" name="submitframe" src="https://www.joytou.net/contact/blank/" allowtransparency="true" style="background-color=transparent display:none" frameborder="0" height="100%" sandbox="allow-same-origin allow-top-navigation	allow-forms allow-scripts" onload="changeFrameHeight()" seamless></iframe>
-<form id="contactform" onsubmit=document.getElementById("url").value=window.location.host; name="myform" method="post" target="_blank" enctype="multipart/form-data" action="http://login.liuyanbao.net/index.php?action=savecontent" accept-charset="GB2312" onsubmit="if(isIE)document.charset='GB2312'">
+<iframe id="iframepage" name="submitframe" src="about:blank" allowtransparency="true" style="background-color=transparent display:none" height="0%" frameborder="0" sandbox="allow-same-origin allow-top-navigation	allow-forms allow-scripts" seamless></iframe>
+<form id="contactform" name="myform" method="post" target="submitframe" enctype="multipart/form-data" action="http://login.liuyanbao.net/index.php?action=savecontent" accept-charset="GB2312" onsubmit="if(isIE)document.charset='GB2312'">
 <div class="form-group">
 		<label class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
 		<input type="text" name="content[0]" value="" class="name form-control"  required aria-required="true"/>
@@ -26,13 +26,6 @@ lang: cn
 		<input type="hidden" name="url" value="" id="url"/>
 </p>
 </form>
-<script>
-function changeFrameHeight(){
-    var ifm= document.getElementById('iframepage'); 
-    ifm.height=document.documentElement.clientHeight;
-    //ifm.height=ifm.document.body.scrollHeight;
-}
-window.onresize=function(){  
-     changeFrameHeight();  
-} 
+<script type="text/javascript">
+   document.getElementById('url').value=window.location.host;
 </script>
