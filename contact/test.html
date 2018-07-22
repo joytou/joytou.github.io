@@ -5,7 +5,7 @@ permalink: /cn/contact/test/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<iframe name="submitframe" src="https://www.joytou.net/contact/blank/" allowtransparency="true" style="background-color=transparent display:inline" scrolling="no" frameborder="0" height="100%" sandbox="allow-same-origin allow-top-navigation	allow-forms allow-scripts" seamless></iframe>
+<iframe id="iframepage" name="submitframe" src="https://www.joytou.net/contact/blank/" allowtransparency="true" style="background-color=transparent" frameborder="0" height="100%" sandbox="allow-same-origin allow-top-navigation	allow-forms allow-scripts" onload="changeFrameHeight()" seamless></iframe>
 <form id="contactform" method="POST" role="form" target="submitframe">
 <div class="form-group">
 		<label for="named" class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
@@ -24,7 +24,6 @@ lang: cn
 		<input type="hidden" name="_subject" value="New submission!" />
 		<input type="hidden" name="_format" value="plain" />
 		<input type="hidden" name="_lang" value="{{ page.lang }}"/>
-		<input type="hidden" name="_date" value="{{  "now" | "%Y-%m-%d, %a" }}"/>
 		<input type="hidden" name="_rfc822" value="{{ "now" | date_to_rfc822 }}"/>
 </p>
 </form>
@@ -32,4 +31,12 @@ lang: cn
 <script>
     var contactform =  document.getElementById('contactform');
     contactform.setAttribute('action', '//formspree.io/' + '1540294142' + '@' + 'qq' + '.' + 'com');
+function changeFrameHeight(){
+    var ifm= document.getElementById('iframepage'); 
+//    ifm.height=document.documentElement.clientHeight;
+   ifm.height=ifm.document.body.scrollHeight;
+}
+window.onresize=function(){  
+     changeFrameHeight();  
+} 
 </script>
