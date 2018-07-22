@@ -5,89 +5,24 @@ permalink: /cn/contact/test/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<script>
-var username = document.getElementById("named");
-var ustr = "";
-var email = document.getElementById("emaild");
-var estr = "";
-var content = document.getElementById("contentd");
-var cstr = "";
-var confirm = document.getElementById("checkconfirm");
-var formusername = document.getElementById("formname");
-var formemail = document.getElementById("formemail");
-var formcontent = document.getElementById("formcontent");
-var formconfirm = document.getElementById("formconfirm");
-var submit = document.getElementById("submitbutton");
-
-function checks()
-{
-    while(username.IndexOf(" ")>=0){
-      ustr = username.replace(" ","");
-    }
-     while(email.IndexOf(" ")>=0){
-      estr = email.replace(" ","");
-    }
-    while(content.IndexOf(" ")>=0){
-      cstr = content.replace(" ","");
-    }
-    if(ustr.length == 0){
-    formusername.addClass("has-error");
-    return false;
-    }else{
-    formusername.removeClass("has-error");
-    return true;
-    }
-    if(estr.length == 0){
-    formemail.addClass("has-error");
-    return false;
-    }else{
-    formemail.removeClass("has-error");
-    return true;
-    }
-    if(cstr.length == 0){
-    formcontent.addClass("has-error");
-    return false;
-    }else{
-    formcontent.removeClass("has-error");
-    return true;
-    }
-}
-
-function check()
-{
-    if(formconfirm.checked == true){
-       submit.removeClass("disabled");
-    }else{
-       submit.addClass("disabled");
-    }
-}
-</script>
-<form action="https://formspree.io/1540294142@qq.com" method="POST" role="form" onsubmit="return checks();">
-
-<div class="form-group" id="formname">
+<form action="https://formspree.io/1540294142@qq.com" method="POST" role="form">
+<div class="form-group">
 		<label for="named" class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
-		<input type="text" name="name" value="" class="name form-control"  required aria-required="true" id="named"/>
-	</div>
-
-<div class="form-group" id="formemail">
-		<label for="emaild" class="grunion-field-label email">{{ translation.email }}<span>（{{ translation.required }}）</span></label>
-		<input type="email" name="_replyto" value="" class="email form-control"  required aria-required="true" id="emaild"/>
-	</div>
-
-<div class="form-group" id="formcontent">
-		<label for="contentd" class="grunion-field-label textarea">{{ translation.content }}<span>（{{ translation.required }}）</span></label>
-		<textarea name="content" rows="20" class="textarea form-control"  required aria-required="true" id="contentd"></textarea>
-	</div>
-	
-	<div class="checkbox" id="formconfirm">
-    <label><input type="checkbox" value="" id="checkconfirm" onclick="checks()">确认所输入均不为空或是无意义字符Make sure the input is not empty or meaningless characters</label>
+		<input type="text" name="name" value="" class="name form-control"  required aria-required="true"/>
 </div>
-	
-		<p class="contact-submit form-group">
-		<input type="submit" id="submitbutton" value="{{ translation.submit }} »" class="btn btn-default btn-block form-control disabled"/>
+<div class="form-group">
+		<label for="emaild" class="grunion-field-label email">{{ translation.email }}<span>（{{ translation.required }}）</span></label>
+		<input type="email" name="_replyto" value="" class="email form-control"  required aria-required="true"/>
+</div>
+<div class="form-group">
+		<label for="contentd" class="grunion-field-label textarea">{{ translation.content }}<span>（{{ translation.required }}）</span></label>
+		<textarea name="content" rows="20" class="textarea form-control"  required aria-required="true"></textarea>
+</div>
+<p class="contact-submit form-group">
+		<input type="submit" value="{{ translation.submit }} »" class="btn btn-default btn-block form-control"/>
 		<input type="hidden" name="_format" value="plain" />
 		<input type="hidden" name="_lang" value="{{ page.lang }}"/>
 		<input type="hidden" name="_date" value="{{  "now" | "%Y-%m-%d, %a" }}"/>
 		<input type="hidden" name="_rfc822" value="{{ "now" | date_to_rfc822 }}"/>
-		</p>
+</p>
 </form>
