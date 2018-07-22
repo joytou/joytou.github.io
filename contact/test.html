@@ -20,8 +20,8 @@ function check(str,elementid)
       str = str.replace(" ","");
     }
     if(str.length == 0){
-      alert("Input cannot be all empty");
-      document.getElementById(elementid).addClass("has-warning");
+      //alert("Input cannot be all empty");
+      document.getElementById(elementid).addClass("disabled");
     }else{
     document.getElementById(elementid).removeClass("has-warning");
     }
