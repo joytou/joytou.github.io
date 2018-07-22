@@ -5,7 +5,7 @@ permalink: /cn/contact/test/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<form action="https://formspree.io/1540294142@qq.com" method="POST" role="form">
+<form id="contactform" method="POST" role="form">
 <div class="form-group">
 		<label for="named" class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
 		<input type="text" name="name" value="" class="name form-control"  required aria-required="true"/>
@@ -20,9 +20,15 @@ lang: cn
 </div>
 <p class="contact-submit form-group">
 		<input type="submit" value="{{ translation.submit }} »" class="btn btn-default btn-block form-control"/>
+		<input type="hidden" name="_subject" value="New submission!" />
 		<input type="hidden" name="_format" value="plain" />
 		<input type="hidden" name="_lang" value="{{ page.lang }}"/>
 		<input type="hidden" name="_date" value="{{  "now" | "%Y-%m-%d, %a" }}"/>
 		<input type="hidden" name="_rfc822" value="{{ "now" | date_to_rfc822 }}"/>
 </p>
 </form>
+<!-- Anti-spam -->
+<script>
+    var contactform =  document.getElementById('contactform');
+    contactform.setAttribute('action', '//formspree.io/' + '1540294142' + '@' + 'qq' + '.' + 'com');
+</script>
