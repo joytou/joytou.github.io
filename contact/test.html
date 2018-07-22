@@ -21,13 +21,13 @@ var submit = document.getElementById("submitbutton");
 
 function checks()
 {
-    while(username.lastIndexOf(" ")>=0){
+    while(username.IndexOf(" ")>=0){
       ustr = username.replace(" ","");
     }
-     while(email.lastIndexOf(" ")>=0){
+     while(email.IndexOf(" ")>=0){
       estr = email.replace(" ","");
     }
-    while(content.lastIndexOf(" ")>=0){
+    while(content.IndexOf(" ")>=0){
       cstr = content.replace(" ","");
     }
     if(ustr.length == 0){
@@ -62,8 +62,7 @@ function check()
     }
 }
 </script>
-<form action="https://formspree.io/1540294142@qq.com"
-      method="POST" role="form" onsubmit="return checks();">
+<form action="https://formspree.io/1540294142@qq.com" method="POST" role="form" onsubmit="return checks();">
 
 <div class="form-group" id="formname">
 		<label for="named" class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
@@ -81,7 +80,7 @@ function check()
 	</div>
 	
 	<div class="checkbox" id="formconfirm">
-    <label><input type="checkbox" value="" id="checkconfirm" onclick="check()">确认所输入均不为空或是无意义字符Make sure the input is not empty or meaningless characters</label>
+    <label><input type="checkbox" value="" id="checkconfirm" onclick="checks()">确认所输入均不为空或是无意义字符Make sure the input is not empty or meaningless characters</label>
 </div>
 	
 		<p class="contact-submit form-group">
