@@ -5,7 +5,7 @@ permalink: /cn/contact/test/
 lang: cn
 ---
 {%- assign translation = site.data.language[page.lang] -%}
-<iframe name="frame" src="https://www.joytou.net/contact/blank/" style="display:none" scrolling="yes" noresize></iframe>
+<iframe id="subframe" name="frame" src="https://www.joytou.net/contact/blank/" style="display:none" scrolling="yes" noresize></iframe>
 <form id="contactform" method="POST" role="form" onsubmit="return sub();" target="frame">
 <div class="form-group">
 		<label for="named" class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
@@ -34,7 +34,7 @@ lang: cn
     contactform.setAttribute('action', '//formspree.io/' + '1540294142' + '@' + 'qq' + '.' + 'com');
     function sub{
        document.getElementById('contactform').style.display='none';
-       document.getElementById('frame').style.display='inline';
+       document.getElementById('subframe').style.display='inline';
        return true;
     }
 </script>
