@@ -55,7 +55,7 @@ lang: cn
                <ul>
 {%- for post in tag.last -%}
 {%- if post.lang contains page.lang -%}
-                    <li>datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
                </ul>
@@ -64,3 +64,6 @@ lang: cn
     </div>
     {%- endfor -%}
 </div>
+<script>
+$('#'+window.location.hash).collapse('show');
+</script>
