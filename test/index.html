@@ -10,8 +10,7 @@ lang: cn
     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" 
-                href="#{{ tag | first }}">{{ tag | first }}<span class="badge">{{ tag | last | where: "lang", page.lang | size }}</span></a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#{{ tag | first }}">{{ tag | first }}&nbsp;<span class="badge">{{ tag | last | where: "lang", page.lang | size }}</span></a>
             </h4>
         </div>
         <div id="{{ tag | first }}" class="panel-collapse collapse">
@@ -19,7 +18,7 @@ lang: cn
                <ul>
 {%- for post in tag.last -%}
 {%- if post.lang contains page.lang -%}
-                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
                </ul>
