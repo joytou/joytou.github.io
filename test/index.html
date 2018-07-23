@@ -65,7 +65,11 @@ lang: cn
     {%- endfor -%}
 </div>
 <script>
-$(function () {
-$('\'#'+window.location.hash+'\'').collapse('show');
-});
+/*$('#'+window.location.hash).collapse({
+	toggle: false
+})*/
+$(function () { $(window.location.hash).collapse('show')});
+/*$(function () { $(window.location.hash).collapse({
+		toggle: false
+})});*/
 </script>
