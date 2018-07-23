@@ -11,7 +11,7 @@ lang: cn
 	{%- if tagname != tn -%}
 		{%- assign tagname = tn -%}
 	    <li{% if forloop.first %} class="active"{% endif %}>
-		  <a href="/{{ page.lang }}/tags/#aa{{ tn }}" data-toggle="tab">{{ tag | first }}{%- for post in tag.last -%}{%- if post.lang contains page.lang -%}{%- increment num -%}{%- endif -%}{%- endfor -%}<span class="badge">{% increment num %}</span></a>
+		  <a href="/{{ page.lang }}/tags/#aa{{ tn }}" data-toggle="tab">{{ tag | first }}{%- for post in tag.last -%}{%- if post.lang contains page.lang -%}{%- increment num -%}{%- endif -%}{%- endfor -%}<span class="badge">{% increment num %}</span>{%- for post in tag.last -%}{%- if post.lang contains page.lang -%}{%- decrement num -%}{%- endif -%}{%- endfor -%}</a>
     </li>
 	{%- endif -%}
 {%- endfor -%}
