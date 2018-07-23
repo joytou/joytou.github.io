@@ -47,10 +47,10 @@ lang: cn
         <div class="panel-heading">
             <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" 
-                href="#{{ tag | first }}">{{ tag | first }}</a>
+                href="#{{ tag | first }}">{{ tag | first }}<span class="badge">{{ tag | last | where: "lang", page.lang | size }}</span></a>
             </h4>
         </div>
-        <div id="{{ tag | first }}" class="panel-collapse collapse in">
+        <div id="{{ tag | first }}" class="panel-collapse collapse">
             <div class="panel-body">
                <ul>
 {%- for post in tag.last -%}
