@@ -2,5 +2,5 @@
 layout: default
 permalink: /tests/
 ---
-Site.time: {{ site.time }}
-Now: {{ "now" }}
+Site.time: {{ site.time | date: "%Y-%m-%d %H:%M" }}
+Now: {{ "now" | date: "%Y-%m-%d %H:%M" }}
