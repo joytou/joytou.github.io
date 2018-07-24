@@ -55,9 +55,9 @@ lang: cn
 
 <span>Date:</span>
 {%- for post in site.posts -%}
-<p><span>{{ post.date }}</span><span class="badge">{{ post | where: "lang", page.lang | size }}</span></p>
+<p><span>{{ post.date }}</span></p>
 {%- endfor -%}
 <script>
-$(function () { $(window.location.hash).collapse('show')});
+$(function(){$(window.location.hash).collapse('show')});
 </script>
 
