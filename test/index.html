@@ -54,18 +54,35 @@ lang: cn
 </div>
 
 <span>Date:</span>
-{%- assign count = 0 -%}
-{%- for post in site.posts -%}
-{%- assign yearmonth = post.date | date: "%Y%m" -%}
-{%- if yearmonth != ym -%}
-{%- unless forloop.first -%}<p><span>ym{{ ym }}</span><span class="badge">{{ count }}</span></p>{%- endunless -%}
-{%- if count != 0 and ym != "" -%}<p><span>yearmonth{{ yearmonth }}</span><span class="badge">{{ count }}</span></p>{%- endif -%}
-{%- assign ym = yearmonth -%}
-{%- assign count = 1 -%}
-{%- else -%}
-{%- assign count = count | plus: 1 -%}
+<div class="panel-group" id="accordionn">
+  {%- for post in site.posts -%}
+	{%- capture ym -%}{{ post.date | date:"%Y%m" }}{%- endcapture -%}
+	{%- if yearmonth != ym -%}
+		{%- assign yearmonth = ym -%}
+                {%- unless forloop.first -%}
+               </ul>
+            </div>
+        </div>
+        {%- endunless -%}
+                    <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ category | first }}">{{ category | first }}&nbsp;<span class="badge">{{ category | last | where: "lang", page.lang | size }}</span></a>
+            </h4>
+        </div>
+        <div id="{{ category | first }}" class="panel-collapse collapse">
+            <div class="panel-body">
+               <ul>
+ {%- endif -%}
+	{%- if post.lang contains page.lang -%}
+	                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
+               </ul>
+            </div>
+        </div>
+</div>
+
 <script>
 $(function(){$(window.location.hash).collapse('show')});
 </script>
