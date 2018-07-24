@@ -101,6 +101,7 @@ lang: cn
   {%- endif -%}
     {%- unless forloop.first -%}
     {%- if thisyear != prevyear -%}
+    <span>{{ thisyear }} != {{ prevyear }} and not forloop.first</span>
                </ul>
             </div>
         </div>
