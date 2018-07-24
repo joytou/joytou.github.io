@@ -88,19 +88,21 @@ lang: cn
 <span>Redesign Date:</span>
 <div class="panel-group" id="accordionl">
 {%- assign counter = 0 -%}
-{%- for post in site.posts -%}
+{%- for post in site.posts | sort -%}
   {%- assign thisyear = post.date | date: "%B%Y" -%}
   {%- assign prevyear = post.previous.date | date: "%B%Y" -%}
   {%- if post.lang contains page.lang -%}
   {%- assign counter = counter | plus: 1 -%}
   {%- endif -%}
-  {%- if thisyear != prevyear -%}
-  {%- unless forloop.first -%}
+    {%- unless forloop.first -%}
+    {%- if thisyear != prevyear -%}
                </ul>
             </div>
         </div>
     </div>
-        {%- endunless -%}
+    {%- endif -%}
+    {%- endunless -%}
+  {%- if thisyear != prevyear -%}
                     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
         <div class="panel-heading">
             <h4 class="panel-title">
