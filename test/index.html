@@ -86,7 +86,7 @@ lang: cn
 </div>
 <p>
 {% assign counter = 0 %}
-{% for post in site.posts %}
+{% for post in site.posts | where: "lang", page.lang %}
   {% assign thisyear = post.date | date: "%B %Y" %}
   {% assign prevyear = post.previous.date | date: "%B %Y" %}
   {% assign counter = counter | plus: 1 %}
