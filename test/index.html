@@ -31,14 +31,7 @@ lang: cn
 $(function () { $(window.location.hash).collapse('show')});
 </script>
 
-<p>No json:
-{{ site.posts | strip_html }}
-</p>
-<p>
-Json:
-{{ site.posts | jsonify | strip_html }}
-</p>
 <p>
 XML:
-{{ site.posts | xml_escape | strip_html }}
+{{ site.posts | xml_escape | strip_html | strip_newlines | replace: "\n", "" | replace: "\r", "" }}
 </p>
