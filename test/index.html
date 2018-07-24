@@ -57,6 +57,7 @@ lang: cn
 <div class="panel-group" id="accordionn">
   {%- for post in site.posts -%}
 	{%- capture ym -%}{{ post.date | date:"%Y%m" }}{%- endcapture -%}
+	{%- assign loopym = post.date | date:"%Y%m" -%}
 	{%- if yearmonth != ym -%}
 		{%- assign yearmonth = ym -%}
                 {%- unless forloop.first -%}
@@ -68,7 +69,7 @@ lang: cn
                     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ ym }}">{{ ym }}&nbsp;<span class="badge">test{{ ym }}</span></a>
+                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ ym }}">{{ ym }}&nbsp;<span class="badge">{{ site.posts | where_exp: "date", "date contains loopym" | size }}</span></a>
             </h4>
         </div>
         <div id="{{ ym }}" class="panel-collapse collapse">
