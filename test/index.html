@@ -56,9 +56,6 @@ lang: cn
 <span>Date:</span>
 {%- assign count = 0 -%}
 {%- for post in site.posts -%}
-{%- if forloop.first -%}
-{%- assign ym= post.date | date: "%Y%m" -%}
-{%- endif -%}
 {%- assign yearmonth = post.date | date: "%Y%m" -%}
 {%- if yearmonth != ym -%}
 {%- assign ym = yearmonth -%}
