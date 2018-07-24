@@ -85,23 +85,26 @@ lang: cn
 </div>
 </div>
 <p>
-<ul>
-{%- assign counter = 0 -%}
 {%- for post in site.posts -%}
-  {%- assign thisyear = post.date | date: "%B %Y" -%}
-  {%- assign prevyear = post.previous.date | date: "%B %Y" -%}
-  {%- if post.lang contains page.lang -%}
-  {%- assign counter = counter | plus: 1 -%}
-  {%- endif -%}
+ {%- assign thisyear = post.date | date: "%B %Y" -%}
+ {%- assign prevyear = post.previous.date | date: "%B %Y" -%}
+ {%- assign counter = counter | plus: 1 -%}
+
   {%- if thisyear != prevyear -%}
-    {%- unless forloop.first -%}</ul>{%- endunless -%}<li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li>{%- unless forloop.last -%}<ul>{%- endunless -%}
-    {%- assign counter = 0 -%}
-  {%- endif -%}
-  {%- if post.lang contains page.lang -%}
-  <li><a>{{ post.title }}</a></li>
+<h2 class="archive"><a>{{ thisyear }}</a> <i class="fa fa-cube"></i>  
+      {{counter }}</h2>
+
+<ul>
+  {%- assign fli = forloop.index | minus: counter -%}
+  {%- for post2 in site.posts limit: counter offset: fli -%} 
+    <li><a href="{{ post2.url }}">{{ post2.title }}</a> 
+    <time> &mdash; {{ post2.date | date: "%a %e-%b-%Y"}}</time> 
+    </li>
+  {%- endfor -%}
+</ul>   
+ {%- assign counter = 0 -%}
   {%- endif -%}
 {%- endfor -%}
-</ul>
 </p>
 <script>
 $(function(){$(window.location.hash).collapse('show')});
