@@ -84,23 +84,43 @@ lang: cn
         </div>
 </div>
 </div>
-<p>
+
+<span>Redesign Date:</span>
+<div class="panel-group" id="accordionl">
 {%- assign counter = 0 -%}
 {%- for post in site.posts -%}
-  {%- assign thisyear = post.date | date: "%B %Y" -%}
-  {%- assign prevyear = post.previous.date | date: "%B %Y" -%}
+  {%- assign thisyear = post.date | date: "%B%Y" -%}
+  {%- assign prevyear = post.previous.date | date: "%B%Y" -%}
   {%- if post.lang contains page.lang -%}
   {%- assign counter = counter | plus: 1 -%}
   {%- endif -%}
   {%- if thisyear != prevyear -%}
-    <li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li>
+  {%- unless forloop.first -%}
+               </ul>
+            </div>
+        </div>
+    </div>
+        {%- endunless -%}
+                    <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionl" href="#{{ thisyear }}">{{ post.date | date:"%Y-%m" }}&nbsp;<span class="badge">{{ counter }}</span></a>
+            </h4>
+        </div>
+        <div id="{{ thisyear }}" class="panel-collapse collapse">
+            <div class="panel-body">
+               <ul>
     {%- assign counter = 0 -%}
   {%- endif -%}
   	{%- if post.lang contains page.lang -%}
 	                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
-</p>
+               </ul>
+            </div>
+        </div>
+</div>
+</div>
 <script>
 $(function(){$(window.location.hash).collapse('show')});
 </script>
