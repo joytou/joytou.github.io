@@ -85,6 +85,7 @@ lang: cn
 </div>
 </div>
 <p>
+<ul>
 {%- assign counter = 0 -%}
 {%- for post in site.posts -%}
   {%- assign thisyear = post.date | date: "%B %Y" -%}
@@ -93,10 +94,14 @@ lang: cn
   {%- assign counter = counter | plus: 1 -%}
   {%- endif -%}
   {%- if thisyear != prevyear -%}
-    <li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li>
+    </ul><li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li><ul>
     {%- assign counter = 0 -%}
   {%- endif -%}
+  {%- if post.lang contains page.lang -%}
+  <li><a>{{ post.title }}</a></li>
+  {%- endif -%}
 {%- endfor -%}
+</ul>
 </p>
 <script>
 $(function(){$(window.location.hash).collapse('show')});
