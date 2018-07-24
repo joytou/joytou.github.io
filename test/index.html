@@ -4,7 +4,6 @@ nav: tag
 permalink: /tests/
 lang: cn
 ---
-{%- assign config = site.data.configuration -%}
 <span>Tag:</span>
 <div class="panel-group" id="accordion">
 {%- for tag in site.tags -%}
@@ -54,7 +53,7 @@ lang: cn
 </div>
 
 <span>Date:</span>
-<div class="panel-group" id="accordionn">
+<div class="panel-group" id="accordionm">
   {%- for post in site.posts -%}
 	{%- capture ym -%}{{ post.date | date:"%Y%m" }}{%- endcapture -%}
 	{%- assign loopym = post.date | date:"%Y%m" -%}
@@ -83,7 +82,8 @@ lang: cn
                </ul>
             </div>
         </div>
-</div></div>
+</div>
+</div>
 
 <script>
 $(function(){$(window.location.hash).collapse('show')});
