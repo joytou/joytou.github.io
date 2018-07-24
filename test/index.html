@@ -32,13 +32,13 @@ $(function () { $(window.location.hash).collapse('show')});
 </script>
 
 <p>No json:
-{{ site.posts }}
+{{ site.posts | strip_html }}
 </p>
 <p>
 Json:
-{{ site.posts | jsonify }}
+{{ site.posts | jsonify | strip_html }}
 </p>
 <p>
 XML:
-{{ site.posts | xml_escape }}
+{{ site.posts | xml_escape | strip_html }}
 </p>
