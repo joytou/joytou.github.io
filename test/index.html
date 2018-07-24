@@ -107,6 +107,9 @@ lang: cn
     </div>
     {%- endif -%}
     {%- endunless -%}
+    {%- if thisyear != prevyear -%}
+    <span>{{ thisyear }} != {{ prevyear }}</span>
+    {%- endif -%}
   {%- if thisyear != prevyear -%}
                     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
         <div class="panel-heading">
