@@ -54,9 +54,13 @@ lang: cn
 
 <span>Date:</span>
 <div class="panel-group" id="accordionm">
+{%- assign count = 0 -%}
   {%- for post in site.posts -%}
 	{%- capture ym -%}{{ post.date | date:"%Y%m" }}{%- endcapture -%}
 	{%- assign loopym = post.date | date:"%Y%m" -%}
+	{%- if post.lang contains page.lang -%}
+	{%- assign count = count | plus: 1 -%}
+	{%- endif -%}
 	{%- if yearmonth != ym -%}
 		{%- assign yearmonth = ym -%}
                 {%- unless forloop.first -%}
@@ -68,12 +72,13 @@ lang: cn
                     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordionm" href="#{{ ym }}">{{ post.date | date:"%Y-%m" }}</a>
+                <a data-toggle="collapse" data-parent="#accordionm" href="#{{ ym }}">{{ post.date | date:"%Y-%m" }}&nbsp;<span class="badge">{{ count }}</span></a>
             </h4>
         </div>
         <div id="{{ ym }}" class="panel-collapse collapse">
             <div class="panel-body">
                <ul>
+               {%- assign count = 0 -%}
  {%- endif -%}
 	{%- if post.lang contains page.lang -%}
 	                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
