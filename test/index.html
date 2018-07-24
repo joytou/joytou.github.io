@@ -89,9 +89,13 @@ lang: cn
 {%- for post in site.posts -%}
   {%- assign thisyear = post.date | date: "%B %Y" -%}
   {%- assign prevyear = post.previous.date | date: "%B %Y" -%}
+  {%- if post.lang contains page.lang -%}
   {%- assign counter = counter | plus: 1 -%}
+  {%- endif -%}
   {%- if thisyear != prevyear -%}
+  {%- if post.lang contains page.lang -%}
     <li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li>
+    {%- endif -%}
     {%- assign counter = 0 -%}
   {%- endif -%}
 {%- endfor -%}
