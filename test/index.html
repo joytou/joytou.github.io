@@ -59,11 +59,11 @@ lang: cn
 {%- if post.lang contains page.lang -%}
 {%- assign yearmonth = post.date | date: "%Y-%m" -%}
 {%- if yearmonth == ym -%}
-{%- assign count = count | plus:1 -%}
+{%- assign count = 0 -%}
 {%- else -%}
 {%- assign ym = yearmonth -%}
+{%- assign count = count | plus:1 -%}
 <p><span>{{ yearmonth }}</span><span class="badge">{{ count }}</span></p>
-{%- assign count = 0 -%}
 {%- endif -%}
 {%- endif -%}
 {%- endfor -%}
