@@ -67,10 +67,10 @@ lang: cn
                     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ category | first }}">{{ category | first }}&nbsp;<span class="badge">{{ category | last | where: "lang", page.lang | size }}</span></a>
+                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ ym }}">{{ ym }}&nbsp;<span class="badge">test{{ ym }}</span></a>
             </h4>
         </div>
-        <div id="{{ category | first }}" class="panel-collapse collapse">
+        <div id="{{ ym }}" class="panel-collapse collapse">
             <div class="panel-body">
                <ul>
  {%- endif -%}
