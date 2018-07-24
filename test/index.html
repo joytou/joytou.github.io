@@ -91,6 +91,8 @@ lang: cn
 </div>
 
 <span>Redesign Date:</span>
+ {%- assign counter = 0 -%}
+ {%- assign count = 0 -%}
 {%- for post in site.posts -%}
  {%- assign thisyear = post.date | date: "%B %Y" -%}
  {%- assign prevyear = post.previous.date | date: "%B %Y" -%}
