@@ -58,7 +58,8 @@ lang: cn
 {%- for post in site.posts -%}
 {%- assign yearmonth = post.date | date: "%Y%m" -%}
 {%- if yearmonth != ym -%}
-<p><span>{{ ym }}</span><span class="badge">{{ count }}</span></p><p>{{ post.title }}</p>
+{%- unless forloop.first -%}<p><span>{{ ym }}</span><span class="badge">{{ count }}</span></p><p>{{ post.title }}</p>{%- endunless -%}
+{%- if forloop.last -%}<p><span>{{ yearmonth }}</span><span class="badge">{{ count }}</span></p><p>{{ post.title }}</p>{%- endif -%}
 {%- assign ym = yearmonth -%}
 {%- assign count = 1 -%}
 {%- else -%}
