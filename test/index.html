@@ -5,6 +5,7 @@ permalink: /tests/
 lang: cn
 ---
 {%- assign config = site.data.configuration -%}
+<span>Tag:</span>
 <div class="panel-group" id="accordion">
 {%- for tag in site.tags -%}
     <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
@@ -27,11 +28,32 @@ lang: cn
     </div>
     {%- endfor -%}
 </div>
+
+<span>Category:</span>
+<div class="panel-group" id="accordionn">
+{%- for category in site.categories -%}
+    <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ category | first }}">{{ category | first }}&nbsp;<span class="badge">{{ category | last | where: "lang", page.lang | size }}</span></a>
+            </h4>
+        </div>
+        <div id="{{ category | first }}" class="panel-collapse collapse">
+            <div class="panel-body">
+               <ul>
+{%- for post in category.last -%}
+{%- if post.lang contains page.lang -%}
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+{%- endif -%}
+{%- endfor -%}
+               </ul>
+            </div>
+        </div>
+    </div>
+    {%- endfor -%}
+</div>
+
 <script>
 $(function () { $(window.location.hash).collapse('show')});
 </script>
 
-<p>
-XML:
-{{ site.posts | xml_escape | strip_html | strip_newlines | replace: "\n", "" | replace: "\r", "" }}
-</p>
