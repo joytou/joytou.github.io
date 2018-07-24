@@ -85,16 +85,16 @@ lang: cn
 </div>
 </div>
 <p>
-{% assign counter = 0 %}
-{% for post in site.posts %}
-  {% assign thisyear = post.date | date: "%B %Y" %}
-  {% assign prevyear = post.previous.date | date: "%B %Y" %}
-  {% assign counter = counter | plus: 1 %}
-  {% if thisyear != prevyear %}
+{%- assign counter = 0 -%}
+{%- for post in site.posts -%}
+  {%- assign thisyear = post.date | date: "%B %Y" -%}
+  {%- assign prevyear = post.previous.date | date: "%B %Y" -%}
+  {%- assign counter = counter | plus: 1 -%}
+  {%- if thisyear != prevyear -%}
     <li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li>
-    {% assign counter = 0 %}
-  {% endif %}
-{% endfor %}
+    {%- assign counter = 0 -%}
+  {%- endif -%}
+{%- endfor -%}
 </p>
 <script>
 $(function(){$(window.location.hash).collapse('show')});
