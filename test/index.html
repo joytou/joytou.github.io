@@ -30,3 +30,15 @@ lang: cn
 <script>
 $(function () { $(window.location.hash).collapse('show')});
 </script>
+
+<p>No json:
+{{ site.posts }}
+</p>
+<p>
+Json:
+{{ site.posts | jsonify }}
+</p>
+<p>
+XML:
+{{ site.posts | xml_escape }}
+</p>
