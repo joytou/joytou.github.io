@@ -98,6 +98,9 @@ lang: cn
     {%- endif -%}
     {%- assign counter = 0 -%}
   {%- endif -%}
+  	{%- if post.lang contains page.lang -%}
+	                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+{%- endif -%}
 {%- endfor -%}
 </p>
 <script>
