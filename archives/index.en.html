@@ -8,8 +8,8 @@ lang: en
  {%- assign counter = 0 -%}
  {%- assign count = 0 -%}
 {%- for post in site.posts -%}
- {%- assign thisyear = post.date | date: "%B%Y" -%}
- {%- assign prevyear = post.previous.date | date: "%B%Y" -%}
+ {%- assign thisyear = post.date | date: "%Y%m" -%}
+ {%- assign prevyear = post.previous.date | date: "%Y%m" -%}
  {%- assign counter = counter | plus: 1 -%}
  {%- if post.lang contains page.lang -%}
  {%- assign count = count | plus: 1 -%}
