@@ -4,39 +4,38 @@ nav: post
 permalink: /en/archives/
 lang: en
 ---
-{%- assign config = site.data.configuration -%}
-<ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
+<div class="panel-group" id="accordionl">
+ {%- assign counter = 0 -%}
+ {%- assign count = 0 -%}
 {%- for post in site.posts -%}
-{%- if post.lang contains page.lang -%}
-	{%- capture ym -%}{{ post.date | date:"%Y%m" }}{%- endcapture -%}
-	{%- if yearmonth != ym -%}
-		{%- assign yearmonth = ym -%}
-	    <li{% if forloop.first %} class="active"{% endif %}>
-		  <a href="/{{ page.lang }}/archives/#aa{{ ym }}" data-toggle="tab">{{ post.date | date: "%B %Y" }}</a>
-    </li>
-	{%- endif -%}
-{%- endif -%}
-{%- endfor -%}
-</ul>
-<div id="myTabContent" class="tab-content">
-  {%- for post in site.posts -%}
-	{%- capture ym -%}{{ post.date | date:"%Y%m" }}{%- endcapture -%}
-	{%- if yearmonth != ym -%}
-		{%- assign yearmonth = ym -%}
-                {%- if forloop.first -%}{%- else -%}</div>{%- endif -%}
-                <div class="tab-pane fade{%- if forloop.first -%} in active{%- endif -%}" id="aa{{ ym }}">
-	{%- endif -%}
-	{%- if post.lang contains page.lang -%}
-	<p>
-	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-	</p>
-{%- endif -%}
+ {%- assign thisyear = post.date | date: "%B%Y" -%}
+ {%- assign prevyear = post.previous.date | date: "%B%Y" -%}
+ {%- assign counter = counter | plus: 1 -%}
+ {%- if post.lang contains page.lang -%}
+ {%- assign count = count | plus: 1 -%}
+ {%- endif -%}
+  {%- if thisyear != prevyear -%}
+   <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionl" href="#{{ thisyear }}">{{ post.date | date:"%Y-%m" }}&nbsp;<span class="badge">{{ count }}</span></a>
+            </h4>
+        </div>
+        <div id="{{ thisyear }}" class="panel-collapse collapse">
+            <div class="panel-body">
+               <ul>
+  {%- assign fli = forloop.index | minus: counter -%}
+  {%- for post2 in site.posts limit: counter offset: fli -%} 
+  {%- if post2.lang contains page.lang -%}
+<li><time datetime="{{ post2.date | date_to_string }}">{{ post2.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post2.url }}" title="{{ post2.title }}">{{ post2.title }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+               </ul>
+            </div>
+        </div>
+    </div>
+ {%- assign counter = 0 -%}
+ {%- assign count = 0 -%}
+  {%- endif -%}
 {%- endfor -%}
 </div>
-</div>
-<script>
-$(function () {
-	  $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
-  });
-</script>

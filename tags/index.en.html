@@ -4,39 +4,25 @@ nav: tag
 permalink: /en/tags/
 lang: en
 ---
-{%- assign config = site.data.configuration -%}
-<ul id="myTab" class="nav nav-{{ config.Nav.Style | default: "tabs" }}{% if config.Nav.Stacked == "true" %} nav-stacked{% endif %}">
-  {%- for tag in site.tags -%}
-  {%- capture tn -%}{{ tag | first }}{%- endcapture -%}
-  {%- if tagname != tn -%}
-  {%- assign tagname = tn -%}
-  <li{% if forloop.first %} class="active"{% endif %}>
-	<a href="/{{ page.lang }}/tags/#aa{{ tn }}" data-toggle="tab">{{ tag | first }}</a>
-  </li>
-  {%- endif -%}
-  {%- endfor -%}
-</ul>
-<div id="myTabContent" class="tab-content">
-  {%- for tag in site.tags -%}
-  {%- capture tn -%}{{ tag | first }}{%- endcapture -%}
-  {%- if tagname != tn -%}
-  {%- assign tagname = tn -%}
-  {%- if forloop.first -%}{%- else -%}</div>{%- endif -%}
-<div class="tab-pane fade{%- if forloop.first -%} in active{%- endif -%}" id="aa{{ tn }}">
-  {%- endif -%}
-  {%- for post in tag.last -%}
-  {%- if post.lang contains page.lang -%}
-  <p>
-	<time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </p>
-  {%- endif -%}
-  {%- endfor -%}
-  {%- endfor -%}
+<div class="panel-group" id="accordion">
+{%- for tag in site.tags -%}
+    <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#{{ tag | first }}">{{ tag | first }}&nbsp;<span class="badge">{{ tag | last | where: "lang", page.lang | size }}</span></a>
+            </h4>
+        </div>
+        <div id="{{ tag | first }}" class="panel-collapse collapse">
+            <div class="panel-body">
+               <ul>
+{%- for post in tag.last -%}
+{%- if post.lang contains page.lang -%}
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+{%- endif -%}
+{%- endfor -%}
+               </ul>
+            </div>
+        </div>
+    </div>
+    {%- endfor -%}
 </div>
-</div>
-<script>
-    $(function () {
-        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
-    });
-</script>
