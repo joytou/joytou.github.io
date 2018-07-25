@@ -1,3 +1,10 @@
+/*archive.js*/
+        var searchURL = window.location.search;
+        searchURL = searchURL.substring(1, searchURL.length);
+        var targetPageId = searchURL.split("&")[0].split("=")[1];
+        document.write(targetPageId);
+
+/*cb-search.js*/
  $(document).ready(function () {
         var time1 = 0;
         var show = false;
@@ -83,3 +90,10 @@
         }).error(function(data, b) { console.log("json解析错误，搜索功能暂不可用，请检查文章title，确保不含有换行等特殊符号"); });
 
     });
+
+/*gotop.js*/
+$(function(){
+	$("#gotop").click(function(){
+		$("html,body").animate({scrollTop:0},1200);
+	});
+});
