@@ -22,8 +22,3 @@
 {%- for js in page.javascript -%}
 <script type="text/script" src="{{ js }}" {%- if id -%}id="{{ id }}"{%- endif -%}></script>
 {%- endfor -%}
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.baseurl }}"></script>
