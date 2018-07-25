@@ -1,6 +1,6 @@
   Navbar:
     Fixed: "fixed-top"
-    Background: "transparent"
+    Background: "inverse"
       
   Panel:
     Top: "primary"
