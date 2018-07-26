@@ -6,7 +6,7 @@ lang: cn
 <html>
   <head>
 	<!--Directly to the area where the user language is located.-->
-	<script src="{{ '/assets/js/languages.js' | prepend: site.baseurl }}"></script>
+	<script type="text/javascript">var language=navigator.browserLanguage?navigator.browserLanguage:navigator.language;if(language.indexOf('en')>-1)window.location.replace("/en/");if(language.indexOf('CN')>-1)window.location.replace("/cn/");if(language.indexOf('HK')>-1||language.indexOf('MO')>-1||language.indexOf('TW')>-1)window.location.replace("/tw/");</script>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="title" content="JOYTOU - Jekyll Blog Template" />
@@ -80,19 +80,19 @@ lang: cn
 	  <!-- 轮播（Carousel）项目 -->
 	  <div class="carousel-inner">
 		<div class="item active">
-		  <img src="{{ '/assets/ScreenshortDemo/mo_cn.png' | prepend: site.baseurl }}" alt="mobile style in Chinese" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_cn_ac91a0843a8dd1a87003b3431abf3578.png' | prepend: site.baseurl }}" alt="mobile style in Chinese" width="100%">
 		  <div class="carousel-caption"><h4>mobile style in Chinese</h4></div>
 		</div>
 		<div class="item">
-		  <img src="{{ '/assets/ScreenshortDemo/mo_en.png' | prepend: site.baseurl }}" alt="mobile style in English" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_en_423f9c5f305055de488c7ac325f20874.png' | prepend: site.baseurl }}" alt="mobile style in English" width="100%">
 		  <div class="carousel-caption"><h4>mobile style in English</h4></div>
 		</div>
 		<div class="item">
-		  <img src="{{ '/assets/ScreenshortDemo/pc_cn.png' | prepend: site.baseurl }}" alt="pc style in Chinese" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_cn_3965515e02c432f4b076dfa5b867952a.png' | prepend: site.baseurl }}" alt="pc style in Chinese" width="100%">
 		  <div class="carousel-caption"><h4>pc style in Chinese</h4></div>
 		</div>
 		<div class="item">
-		  <img src="{{ '/assets/ScreenshortDemo/pc_en.png' | prepend: site.baseurl }}" alt="pc style in English" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_en_d6e97bac984ae939a698ab9876c40110.png' | prepend: site.baseurl }}" alt="pc style in English" width="100%">
 		  <div class="carousel-caption"><h4>pc style in English</h4></div>
 		</div>
 	  </div>

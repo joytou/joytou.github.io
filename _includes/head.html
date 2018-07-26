@@ -1,34 +1,34 @@
 {% assign translation = site.data.language[page.lang] %}
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-dns-prefetch-control" content="{%- if dnsPrefetch -%}on{%- else -%}off{%- endif -%}">
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-dns-prefetch-control" content="{%- if dnsPrefetch -%}on{%- else -%}off{%- endif -%}"/>
     {%- for dns in site.dns -%}
-    <link rel="dns-prefetch" href="{{ dns }}">
+    <link rel="dns-prefetch" href="{{ dns }}"/>
     {%- endfor -%}
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="title" content="{% if page.title %}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}" />
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
-    <meta name="author" content="{{ site.author }}">
-	<meta name="owner" content="{{ site.owner_name }}" />
-    <meta name="copyright" content="(c) 2017 - 2018" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="title" content="{% if page.title %}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}"/>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
+    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}"/>
+    <meta name="author" content="{{ site.author }}"/>
+	<meta name="owner" content="{{ site.owner_name }}"/>
+    <meta name="copyright" content="(c) 2017 - 2018"/>
 	{% for meta in site.data.metas %}<meta name="{{ meta.name }}" content="{{ meta.content }}"/>{% endfor %}
 <!--Rich preview-->
-<meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}" />
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}" />
-<meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}" />
-<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}" />
-<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}"/>
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}"/>
+<meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}"/>
+<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}"/>
+<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
 {%- if page.nav == "post" -%}
-<meta property="og:type" content="article" />
+<meta property="og:type" content="article"/>
 {%- endif -%}
 <!-- End rich preview-->
-    <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}">
-    <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"> 
-    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}"/>
+    <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"/> 
+    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"/>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}"/>
     <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
 {%- for lang in site.data.lang -%}
 				{%- capture domainlang -%}/{{ page.lang }}/{%- endcapture -%}
@@ -68,23 +68,20 @@
   }
 }
 </script>
-    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
-    <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
-
     <!-- pictonic font icon css-->
     <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}">
-    <!--[if lt IE 8]><script src="{{ '/assets/js/pictonic.min.js' | prepend: site.baseurl }}"></script><![endif]-->
-	
     <!-- Bootstrap core CSS -->
     <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
-
 	<!-- search style -->
-    <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}" rel="stylesheet">
-	
+ <!--   <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}" rel="stylesheet"/>-->
+ <style type="text/css">@media screen and (min-width:768px){.dropdown-menu{position:relative;float:none;font-size:20px;width:70%;margin:0 15%}.cb-search-tool ul{width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cb-search-content{width:70%;margin:0 15%;position:absolute;top:13%;left:auto;right:auto;font-size:22px;height:50px;background-color:#eee;color:black;opacity:1.0}}@media screen and (max-width:767px){.dropdown-menu{position:relative;float:none;font-size:20px;width:96%;margin:0 2%}.cb-search-tool ul{width:96%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cb-search-content{width:96%;margin:0 2%;position:absolute;top:10%;left:auto;right:auto;font-size:22px;height:50px;background-color:#eee;color:black;opacity:1.0}}</style>
   <!-- Custom styles for this template -->
-  <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
+  <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet"/>
 	{%- for css in page.css -%}
 	<link href="{{ css }}" rel="stylesheet" type="text/css" />
 	{%- endfor -%}
+	<!-- Javacscript -->
+    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+    <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
   </head>
