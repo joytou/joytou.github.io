@@ -1,27 +1,27 @@
-{% assign translation = site.data.language[page.lang] %}
+{%- assign translation = site.data.language[page.lang] -%}
 <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-dns-prefetch-control" content="{%- if dnsPrefetch -%}on{%- else -%}off{%- endif -%}"/>
+    <meta http-equiv="x-dns-prefetch-control" content="{%- if dnsPrefetch -%}on{%- else -%}off{%- endif -%}">
     {%- for dns in site.dns -%}
-    <link rel="dns-prefetch" href="{{ dns }}"/>
+    <link rel="dns-prefetch" href="{{ dns }}">
     {%- endfor -%}
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="title" content="{% if page.title %}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}"/>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
-    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}"/>
-    <meta name="author" content="{{ site.author }}"/>
-	<meta name="owner" content="{{ site.owner_name }}"/>
-    <meta name="copyright" content="(c) 2017 - 2018"/>
-	{% for meta in site.data.metas %}<meta name="{{ meta.name }}" content="{{ meta.content }}"/>{% endfor %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="{% if page.title %}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+    <meta name="author" content="{{ site.author }}">
+	<meta name="owner" content="{{ site.owner_name }}">
+    <meta name="copyright" content="(c) 2017 - 2018">
+	{% for meta in site.data.metas %}<meta name="{{ meta.name }}" content="{{ meta.content }}">{% endfor %}
 <!--Rich preview-->
-<meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}"/>
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}"/>
-<meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}"/>
-<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}"/>
-<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+<meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}">
+<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 {%- if page.nav == "post" -%}
-<meta property="og:type" content="article"/>
+<meta property="og:type" content="article">
 {%- endif -%}
 <!-- End rich preview-->
     <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}"/>
