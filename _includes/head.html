@@ -1,7 +1,7 @@
 {%- assign translation = site.data.language[page.lang] -%}
 <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-dns-prefetch-control" content="{%- if dnsPrefetch -%}on{%- else -%}off{%- endif -%}">
+    <meta http-equiv="x-dns-prefetch-control" content="{{ site.dnsPrefetch }}">
     {%- for dns in site.dns -%}
     <link rel="dns-prefetch" href="{{ dns }}">
     {%- endfor -%}
