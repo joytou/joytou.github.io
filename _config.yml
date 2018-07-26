@@ -21,8 +21,8 @@ coding: https://coding.net/joytou/
 baseurl: ""
 dnsPrefetch: true
 dns:
-      -"//beau.ns.cloudflare.com"
-      -"//fiona.ns.cloudflare.com"
+      - "//beau.ns.cloudflare.com"
+      - "//fiona.ns.cloudflare.com"
 
 #Page settings
 future: true
