@@ -17,7 +17,6 @@ repo: JOYTOU
 #Server
 url: https://www.joytou.net
 github: https://github.com/joytou/
-coding: https://coding.net/joytou/
 baseurl: ""
 dnsPrefetch: "on"
 #dnsPrefetch: "off" if don't want use dns-prefetch
@@ -35,6 +34,7 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 
 #Pagination setting
+#Testing, not opening
 paginatenum: 2
  
 exclude: ['README.md','Manifest.md']
@@ -62,26 +62,8 @@ keywords:
         - "gitee"
         - "github"
         
-        
-#Update configuration
-
-versioncode: 1
-        #The current versioncode.
-        
-versionname: "1.0.1"
-        #The current versionname.
-        
-#remind: true
-        #Whether to remind you to upgrade the latest version when there is the latest version.
-
 
 #Others
-
-#CNZZ
-cnzz:
-  id: "1272874117"
-  show: "pic"
-  HttpsEncryption: false
 
 #ChangYan
 changyan:

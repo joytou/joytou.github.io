@@ -7,15 +7,6 @@
       <p class="text-center">Copyright &copy; 2017 - 2018 <a href="{{ site.url }}">{{ translation.sitename }}</a></p>
       <p class="text-center">{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
       <script src="{{ '/assets/js/myfunction.js' | prepend: site.baseurl }}"></script>
-      {%- if site.cnzz.id -%}
-      {%- if site.cnzz.HttpsEncryption -%}
-      <script src="https://s19.cnzz.com/z_stat.php?id={{ site.cnzz.id }}&web_id={{ site.cnzz.id }}" language="JavaScript"></script>
-	  {%- endif -%}
-      <script type="text/javascript">
-	      var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-	      document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz.id }}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D{{ site.cnzz.id }}{%- if site.cnzz.show -%}%26show%3D{{ site.cnzz.show }}{%- endif -%}' type='text/javascript'%3E%3C/script%3E"));
-      </script>
-      {%- endif -%}
     </div>
     <script async src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script>
 {%- for js in page.javascript -%}
