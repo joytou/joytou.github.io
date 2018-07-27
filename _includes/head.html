@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-dns-prefetch-control" content="{{ site.dnsPrefetch }}">
+    <meta http-equiv="Cache-control" content="public">
     {%- for dns in site.dns -%}
     <link rel="dns-prefetch" href="{{ dns }}">
     {%- endfor -%}
@@ -69,19 +70,19 @@
 }
 </script>
     <!-- pictonic font icon css-->
-    <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}">
     <!-- Bootstrap core CSS -->
-    <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
+    <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet">
 	<!-- search style -->
- <!--   <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}" rel="stylesheet"/>-->
+ <!--   <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet"/>-->
  <style type="text/css">@media screen and (min-width:768px){.dropdown-menu{position:relative;float:none;font-size:20px;width:70%;margin:0 15%}.cb-search-tool ul{width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cb-search-content{width:70%;margin:0 15%;position:absolute;top:13%;left:auto;right:auto;font-size:22px;height:50px;background-color:#eee;color:black;opacity:1.0}}@media screen and (max-width:767px){.dropdown-menu{position:relative;float:none;font-size:20px;width:96%;margin:0 2%}.cb-search-tool ul{width:96%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cb-search-content{width:96%;margin:0 2%;position:absolute;top:10%;left:auto;right:auto;font-size:22px;height:50px;background-color:#eee;color:black;opacity:1.0}}</style>
   <!-- Custom styles for this template -->
-  <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet"/>
+  <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet"/>
 	{%- for css in page.css -%}
-	<link href="{{ css }}" rel="stylesheet" type="text/css" />
+	<link href="{{ css }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet" type="text/css" />
 	{%- endfor -%}
 	<!-- Javacscript -->
-    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
     <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
   </head>
