@@ -1,27 +1,30 @@
-# Attention
-Because of the server, [joytou.github.io](https://github.com/joytou/joytou.github.io) has moved from [`joytou.github.io`](https://github.com/joytou/joytou.github.io) to [`JOYTOU`](https://github.com/joytou/JOYTOU). And no longer supported for [`joytou.github.io`](https://github.com/joytou/joytou.github.io), but you can still use it as a blog template.
+<p><a href="https://jekyll-themes.com">
+<img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield"/></a></p>
+<p><a href="http://jekyllthemes.org">Jekyll Themes</a></p>
+<p><a href="http://www.qingbloger.com">氢客</a></p>
+<p></p>
 # JOYTOU
-JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
+JOYTOU(http://joytou.net) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
 
 # Content
 
 | Directory | 目录 | 目錄 | 
 |:----------:|:----------:|:----------:|
-| [English](#en) | [简体中文](#cn)| [繁體中文](#tw) |
-| [Introduction](#introduction) | [概述](#概述) | [概述](#概述) |
-| [Features](#features) | [功能特色](#功能特色) | [功能特色](#功能特色)|
-| [Native Server](#native-server) | [服务版本](#服务版本) | [服務版本](#服務版本) |
+| [English](#user-content-en) | [简体中文](#user-content-cn)| [繁體中文](#user-content-tw) |
+| [Introduction](#user-content-introduction) | [概述](#user-content-概述) | [概述](#user-content-概述tw) |
+| [Features](#user-content-features) | [功能特色](#user-content-功能特色) | [功能特色](#user-content-功能特色tw)|
+| [Native Server](#user-content-native-server) | [服务版本](#user-content-服务版本) | [服務版本](#user-content-服務版本) |
 | [File directories](Mainfest.md) | [文件目录](Mainfest.md) | [文件目錄](Mainfest.md) |
-| [Configurations](#configurations) | [配置](#配置) | [配置](#配置) |
-| [Writting article](#writting-article) | [写文章](#写文章) | [寫文章](#寫文章) |
-| [License](#license) | [许可协议](#许可协议) | [許可協議](#許可協議)|
+| [Configurations](#user-content-configurations) | [配置](#user-content-配置) | [配置](#user-content-配置tw) |
+| [Writting article](#user-content-writting-article) | [写文章](#user-content-写文章) | [寫文章](#user-content-寫文章) |
+| [License](#user-content-license) | [许可协议](#user-content-许可协议) | [許可協議](#user-content-許可協議)|
 
 -------
 
 # en
 
 ## Introduction
-JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
+JOYTOU(http://joytou.net) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
 
 ## Features
 1. BootStrap style
@@ -37,16 +40,16 @@ JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou W
 11. JQuery responsive design
 
 ## Native Server
-Clone from github.com:
+Clone from coding.net:
 
 - Clone with SSH:
 ```
-git clone git@github.com:joytou/joytou.github.io.git
+git clone git@git.coding.net:joytou/JOYTOU.git
 ```
 
 - Clone with HTTPS:
 ```
-git clone https://github.com/joytou/joytou.github.io.git
+git clone https://git.coding.net/joytou/JOYTOU.git
 ```
 
 ## Configurations
@@ -56,17 +59,12 @@ in _config.yml:
 |:----------:|:----------:|:----------|
 |      email      |      1540294142@qq.com      |       Your e-mail address     |
 |      author      |      Joytou Wu      |      The article author's name      |
-|       url     |     http://joytou.nets.hk       |      Your site address, and do not add  `/`  in the end      |
-|     github       |      https://github.com/joytou/      |      Your github account address      |
-|      github_username      |      joytou      |       Your github account name     |
-|      repo      |      joytou.github.io      |      Your repository name     |
+|       url     |     http://joytou.net       |      Your site address, and do not add  `/`  in the end      |
+|      git_username      |      joytou      |       Your git account name     |
+|      repo      |      JOYTOU      |      Your repository name     |
 |      owner_name      |      joytou      |      The site owner name      |
 |     description       |      ---      |     Your site description       |
 |      keywords      |      ---      |      Your site keywords, and it must listted as array      |
-|       remind     |      BOOL      |       Whether to remind you to upgrade the latest version when there is the latest version.     |
-|      BaiduSiteVerification      |      ---      |      The string of Baidu Site Verification. If you didn't have, left it blank.      |
-|      51la      |      ---      |      The String of 51.la statistic's id. If you didn't have, left it blank.       |
-|       51lamb     |      ---      |      The style of 51.la statistic's data reference.       |
 > Please refer to the official website for other variables.
 
 in each /_data/(languages code).yml:
@@ -87,6 +85,9 @@ layout: post
 title:  test       
 #article title 
 
+description: Summary Content
+#Summary content. 
+
 date:   2015-04-05 08:00:00 +0800     
 #publish date 
 
@@ -104,11 +105,6 @@ tags: [log, bootstrap, joytou]    
 * content 
 {:toc} 
 
-Summary Content
-#Summary content. 
-
-<!-- more --> 
-
 Article mainly content
 #Writting the article here. 
 ```
@@ -122,7 +118,7 @@ By using the Service, you [agree to comply with all the terms of this Agreement]
 # cn
 
 ## 概述
-JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
+JOYTOU(http://joytou.net) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
 
 ## 功能特色
 1. BootStrap样式
@@ -138,16 +134,16 @@ JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基于Bootstrap开发的博�
 11. JQuery响应式设计
 
 ## 服务版本
-从Github克隆项目：
+从Coding克隆项目：
 
 - 用SSH克隆：
 ```
-git clone git@github.com:joytou/joytou.github.io.git
+git clone git@git.coding.net:joytou/JOYTOU.git
 ```
 
 - 用HTTPS克隆：
 ```
-git clone https://github.com/joytou/joytou.github.io.git
+git clone https://git.coding.net/joytou/JOYTOU.git
 ```
 
 ## 配置
@@ -157,17 +153,12 @@ _config.yml:
 |:----------:|:----------:|:----------|
 |      email      |      1540294142@qq.com      |       您的电子邮件地址     |
 |      author      |      Joytou Wu      |      文章作者名称      |
-|       url     |     http://joytou.nets.hk       |      您的网址，末尾不能加上 `/`       |
-|     github       |      https://github.com/joytou/      |      您的Github用户地址      |
-|      github_username      |      joytou      |       您的Github用户名     |
-|      repo      |      joytou.github.io      |      您的repository名字     |
+|       url     |     http://joytou.net       |      您的网址，末尾不能加上 `/`       |
+|      git_username      |      joytou      |       您的Git用户名     |
+|      repo      |      JOYTOU      |      您的repository名字     |
 |      owner_name      |      joytou      |      网站所有者名字      |
 |     description       |      ---      |     网站的描述       |
 |      keywords      |      ---      |      网站的关键词，必须以数组形式列出      |
-|       remind     |      BOOL      |       是否提醒可升级新版本     |
-|      BaiduSiteVerification      |      ---      |      百度网站的验证码。如果没有，请留空白      |
-|      51la      |      ---      |      51.la网站的统计id。如果没有，请留空白       |
-|       51lamb     |      ---      |      51.la数据引用的样式       |
 > 其它变量请参考官网的介绍。
 
 各个 /_data/(语言代码).yml 文件:
@@ -188,6 +179,9 @@ layout: post
 title:  test       
 #文章标题 
 
+description: Summary Content
+#摘要内容 
+
 date:   2015-04-05 08:00:00 +0800     
 #发布日期 
 
@@ -205,11 +199,6 @@ tags: [log, bootstrap, joytou]    
 * content 
 {:toc} 
 
-Summary Content
-#摘要内容 
-
-<!-- more --> 
-
 Article mainly content
 #在这儿写文章
 ```
@@ -221,10 +210,10 @@ Article mainly content
 
 # tw 
 
-## 概述 
-JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
+## 概述tw 
+JOYTOU(http://joytou.net) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
 
-## 功能特色 
+## 功能特色tw 
 1. BootStrap樣式 
 2. 博客基本功能 
 3. 頂部導航欄 
@@ -238,32 +227,27 @@ JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基於Bootstrap開發的博�
 11. JQuery響應式設計 
 
 ## 服務版本 
-從Github克隆項目： 
+從Coding克隆項目： 
 
 - 用SSH克隆： 
-``` git clone git@github.com:joytou/joytou.github.io.git ``` 
+``` git clone git@git.coding.net:joytou/JOYTOU.git ``` 
 
 - 用HTTPS克隆： 
-``` git clone https://github.com/joytou/joytou.github.io.git ``` 
+``` git clone https://git.coding.net/joytou/JOYTOU.git ``` 
 
-## 配置 
+## 配置tw 
 _config.yml: 
 
 | 鍵 | 值 | 備註 | 
 |:----------:|:----------:|:----------| 
 | email | 1540294142@qq.com | 您的電子郵件地址 | 
 | author | Joytou Wu | 文章作者名稱 | 
-| url | http://joytou.nets.hk | 您的網址，末尾不能加上 `/` | 
-| github | https://github.com/joytou/ | 您的Github用戶地址 | 
-| github_username | joytou | 您的Github用戶名 | 
-| repo | joytou.github.io | 您的repository名字 | 
+| url | http://joytou.net | 您的網址，末尾不能加上 `/` | 
+| git_username | joytou | 您的Git用戶名 | 
+| repo | JOYTOU | 您的repository名字 | 
 | owner_name | joytou | 網站所有者名字 | 
 | description | --- | 網站的描述 | 
 | keywords | --- | 網站的關鍵詞，必須以數組形式列出 | 
-| remind | BOOL | 是否提醒可升級新版本 | 
-| BaiduSiteVerification | --- | 百度網站的驗證碼。如果沒有，請留空白 | 
-| 51la | --- | 51.la網站的統計id。如果沒有，請留空白 | 
-| 51lamb | --- | 51.la數據引用的樣式 | 
 > 其它變量請參考官網的介紹。 
 
 各個 /_data/(語言代碼).yml 文件:
@@ -283,6 +267,9 @@ layout: post
 title:  test       
 #文章標題
 
+description: Summary Content
+#摘要內容
+
 date:   2015-04-05 08:00:00 +0800     
 #發佈日期
 
@@ -299,11 +286,6 @@ tags: [log, bootstrap, joytou]    
 --- 
 * content 
 {:toc} 
-
-Summary Content
-#摘要內容
-
-<!-- more --> 
 
 Article mainly content
 #在這兒寫文章

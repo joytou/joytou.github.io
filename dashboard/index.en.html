@@ -1,0 +1,227 @@
+---
+layout: dashboard
+nav: dashboard
+permalink: /en/dashboard/
+lang: en
+---
+{%- assign translation = site.data.language[page.lang] -%}
+<h1 class="page-header">{{ translation.dashboard }}</h1>
+<div class="well">Lastest updated time:{{ site.time }}</div>
+<div class="well">Production environment:{{ jekyll.environment }}</div>
+<!--Pages list-->
+<h2 class="sub-header">Pages list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Relative path</th>
+		<th>Source file address</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- for sitepage in site.pages | sort -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitepage.url }}</td>
+  <td>{{ sitepage.path }}</td>
+</tr>
+{%- endfor -%}
+    </tbody>
+  </table>
+</div>
+<!--Static files list-->
+<h2 class="sub-header">Static files list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Path</th>
+		<th>Suffix</th>
+		<th>Date</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitestaticfile in site.static_files | sort -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitestaticfile.path }}</td>
+  <td>{{ sitestaticfile.extname }}</td>
+  <td>{{ sitestaticfile.modified_time }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--collections collection list-->
+<h2 class="sub-header">Collections list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Content</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitecollection in site.collections | sort -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitecollection | xml_escape }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--data data list-->
+<h2 class="sub-header">Datas list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Attribution</th>
+		<th>Content</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitedata in site.data | sort -%}
+      {%- assign pd = sitedata | first -%}
+      {%- if pd == "language" -%}
+      {%- continue -%}
+      {%- else -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitedata | first }}</td>
+  <td>{{ sitedata | last | jsonify }}</td>
+</tr>
+{%- endif -%}
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--language list-->
+<h2 class="sub-header">Languages list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Language</th>
+		<th>Language code</th>
+		<th>Country/Region code</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for languages in site.data.lang | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ languages[1].language }}</td>
+		<td>{{ languages[1].code }}</td>
+		<td>{{ languages[1].country | join: "," }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--Translations list-->
+<h2 class="sub-header">Translations list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		{%- for lang in site.data.lang -%}
+		<th>{{ lang[1].language }}</th>
+		{%- endfor -%}
+	  </tr>
+	</thead>
+	<tbody>
+{%- for langkey in site.data.language.cn -%}
+<tr>
+{%- unless foeloop.first -%}
+<td>{{ langkey[0] }}</td>
+{%- endunless -%}
+{%- for langs in site.data.lang -%}
+{%- assign lang = langs[1].lang -%}
+{%- assign keys = langkey[0] -%}
+{%- assign key = site.data.language[lang] -%}
+<td>{{ key[keys] }}</td>
+{%- endfor -%}
+</tr>
+{%- endfor -%}
+</tbody>
+  </table>
+</div>
+<!--Articles list-->
+<h2 class="sub-header">Articles list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Title</th>
+		<th>Date</th>
+		<th>Language</th>
+		<th>Top</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for posts in site.posts | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ posts.title }}</td>
+		<td>{{ posts.date }}</td>
+		<td>{{ site.data.lang[posts.lang].language }}</td>
+		<td>{% if posts.stickie %}<span class="glyphicon glyphicon-ok"></span>{% endif %}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--Category list-->
+<h2 class="sub-header">Categories list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Category</th>
+		<th>Number of articles</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for category in site.categories | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ category | first }}</td>
+		<td>{{ category.last.size }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--Tag list-->
+<h2 class="sub-header">Tags list</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>Tag</th>
+		<th>Number of article</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for tag in site.tags | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ tag | first }}</td>
+		<td>{{ tag.last.size }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+

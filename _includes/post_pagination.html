@@ -1,0 +1,44 @@
+{% assign translation = site.data.language[page.lang] %}
+{%- assign findex = 1 -%}
+{%- for firstpost in site.posts | sort -%}
+  {%- if firstpost.lang contains page.lang -%}
+    {%- if page.url contains firstpost.url -%}
+      {%- break -%}
+    {%- else -%}
+      {%- assign findex = findex | plus: 1 -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign secondindex = 1 -%}
+{%- assign previousindex = findex | minus: 1 -%}
+{%- assign nextindex = findex | plus: 1 -%}
+{%- for secondpost in site.posts | sort -%}
+  {%- if secondpost.lang contains page.lang -%}
+    {%- if previousindex == secondindex -%}
+      {%- capture previousurl -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture previoustitle-%}{{ secondpost.title }}{%- endcapture -%}
+    {%- elsif findex == secondindex -%}
+      {%- capture currenturl -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture currenttitle -%}{{ secondpost.title }}{%- endcapture -%}
+    {%- elsif nextindex == secondindex -%}
+      {%- capture nexturl -%}{{ secondpost.url }}{%- endcapture -%}
+      {%- capture nexttitle -%}{{ secondpost.title }}{%- endcapture -%}
+    {%- else -%}
+    {%- endif -%}
+    {%- assign secondindex = secondindex | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+<hr>
+  <ul class="pager">
+  {%- if previousurl -%}
+    <li class="previous"><a href="{{ previousurl }}" title="{{ previoustitle }}">&larr; {{ translation.previouspost }}</a></li>
+  {%- else -%}
+    <li class="previous disabled"><a>&larr; {{ translation.previouspost }}</a></li>
+  {%- endif -%}
+  {%- if nexturl -%}
+    <li class="next"><a href="{{ nexturl }}" title="{{ nexttitle }}">{{ translation.nextpost }} &rarr;</a></li>
+  {%- else -%}
+    <li class="next disabled"><a>{{ translation.nextpost }} &rarr;</a></li>
+  {%- endif -%}
+  </ul>
+<hr>

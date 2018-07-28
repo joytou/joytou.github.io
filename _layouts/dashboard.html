@@ -1,0 +1,29 @@
+{%- assign translation = site.data.language[page.lang] -%}
+<!DOCTYPE html>
+<html{% if page.lang %}{% assign pgs = site.data.lang[page.lang] %} lang="{{ pgs.code }}"{% endif %}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
+	<link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
+	<link href="{{ '/assets/css/dashboard.css' | prepend: site.baseurl }}" rel="stylesheet">
+	<link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
+    <title>{{translation.dashboard }} - {{ translation.sitename }}</title>
+  </head>
+
+  <body>
+
+    {%- include masthead.html -%}
+	
+    <div class="container-fluid">
+      <div class="row">
+		{{ content }}
+	  </div>
+    </div>
+	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script> 
+  </body>
+</html>
+

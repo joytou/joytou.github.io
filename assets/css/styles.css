@@ -1,4 +1,3 @@
-
 /*
  * Globals
  */
@@ -6,6 +5,7 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  padding-top: 70px;
 }
 
 h1, .h1,
@@ -80,8 +80,8 @@ h6, .h6 {
  */
 
 .blog-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: -20px;
+  padding-bottom: 10px;
 }
 .blog-title {
   margin-top: 30px;
@@ -119,7 +119,6 @@ h6, .h6 {
 .sidebar-module-inset ol:last-child {
   margin-bottom: 0;
 }
-
 
 
 /* Pagination */

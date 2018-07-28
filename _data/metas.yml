@@ -1,0 +1,14 @@
+- name: "baidu-site-verification"
+  content: "IU8HZycD5b"
+  
+- name: "sogou_site_verification"
+  content: "YNMvNnvbNi"
+  
+- name: "360-site-verification"
+  content: "e80b8ce00a975ed7912da927f840b7ca"
+  
+- name: "wlhlauth"
+  content: "5329f48a2a535002f08beae2949ef00e"
+  
+- name: "google-site-verification"
+  content: "rjUiE8W57nXPf6Ac5tVicZ0tWqChZFZtta5dzd3xhTU"

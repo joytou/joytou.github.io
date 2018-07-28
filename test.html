@@ -1,0 +1,67 @@
+---
+layout: default
+lang: cn
+permalink: /test.html
+---
+
+<div id="myTabContent" class="tab-content">
+{%- assign post_num = 1 -%}
+{%- assign pagenum = 1 -%}
+<div class="tab-pane fade in active" id="page{{ pagenum }}">
+{%- for post in site.posts -%}
+{%- if post.lang contains page.lang -%}
+<a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+  {%- if post_num == site.paginatenum -%}
+    {%- assign post_num = 1 -%}
+{%- unless forloop.last -%}
+    {%- assign pagenum = pagenum | plus: 1 -%}
+</div>
+<div class="tab-pane fade" id="page{{ pagenum }}">
+    {%- endunless -%}
+  {%- else -%}
+    {%- assign post_num = post_num | plus: 1 -%}
+  {%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+</div>
+</div>
+<ul id="myTab" class="pagination">
+<li><a id="pre_btn" href="#" onclick="window.location.replace(this.href);return false;">&laquo;</a></li>
+{%- for countnum in (1..pagenum) -%}
+<li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
+{%- endfor -%}
+<li><a id="next_btn" href="#" onclick="window.location.replace(this.href);return false;">&raquo;</a></li>
+</ul>
+<script>
+    $(function () {
+//      $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+      siqi();
+      $('#myTab a').click(function(e) {
+        siqi();
+      });
+      function siqi(){
+        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+        var pre_btn = document.getElementById("pre_btn");
+        var next_btn = document.getElementById("next_btn");
+        var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
+        //previous
+        preindex = currentindex - 1;
+        if(preindex>{{ pagenum }}){
+          pre_btn.href = '#page{{ pagenum }}';
+        }else if(preindex<1){
+          pre_btn.href = '#page1';
+        }else{
+          pre_btn.href = '#page' + preindex;
+        }
+        //next
+        nextindex = currentindex + 1;
+        if(nextindex>{{ pagenum }}){
+          next_btn.href = '#page{{ pagenum }}';
+        }else if(nextindex<1){
+          next_btn.href = '#page1';
+        }else{
+          next_btn.href = '#page' + nextindex;
+        }
+      }
+    });
+</script>

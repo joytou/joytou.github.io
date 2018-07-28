@@ -1,0 +1,21 @@
+{%- assign translation = site.data.language[page.lang] -%}
+{%- assign languages = site.data.lang -%}
+<div class="dropdown">
+<button type="button" class="btn dropdown-toggle" id="dropdownMenulang" 
+			data-toggle="dropdown">
+		{{ translation.currentlang }}{{ languages[page.lang].language }}
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenulang">
+	{%- for ll in languages -%}
+					{%- assign weblang = ll[1] -%}
+				{%- capture domainlang -%}/{{ page.lang }}/{%- endcapture -%}
+				{%- capture postlang -%}-{{ page.lang }}{%- endcapture -%}
+				{%- capture replacedomainlang -%}/{{ weblang.lang }}/{%- endcapture -%}
+				{%- capture replacepostlang -%}-{{ weblang.lang }}{%- endcapture -%}
+	 <li role="presentation">
+	  <a role="menuitem" tabindex="-1" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}" onclick="window.location.replace('{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang }}');return false;">{{ weblang.language }}</a>
+	 </li>
+	{%- endfor -%}
+	</ul>
+</div>

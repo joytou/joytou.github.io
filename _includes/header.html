@@ -1,13 +1,7 @@
-{% assign translation = site.data[page.lang] %}
+{% assign translation = site.data.language[page.lang] %}
+{% assign announce = site.data.announcement[0] %}
 <div class="blog-header">
-        <h1 class="blog-title">{{ translation.sitename }}</h1>
-        <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>
-		  <!--{% if site.remind %}
-<div class="alert alert-info alert-dismissable" id="JOYTOUupdate">
-	<button type="button" class="close" data-dismiss="alert"
-			aria-hidden="true">
-		&times;
-	</button>
+  <br/><div class="well well-sm"><noscript>{{ translation.noscript }}</noscript><marquee direction="{{ announce.direction }}" behavior="{{ announce.behavior }}" scrollAmount="{{ announce.scrollamount }}">{{ announce.date }}:{{ announce.msg[page.lang] }}</marquee></div>
+        <!--<h1 class="blog-title">{{ translation.sitename }}</h1>
+        <p class="lead blog-description">{{ translation.sitedescription | replace: 'builder', 'Joytou' | replace: 'style', 'Bootstrap' }}</p>-->
 </div>
-{% endif %}-->
-      </div>

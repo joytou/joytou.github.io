@@ -1,0 +1,227 @@
+---
+layout: dashboard
+nav: dashboard
+permalink: /tw/dashboard/
+lang: tw
+---
+{%- assign translation = site.data.language[page.lang] -%}
+<h1 class="page-header">{{ translation.dashboard }}</h1>
+<div class="well">最近更新時間：{{ site.time }}</div>
+<div class="well">生產環境：{{ jekyll.environment }}</div>
+<!--Pages清單-->
+<h2 class="sub-header">頁面清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>相對路徑</th>
+		<th>源文件地址</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%- for sitepage in site.pages | sort -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitepage.url }}</td>
+  <td>{{ sitepage.path }}</td>
+</tr>
+{%- endfor -%}
+    </tbody>
+  </table>
+</div>
+<!--靜態文件清單-->
+<h2 class="sub-header">靜態文件清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>路徑</th>
+		<th>擴展名</th>
+		<th>日期</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitestaticfile in site.static_files | sort -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitestaticfile.path }}</td>
+  <td>{{ sitestaticfile.extname }}</td>
+  <td>{{ sitestaticfile.modified_time }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--collections集合清單-->
+<h2 class="sub-header">集合清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>內容</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitecollection in site.collections | sort -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitecollection | xml_escape }}</td>
+</tr>
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--data數據清單-->
+<h2 class="sub-header">數據清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>歸屬</th>
+		<th>內容</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for sitedata in site.data | sort -%}
+      {%- assign pd = sitedata | first -%}
+      {%- if pd == "language" -%}
+      {%- continue -%}
+      {%- else -%}
+<tr>
+  <td>{{ forloop.index }}</td>
+  <td>{{ sitedata | first }}</td>
+  <td>{{ sitedata | last | jsonify }}</td>
+</tr>
+{%- endif -%}
+{%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--語言清單-->
+<h2 class="sub-header">語言清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>語言</th>
+		<th>語言代碼</th>
+		<th>國家/地區代碼</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for languages in site.data.lang | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ languages[1].language }}</td>
+		<td>{{ languages[1].code }}</td>
+		<td>{{ languages[1].country | join: "," }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--翻譯清單-->
+<h2 class="sub-header">翻譯清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		{%- for lang in site.data.lang -%}
+		<th>{{ lang[1].language }}</th>
+		{%- endfor -%}
+	  </tr>
+	</thead>
+	<tbody>
+{%- for langkey in site.data.language.cn -%}
+<tr>
+{%- unless foeloop.first -%}
+<td>{{ langkey[0] }}</td>
+{%- endunless -%}
+{%- for langs in site.data.lang -%}
+{%- assign lang = langs[1].lang -%}
+{%- assign keys = langkey[0] -%}
+{%- assign key = site.data.language[lang] -%}
+<td>{{ key[keys] }}</td>
+{%- endfor -%}
+</tr>
+{%- endfor -%}
+</tbody>
+  </table>
+</div>
+<!--文章清單-->
+<h2 class="sub-header">文章清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>標題</th>
+		<th>日期</th>
+		<th>語言</th>
+		<th>置頂</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for posts in site.posts | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ posts.title }}</td>
+		<td>{{ posts.date }}</td>
+		<td>{{ site.data.lang[posts.lang].language }}</td>
+		<td>{% if posts.stickie %}<span class="glyphicon glyphicon-ok"></span>{% endif %}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--分類清單-->
+<h2 class="sub-header">文章分類清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>類別</th>
+		<th>文章數量</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for category in site.categories | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ category | first }}</td>
+		<td>{{ category.last.size }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+<!--標簽清單-->
+<h2 class="sub-header">文章標簽清單</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+	<thead>
+	  <tr>
+		<th>#</th>
+		<th>標簽</th>
+		<th>文章數量</th>
+	  </tr>
+	</thead>
+	<tbody>
+      {%- for tag in site.tags | sort -%}
+	  <tr>
+		<td>{{ forloop.index }}</td>
+		<td>{{ tag | first }}</td>
+		<td>{{ tag.last.size }}</td>
+	  </tr>
+	  {%- endfor -%}
+	</tbody>
+  </table>
+</div>
+

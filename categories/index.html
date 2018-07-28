@@ -4,39 +4,25 @@ nav: category
 permalink: /cn/categories/
 lang: cn
 ---
-
-<ul id="myTab" class="nav nav-tabs">
-{% for category in site.categories %}
-	{% capture cn %}{{ category | first }}{% endcapture %}
-	{% if categoryname != cn %}
-		{% assign categoryname = cn %}
-	    <li{% if forloop.first %} class="active"{% endif %}>
-		  <a href="/{{ page.lang }}/categories/#aa{{ cn }}" data-toggle="tab">{{ category | first }}</a>
-    </li>
-	{% endif %}
-{% endfor %}
-</ul>
-<div id="myTabContent" class="tab-content">
-{% for category in site.categories %}
-	{% capture cn %}{{ category | first }}{% endcapture %}
-	{% if categoryname != cn %}
-		{% assign categoryname = cn %}
-                {% if forloop.first %}{% else %}</div>{% endif %}
-                <div class="tab-pane fade{% if forloop.first %} in active{% endif %}" id="aa{{ cn }}">
-	{% endif %}
-	{% for post in category.last %}
-	{% if post.lang contains page.lang %}
-	  <p>
-	  <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-	  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-	  </p>
-	{% endif %}
-	{% endfor %}
-{% endfor %}
+<div class="panel-group" id="accordionn">
+{%- for category in site.categories -%}
+    <div class="panel panel-{% cycle 'default', 'primary', 'success', 'info', 'warning', 'danger' %}">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionn" href="#{{ category | first }}">{{ category | first }}&nbsp;<span class="badge">{{ category | last | where: "lang", page.lang | size }}</span></a>
+            </h4>
+        </div>
+        <div id="{{ category | first }}" class="panel-collapse collapse">
+            <div class="panel-body">
+               <ul>
+{%- for post in category.last -%}
+{%- if post.lang contains page.lang -%}
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+{%- endif -%}
+{%- endfor -%}
+               </ul>
+            </div>
+        </div>
+    </div>
+    {%- endfor -%}
 </div>
-</div>
-<script>
-    $(function () {
-        $('#myTab a[href="/{{ page.lang }}/categories/'+window.location.hash+'"]').tab('show');
-    });
-</script>

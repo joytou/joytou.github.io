@@ -1,0 +1,32 @@
+---
+layout: default
+nav: contact
+permalink: /cn/contact/
+lang: cn
+---
+{%- assign translation = site.data.language[page.lang] -%}
+<form id="contactform" name="myform" method="post" target="_blank" enctype="multipart/form-data" action="http://login.liuyanbao.net/index.php?action=savecontent" accept-charset="GB2312" onsubmit="if(isIE)document.charset='GB2312'">
+<div class="form-group">
+		<label class="grunion-field-label name">{{ translation.name }}<span>（{{ translation.required }}）</span></label>
+		<input type="text" name="content[0]" value="" class="name form-control"  required aria-required="true"/>
+</div>
+<div class="form-group">
+		<label class="grunion-field-label email">{{ translation.email }}<span>（{{ translation.required }}）</span></label>
+		<input type="email" name="content[1]" value="" class="email form-control"  required aria-required="true"/>
+</div>
+<div class="form-group">
+		<label class="grunion-field-label textarea">{{ translation.content }}<span>（{{ translation.required }}）</span></label>
+		<textarea name="content[2]" rows="20" class="textarea form-control"  required aria-required="true"></textarea>
+</div>
+<p class="contact-submit form-group">
+		<input type="submit" name="submitcontent" value="{{ translation.submit }} »" class="btn btn-default btn-block form-control"/>
+		<input type="hidden" name="fid" value="" id="fid"/>
+		<input type="hidden" name="guishu" value="" id="guishu"/>
+		<input type="hidden" name="url" value="" id="url"/>
+</p>
+</form>
+<script type="text/javascript">
+   document.getElementById('url').value=window.location.host;
+   document.getElementById('fid').value='{{ site.liuyanbao.fid }}';
+   document.getElementById('guishu').value='{{ site.liuyanbao.guishu }}';
+</script>

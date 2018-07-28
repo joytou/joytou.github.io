@@ -1,13 +1,26 @@
 cn: 
    language: "简体中文"
    code: "zh-Hans"
+   simplecode: "zh"
    lang: "cn"
+   country:  
+                   - "cn"
+   
 tw:
    language: "繁體中文"
    code: "zh-Hant"
+   simplecode: "zh"
    lang: "tw"
+   country:
+                   - "tw"
+                   - "mo"
+                   - "hk"
+ 
 en: 
    language: "English"
    code: "en"
+   simplecode: "en"
    lang: "en"
+   country:
+                   - "en"
 

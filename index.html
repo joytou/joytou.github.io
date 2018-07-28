@@ -6,30 +6,66 @@ lang: cn
 <html>
   <head>
 	<!--Directly to the area where the user language is located.-->
-	<script src="{{ '/assets/js/languages.js' | prepend: site.baseurl }}"></script>
+	<script type="text/javascript">var language=navigator.browserLanguage?navigator.browserLanguage:navigator.language;if(language.indexOf('en')>-1)window.location.replace("/en/");if(language.indexOf('CN')>-1)window.location.replace("/cn/");if(language.indexOf('HK')>-1||language.indexOf('MO')>-1||language.indexOf('TW')>-1)window.location.replace("/tw/");</script>
 	<meta charset="utf-8"> 
+	<meta http-equiv="Cache-control" content="public">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="title" content="JOYTOU - Jekyll Blog Template" />
 	<meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
     <meta name="author" content="{{ site.author }}">
 	<meta name="owner" content="{{ site.owner_name }}" />
-    <meta name="copyright" content="(c) 2017" />
-	{% if site.BaiduSiteVerification %}
-	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
-    {% endif %}
-	{% if site.SogouSiteVerification %}
-    <meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
-	{% endif %}
-	{% if site.360SiteVerification %}
-    <meta name="360-site-verification" content="{{ site.360SiteVerification }}" />
-	{% endif %}
+    <meta name="copyright" content="(c) 2017 - 2018" />
+	{%- for meta in site.data.metas -%}
+    <meta name="{{ meta.name }}" content="{{ meta.content }}"/>
+	{%- endfor -%}
+	<!--Rich preview-->
+	<meta property="og:site_name" content="JOYTOU - Jekyll Blog Template" />
+<meta property="og:title" content="Home page - JOYTOU Blog" />
+<meta property="og:description" content="{{ site.description | slice: 0, 49 }}" />
+<meta property="og:image" content="{{ site.url }}/assets/ScreenshortDemo/pc_en.png" />
+<meta property="og:url" content="{{ site.url }}/">
+<!-- End rich preview-->
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
-	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}">
-	<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}" />
+	<link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+{%- for langs in site.data.lang -%}
+{%- for countries in langs[1].country -%}
+	<link rel="alternate" hreflang="{% if langs[1].simplecode == countries %}{{ countries }}{% else %}{{ langs[1].simplecode }}-{{ countries }}{% endif %}" href="{{ langs[1].lang | prepend: '/' | prepend: site.url }}/" />
+{%- endfor -%}
+{%- endfor -%}
+	<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Product",
+  "name" : "JOYTOU Blog",
+  "description" : "This blog build by Joytou from Bootstrap",
+  "url" : "http://www.joytou.net/",
+  "brand" : {
+    "@type" : "Brand",
+    "name" : "JOYTOU",
+    "logo" : "http://www.joytou.net/assets/logo.png"
+  },
+  "offers" : {
+    "@type" : "Offer",
+    "price" : "0"
+  },
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "bestRating" : "8"
+  },
+  "review" : {
+    "@type" : "Review",
+    "reviewRating" : {
+      "@type" : "Rating",
+      "bestRating" : "10"
+    }
+  }
+}
+</script>
   </head>
   <body>
 
@@ -45,19 +81,19 @@ lang: cn
 	  <!-- 轮播（Carousel）项目 -->
 	  <div class="carousel-inner">
 		<div class="item active">
-		  <img src="{{ '/assets/ScreenshortDemo/mo_cn.png' | prepend: site.baseurl }}" alt="mobile style in Chinese" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_cn_ac91a0843a8dd1a87003b3431abf3578.png' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" alt="mobile style in Chinese" width="100%">
 		  <div class="carousel-caption"><h4>mobile style in Chinese</h4></div>
 		</div>
 		<div class="item">
-		  <img src="{{ '/assets/ScreenshortDemo/mo_en.png' | prepend: site.baseurl }}" alt="mobile style in English" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/mo_en_423f9c5f305055de488c7ac325f20874.png' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" alt="mobile style in English" width="100%">
 		  <div class="carousel-caption"><h4>mobile style in English</h4></div>
 		</div>
 		<div class="item">
-		  <img src="{{ '/assets/ScreenshortDemo/pc_cn.png' | prepend: site.baseurl }}" alt="pc style in Chinese" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_cn_3965515e02c432f4b076dfa5b867952a.png' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" alt="pc style in Chinese" width="100%">
 		  <div class="carousel-caption"><h4>pc style in Chinese</h4></div>
 		</div>
 		<div class="item">
-		  <img src="{{ '/assets/ScreenshortDemo/pc_en.png' | prepend: site.baseurl }}" alt="pc style in English" width="100%">
+		  <img src="{{ '/assets/ScreenshortDemo/pc_en_d6e97bac984ae939a698ab9876c40110.png' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" alt="pc style in English" width="100%">
 		  <div class="carousel-caption"><h4>pc style in English</h4></div>
 		</div>
 	  </div>
@@ -83,6 +119,8 @@ lang: cn
 <p>This blog template is a free template and does not charge any fees. In addition, if you support the blog template, you can subsidize me a little.</p>
 	  <p>All English translations are provided by Google</p>
 </div>
+<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+	<script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
 <script>
 	$(function(){
 		// 初始化轮播

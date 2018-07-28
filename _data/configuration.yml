@@ -1,0 +1,12 @@
+  Navbar:
+    Fixed: "fixed-top"
+    Background: "inverse"
+      
+  Panel:
+    Top: "primary"
+    NonTop: "default"
+      
+  Nav:
+    Style: "tabs"
+    Stacked: "false"
+      

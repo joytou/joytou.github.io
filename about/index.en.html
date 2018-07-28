@@ -4,7 +4,7 @@ nav: about
 permalink: /en/about/
 lang: en
 ---
-{% assign translation = site.data[page.lang] %}
+{% assign translation = site.data.language[page.lang] %}
 <div class="blog-post">
   <h2 class="blog-post-title">{{ translation.aboutme }}</h2>
   <p class="blog-post-meta">Joytou Wu</p>
@@ -15,7 +15,7 @@ lang: en
   <li class="list-group-item">E-mail：master@joytou.net.cn</li>
   <li class="list-group-item">Home page：http://joytou.net.cn/</li>
   <li class="list-group-item">WeChat：wu__ruitao</li>
-	<li class="list-group-item">Scan and Watch me<p><img src="{{ '/assets/qqqrecode.jpg' | prepend: site.baseurl }}"/><img src="{{ '/assets/mmqrecode.png' | prepend: site.baseurl }}"/></p></li>
+    <li class="list-group-item">Scan and Watch me：<p>WeChat Official Account<img src="{{ '/assets/qrcodejoytoublog.jpg' | prepend: site.baseurl }}" class="img-responsive"/></p><p>WeChat Personal Account/QQ<img src="{{ '/assets/qqqrcode.jpg' | prepend: site.baseurl }}" class="img-responsive"/><img src="{{ '/assets/mmqrcode.png' | prepend: site.baseurl }}" class="img-responsive"/></p></li>
   </ul>
   <p>==================</p>
   <p>

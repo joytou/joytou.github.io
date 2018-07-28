@@ -1,11 +1,13 @@
-{% assign translation = site.data[page.lang] %}
-<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+{%- assign translation = site.data.language[page.lang] -%}
+<!--div class="col-sm-3 col-sm-offset-1 blog-sidebar"-->
+<div class="sidebar-module">
   <ul class="list-group">
 	<a class="list-group-item active">
 	  <h3 class="list-group-item-heading">{{ translation.friendlinks }}</h3>
 	</a>
-	{% for exlinks in site.data.links %}
-	<li class="list-group-item"><a href="{{ exlinks.link }}">{{ exlinks[page.lang] }}</a></li>
-	{% endfor %}
+	{%- for exlinks in site.data.links -%}
+	<li class="list-group-item"><a href="{{ exlinks.link }}" target="_blank">{{ exlinks[page.lang] }}</a></li>
+	{%- endfor -%}
   </ul>
+</div>
 </div>

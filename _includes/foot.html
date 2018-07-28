@@ -1,33 +1,14 @@
-{% assign translation = site.data[page.lang] %}
-{% capture builder %}<a href="//joytou.net.cn/">Joytou</a>{% endcapture %}
-{% capture style %}<a href="http://getbootstrap.com">Bootstrap</a>{% endcapture %}
-<div class="blog-footer">
-      <p>Copyright &copy; 2017 <a href="//joytou.net.cn/">Joytou</a></p>
-      <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-      <p>{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
-      <p>
-        <a href="#">{{ translation.backtop }}</a>
-      </p>
-	  {% if site.51la and site.51lamb %}
-	  <p>
-		{{ translation.totalvisit }}<script language="javascript" type="text/javascript" src="//quote.users.51.la/?id={{ site.51la }}&amp;mb={{ site.51lamb }}"></script>
-	  </p>
-	  {% endif %}
+{%- assign translation = site.data.language[page.lang] -%}
+{%- capture builder -%}<a href="//joytou.net.cn/">Joytou</a>{%- endcapture -%}
+{%- capture style -%}<a href="http://getbootstrap.com">Bootstrap</a>{%- endcapture -%}
+<div class="blog-footer text-justify">
+{% include select_language.html %}
+      <p class="text-center"><a href="http://www.alexa.cn">ALEXA</a>&nbsp;|&nbsp;<a href="http://icp.alexa.cn">ICP</a>&nbsp;|&nbsp;<a href="http://www.wenming.cn/" target="_blank">中国文明网</a>&nbsp;|&nbsp;<a href="http://www.12377.cn/" target="_blank">中国互联网举报中心</a></p>
+      <p class="text-center">Copyright &copy; 2017 - 2018 <a href="{{ site.url }}">{{ translation.sitename }}</a></p>
+      <p class="text-center">{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
+      <script src="{{ '/assets/js/myfunction.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
     </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/docs.min.js' | prepend: site.baseurl }}"></script>
-    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.baseurl }}"></script>
-    {% if site.51la %}
-	<!-- 51.la statistic -->
-	<script language="javascript" type="text/javascript" src="//js.users.51.la/{{ site.51la }}.js"></script>
-    <noscript><a href="//www.51.la/?{{ site.51la }}" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/{{ site.51la }}.asp" style="border:none" /></a></noscript>
-	{% endif %}
+    <script async src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+{%- for js in page.javascript -%}
+<script type="text/script" src="{{ js }}?v={{ site.time | date:"%Y%m%d" }}" {%- if id -%}id="{{ id }}"{%- endif -%}></script>
+{%- endfor -%}

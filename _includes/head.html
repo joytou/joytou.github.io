@@ -1,66 +1,88 @@
-{% assign translation = site.data[page.lang] %}
+{%- assign translation = site.data.language[page.lang] -%}
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-dns-prefetch-control" content="{{ site.dnsPrefetch }}">
+    <meta http-equiv="Cache-control" content="public">
+    {%- for dns in site.dns -%}
+    <link rel="dns-prefetch" href="{{ dns }}">
+    {%- endfor -%}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="title" content="{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}" />
-    <meta name="description" content="{{ site.description }}">
-    <meta name="keywords" content="{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+	<meta name="title" content="{% if page.title %}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{% for word in site.keywords %}{{ word }}{% unless forloop.last %},{% endunless %}{% endfor %}">
     <meta name="author" content="{{ site.author }}">
-	<meta name="owner" content="{{ site.owner_name }}" />
-    <meta name="copyright" content="(c) 2017" />
-	{% if site.BaiduSiteVerification %}
-	<meta name="baidu-site-verification" content="{{ site.BaiduSiteVerification }}" />
-    {% endif %}
-    {% if site.SogouSiteVerification %}
-    <meta name="sogou_site_verification" content="{{ site.SogouSiteVerification }}"/>
-	{% endif %}
-    {% if site.360SiteVerification %}
-    <meta name="360-site-verification" content="{{ site.360SiteVerification }}" />
-	{% endif %}
-    <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}">
-    <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"> 
-    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
-    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript">
-       var $versioncode = {{ site.versioncode }};//当前版本号，请勿修改
-	   var $lang = "{{ page.lang }}";
-	   function JOYTOUdismiss(){//必须添加JOYTOUdismiss函数，而执行命令可为空
-	       //可选，当没有新版本时所执行的命令
-		   $("#JOYTOUupdate").alert('close');
-	    }
-    </script>
-    <!-- 配置信息 -->
-    <script type="text/javascript" src="//joytou.net.cn/server/server.js"></script>
-    <!-- 引入服务端脚本命令 -->
-    <script src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/assets/js/cb-search.js' | prepend: site.baseurl }}"></script>
-	  
-    <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
-
+	<meta name="owner" content="{{ site.owner_name }}">
+    <meta name="copyright" content="(c) 2017 - 2018">
+	{% for meta in site.data.metas %}<meta name="{{ meta.name }}" content="{{ meta.content }}">{% endfor %}
+<!--Rich preview-->
+<meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}">
+<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{%- if page.nav == "post" -%}
+<meta property="og:type" content="article">
+{%- endif -%}
+<!-- End rich preview-->
+    <link rel="apple-touch-icon" href="{{ '/assets/logo.png' | prepend: site.baseurl }}"/>
+    <link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}"/> 
+    <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"/>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+{%- for lang in site.data.lang -%}
+				{%- capture domainlang -%}/{{ page.lang }}/{%- endcapture -%}
+				{%- capture postlang -%}-{{ page.lang }}{%- endcapture -%}
+				{%- capture replacedomainlang -%}/{{ lang[1].lang }}/{%- endcapture -%}
+				{%- capture replacepostlang -%}-{{ lang[1].lang }}{%- endcapture -%}
+				{%- for countries in lang[1].country -%}
+	   <link rel="alternate" hreflang="{% if lang[1].simplecode == countries %}{{ countries }}{% else %}{{ lang[1].simplecode }}-{{ countries }}{% endif %}" href="{{ page.url | replace: domainlang,replacedomainlang | replace: postlang,replacepostlang | prepend: site.url }}" />
+	   {%- endfor -%}
+{%- endfor -%}
+    <script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Product",
+  "name" : "JOYTOU Blog",
+  "description" : "This blog build by Joytou from Bootstrap",
+  "url" : "https://www.joytou.net/",
+  "brand" : {
+    "@type" : "Brand",
+    "name" : "JOYTOU",
+    "logo" : "http://www.joytou.net/assets/logo.png"
+  },
+  "offers" : {
+    "@type" : "Offer",
+    "price" : "0"
+  },
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "bestRating" : "10"
+  },
+  "review" : {
+    "@type" : "Review",
+    "reviewRating" : {
+      "@type" : "Rating",
+      "bestRating" : "10"
+    }
+  }
+}
+</script>
     <!-- pictonic font icon css-->
-    <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}">
-    <!--[if lt IE 8]><script src="{{ '/assets/js/pictonic.min.js' | prepend: site.baseurl }}"></script><![endif]-->
-	
+    <link rel="stylesheet" href="{{ '/assets/css/pictonic.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}">
     <!-- Bootstrap core CSS -->
-    <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}" rel="stylesheet">
-
+    <link href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet">
 	<!-- search style -->
-    <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}" rel="stylesheet">
-	
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="{{ '/assets/js/ie-emulation-modes-warning.js' | prepend: site.baseurl }}"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+ <!--   <link href="{{ '/assets/css/cb-search.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet"/>-->
+ <style type="text/css">@media screen and (min-width:768px){.dropdown-menu{position:relative;float:none;font-size:20px;width:70%;margin:0 15%}.cb-search-tool ul{width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cb-search-content{width:70%;margin:0 15%;position:absolute;top:13%;left:auto;right:auto;font-size:22px;height:50px;background-color:#eee;color:black;opacity:1.0}}@media screen and (max-width:767px){.dropdown-menu{position:relative;float:none;font-size:20px;width:96%;margin:0 2%}.cb-search-tool ul{width:96%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cb-search-content{width:96%;margin:0 2%;position:absolute;top:10%;left:auto;right:auto;font-size:22px;height:50px;background-color:#eee;color:black;opacity:1.0}}</style>
+  <!-- Custom styles for this template -->
+  <link href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet"/>
+	{%- for css in page.css -%}
+	<link href="{{ css }}?v={{ site.time | date:"%Y%m%d" }}" rel="stylesheet" type="text/css" />
+	{%- endfor -%}
+	<!-- Javacscript -->
+    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+    <title>{% if page.title%}{{ page.title }} - {{ translation.sitename }}{% else %}{{ translation.sitename }} - {{ translation.sitesubname }}{% endif %}</title>
   </head>

@@ -1,6 +1,7 @@
 ---
 layout: posten
 title: "Add multiple languages for Jekyll web site"
+description: "How to add multiple language function without plugin for the Jekyll web site?"
 date: 2017-08-07 10:08:00 +0800
 lang: en
 nav: post
@@ -11,8 +12,6 @@ tags: [jekyll, multiple-languages]
 * content
 {:toc}
 
-How to add multiple language function without plugin for the Jekyll web site?
-<!-- more -->
 
 - 1.in the'_data'folder create a empty file named' (language code).yml'
 
