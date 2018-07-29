@@ -18,7 +18,7 @@ lang: cn
                <ul>
 {%- for post in tag.last -%}
 {%- if post.lang contains page.lang -%}
-                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
                </ul>
@@ -42,7 +42,7 @@ lang: cn
                <ul>
 {%- for post in category.last -%}
 {%- if post.lang contains page.lang -%}
-                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
                </ul>
@@ -81,7 +81,7 @@ lang: cn
                {%- assign count = 0 -%}
  {%- endif -%}
 	{%- if post.lang contains page.lang -%}
-	                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
                </ul>
@@ -114,7 +114,7 @@ lang: cn
   {%- assign fli = forloop.index | minus: counter -%}
   {%- for post2 in site.posts limit: counter offset: fli -%} 
   {%- if post2.lang contains page.lang -%}
-<li><time datetime="{{ post2.date | date_to_string }}">{{ post2.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post2.url }}" title="{{ post2.title }}">{{ post2.title }}</a></li>
+<li><time datetime="{{ post2.date | date_to_string }}">{{ post2.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post2.url | prepend: site.baseurl }}" title="{{ post2.title }}">{{ post2.title }}</a></li>
     {%- endif -%}
   {%- endfor -%}
                </ul>

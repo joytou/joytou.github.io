@@ -19,8 +19,8 @@
 <meta property="og:site_name" content="{{ translation.sitename }} - {{ translation.sitesubname }}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ translation.home }}{% endif %} - {{ translation.sitename }}">
 <meta property="og:description" content="{% if page.description %}{{ page.description | slice: 0, 49 }}{% else %}{{ site.description | slice: 0, 49 }}{% endif %}">
-<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}/assets/ScreenshortDemo/pc_en.png{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{% if page.cover %}{{ page.cover }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/ScreenshortDemo/pc_en.png{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 {%- if page.nav == "post" -%}
 <meta property="og:type" content="article">
 {%- endif -%}
@@ -30,7 +30,7 @@
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"/>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}"/>
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}"/>
-    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}/" />
 {%- for lang in site.data.lang -%}
 				{%- capture domainlang -%}/{{ page.lang }}/{%- endcapture -%}
 				{%- capture postlang -%}-{{ page.lang }}{%- endcapture -%}

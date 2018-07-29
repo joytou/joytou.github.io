@@ -31,12 +31,12 @@
 <hr>
   <ul class="pager">
   {%- if previousurl -%}
-    <li class="previous"><a href="{{ previousurl }}" title="{{ previoustitle }}">&larr; {{ translation.previouspost }}</a></li>
+    <li class="previous"><a href="{{ site.baseurl }}{{ previousurl }}" title="{{ previoustitle }}">&larr; {{ translation.previouspost }}</a></li>
   {%- else -%}
     <li class="previous disabled"><a>&larr; {{ translation.previouspost }}</a></li>
   {%- endif -%}
   {%- if nexturl -%}
-    <li class="next"><a href="{{ nexturl }}" title="{{ nexttitle }}">{{ translation.nextpost }} &rarr;</a></li>
+    <li class="next"><a href="{{ site.baseurl }}{{ nexturl }}" title="{{ nexttitle }}">{{ translation.nextpost }} &rarr;</a></li>
   {%- else -%}
     <li class="next disabled"><a>{{ translation.nextpost }} &rarr;</a></li>
   {%- endif -%}

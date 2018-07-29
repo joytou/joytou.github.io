@@ -6,7 +6,7 @@ lang: cn
 <html>
   <head>
 	<!--Directly to the area where the user language is located.-->
-	<script type="text/javascript">var language=navigator.browserLanguage?navigator.browserLanguage:navigator.language;if(language.indexOf('en')>-1)window.location.replace("/en/");if(language.indexOf('CN')>-1)window.location.replace("/cn/");if(language.indexOf('HK')>-1||language.indexOf('MO')>-1||language.indexOf('TW')>-1)window.location.replace("/tw/");</script>
+	<script type="text/javascript">var language=navigator.browserLanguage?navigator.browserLanguage:navigator.language;if(language.indexOf('en')>-1)window.location.replace("{{ site.baseurl }}/en/");if(language.indexOf('CN')>-1)window.location.replace("{{ site.baseurl }}/cn/");if(language.indexOf('HK')>-1||language.indexOf('MO')>-1||language.indexOf('TW')>-1)window.location.replace("{{ site.baseurl }}/tw/");</script>
 	<meta charset="utf-8"> 
 	<meta http-equiv="Cache-control" content="public">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,15 +23,15 @@ lang: cn
 	<meta property="og:site_name" content="JOYTOU - Jekyll Blog Template" />
 <meta property="og:title" content="Home page - JOYTOU Blog" />
 <meta property="og:description" content="{{ site.description | slice: 0, 49 }}" />
-<meta property="og:image" content="{{ site.url }}/assets/ScreenshortDemo/pc_en.png" />
-<meta property="og:url" content="{{ site.url }}/">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/ScreenshortDemo/pc_en.png" />
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
 <!-- End rich preview-->
 	<link rel="icon" href="{{ '/assets/favicon-32.ico' | prepend: site.baseurl }}">
     <link rel="bookmark" href="{{ '/assets/favicon-128.ico' | prepend: site.baseurl }}" type="image/x-icon"　/>
 	<title>JOYTOU - Jekyll Blog Template</title>
 	<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}" />
-	<link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+	<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}/" />
 {%- for langs in site.data.lang -%}
 {%- for countries in langs[1].country -%}
 	<link rel="alternate" hreflang="{% if langs[1].simplecode == countries %}{{ countries }}{% else %}{{ langs[1].simplecode }}-{{ countries }}{% endif %}" href="{{ langs[1].lang | prepend: '/' | prepend: site.url }}/" />
@@ -105,9 +105,9 @@ lang: cn
   	<p><ul class="list-group">
 	  <p>请选择您的语言</p>
 	  <p>Please select your language</p>
-	  <li class="list-group-item"><a href="/cn/">简体中文</a></li>
-	  <li class="list-group-item"><a href="/tw/">繁体中文</a></li>
-	  <li class="list-group-item"><a href="/en/">English</a></li>
+	  <li class="list-group-item"><a href="{{ site.baseurl }}/cn/">简体中文</a></li>
+	  <li class="list-group-item"><a href="{{ site.baseurl }}/tw/">繁体中文</a></li>
+	  <li class="list-group-item"><a href="{{ site.baseurl }}/en/">English</a></li>
 	  </ul>
 	</p>
 	<div class="page-header">

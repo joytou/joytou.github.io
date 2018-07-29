@@ -17,7 +17,7 @@ lang: en
                <ul>
 {%- for post in category.last -%}
 {%- if post.lang contains page.lang -%}
-                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                    <li><time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%Y-%m-%d" }}</time>&nbsp;<a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {%- endif -%}
 {%- endfor -%}
                </ul>

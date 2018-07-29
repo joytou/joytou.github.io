@@ -18,8 +18,8 @@ layout: null
 "date":"{{ post.date }}",
 "update":"{% if post.lastdate %}{{ post.lastdate }}{% else %}{{ post.date }}{% endif %}",
 "lang":"{{ post.lang }}",
-"path":"{{ post.path }}",
-"url":"https://coding.net/u/{{ site.git_username }}/p/{{ site.repo }}/git/raw/master/{{ post.path }}"
+"path":"{{ post.path | prepend: site.baseurl }}",
+"url":"https://coding.net/u/{{ site.git_username }}/p/{{ site.repo }}/git/raw/master{{ site.baseurl }}/{{ post.path }}"
 {% if forloop.last %}
 } 
 {% else %}

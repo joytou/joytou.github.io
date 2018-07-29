@@ -22,8 +22,8 @@ layout: null
 {% endfor %}
 ],
 "category":"{{ post.categories }}",
-"path":"{{ post.path }}",
-"url":"https://coding.net/u/{{ site.git_username }}/p/{{ site.repo }}/git/raw/master/{{ post.path }}",
+"path":"{{ post.path | prepend: site.baseurl }}",
+"url":"https://coding.net/u/{{ site.git_username }}/p/{{ site.repo }}/git/raw/master{{ site.baseurl }}/{{ post.path }}",
 {% if forloop.last %}
 } 
 {% else %}

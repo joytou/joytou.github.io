@@ -10,7 +10,7 @@ permalink: /test.html
 <div class="tab-pane fade in active" id="page{{ pagenum }}">
 {%- for post in site.posts -%}
 {%- if post.lang contains page.lang -%}
-<a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+<a href="{{ post.url | prepend: site.baseurl }}" target="_blank">{{ post.title }}</a>
   {%- if post_num == site.paginatenum -%}
     {%- assign post_num = 1 -%}
 {%- unless forloop.last -%}
@@ -28,7 +28,7 @@ permalink: /test.html
 <ul id="myTab" class="pagination">
 <li><a id="pre_btn" href="#" onclick="window.location.replace(this.href);return false;">&laquo;</a></li>
 {%- for countnum in (1..pagenum) -%}
-<li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
+<li{% if forloop.first %} class="active"{% endif %}><a href="{{ page.permalink | prepend: site.baseurl }}#page{{ countnum }}" onclick="window.location.replace('{{ page.permalink | prepend: site.baseurl }}#page{{ countnum }}');" data-toggle="tab">{{ countnum }}</a></li>
 {%- endfor -%}
 <li><a id="next_btn" href="#" onclick="window.location.replace(this.href);return false;">&raquo;</a></li>
 </ul>
@@ -40,7 +40,7 @@ permalink: /test.html
         siqi();
       });
       function siqi(){
-        $('#myTab a[href="{{ page.permalink }}'+window.location.hash+'"]').tab('show');
+        $('#myTab a[href="{{ page.permalink | prepend: site.baseurl }}'+window.location.hash+'"]').tab('show');
         var pre_btn = document.getElementById("pre_btn");
         var next_btn = document.getElementById("next_btn");
         var currentindex = parseInt((!window.location.hash)?1:window.location.hash.replace("#page",""));
