@@ -3,3 +3,9 @@ deny from all
 </Files>
 ErrorDocument 404 /404.html
 order deny,allow
+<FilesMatch "\.(flv|gif|jpg|jpeg|png|ico|swf|css|js|map|eot|svg|svgz|ttf|woff|woff2|json)$">
+Header set Cache-Control "max-age=31536000,public"
+</FilesMatch>
+<ifmodule mod_deflate.c>
+	AddOutputFilter DEFLATE htm html xml php jpg png js css txt json
+</ifmodule>

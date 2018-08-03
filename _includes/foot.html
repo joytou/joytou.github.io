@@ -6,9 +6,9 @@
       <p class="text-center"><a href="http://www.alexa.cn">ALEXA</a>&nbsp;|&nbsp;<a href="http://icp.alexa.cn">ICP</a>&nbsp;|&nbsp;<a href="http://www.wenming.cn/" target="_blank">中国文明网</a>&nbsp;|&nbsp;<a href="http://www.12377.cn/" target="_blank">中国互联网举报中心</a></p>
       <p class="text-center">Copyright &copy; 2017 - 2018 <a href="{{ site.url | append: site.baseurl }}">{{ translation.sitename }}</a></p>
       <p class="text-center">{{ translation.footcopyright | replace: 'builder', builder | replace: 'style', style }}</p>
-      <script src="{{ '/assets/js/myfunction.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
     </div>
-    <script async src="{{ '/assets/js/bootstrap3-typeahead.min.js' | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
-{%- for js in page.javascript -%}
-<script type="text/script" src="{{ js }}?v={{ site.time | date:"%Y%m%d" }}" {%- if id -%}id="{{ id }}"{%- endif -%}></script>
-{%- endfor -%}
+<!-- javascript -->
+<script src="{{ "/assets/js/jquery-3.2.1.min.js" | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+<script src="{{ "/assets/js/bootstrap.min.js" | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+<script src="{{ "/assets/js/myfunction.js" | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>
+<script src="{{ "/assets/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}?v={{ site.time | date:"%Y%m%d" }}"></script>

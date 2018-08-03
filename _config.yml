@@ -11,8 +11,6 @@ highlighter:     rouge
 email: master@joytou.net.cn
 author: Joytou Wu
 owner_name: Joytou Wu
-git_username: joytou
-repo: JOYTOU
 
 #Server
 url: https://joytou.net
@@ -23,6 +21,11 @@ dnsPrefetch: "on"
 dns:
       - "//beau.ns.cloudflare.com"
       - "//fiona.ns.cloudflare.com"
+      
+#Github announce Settings
+github_username: joytou
+github_repo: joytou.github.io
+github_label: announcement
 
 #Page settings
 future: true
@@ -32,6 +35,10 @@ published: false
 safe: false
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+
+#Navbar setting
+#If show the 'download' item on the navbar
+showdownload: true
 
 #Pagination setting
 #Testing, not opening

@@ -13,7 +13,7 @@
 		  <a class="navbar-brand" href="{{ site.baseurl }}/{{ page.lang }}/"><span><img src="{{ '/assets/logo_b6e8782d08efd809c0b5076a3d24a5eb.png' | prepend: site.baseurl }}" width="32px" alt="JOYTOU" style="margin-top: -6px"/><strong> {{ translation.sitename }}</strong></span></a>
 		</div>
 		<div class="collapse navbar-collapse" id="example-navbar-collapse">
-		  <ul class="nav navbar-nav">
+		  <ul class="nav navbar-nav navbar-right">
             <li class="{%- if page.nav == "index" -%} active{%- endif -%}"><a href="{{ site.baseurl }}/{{ page.lang }}/"><span class="glyphicon glyphicon-home"></span>{{ translation.home }}</a></li>
             <li class="dropdown{% if page.nav == "post" %} active{% endif %}">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -75,6 +75,7 @@
    <li class="{%- if page.nav == "about" -%} active{%- endif -%}"><a href="{{ site.baseurl }}/{{ page.lang }}/about/"><span class="glyphicon glyphicon-user"></span>{{ translation.about }}</a></li>
   <li class="{%- if page.nav == "contact" -%} active{%- endif -%}"><a href="{{ site.baseurl }}/{{ page.lang }}/contact/"><span class="glyphicon glyphicon-comment"></span>{{ translation.contact }}</a></li>
             <li class="{%- if page.nav == "feed" -%}active{%- endif -%}"><a href="{{ site.baseurl }}/feed.xml"><span class="icon-rss"></span>{{ translation.rssfeed }}</a></li>
+{%- if site.showdownload -%}            <li class="{%- if page.nav == "downloads" -%}active{%- endif -%}"><a href="{{ site.baseurl }}/{{ page.lang }}/downloads/"><span class="glyphicon glyphicon-download-alt"></span>{{ translation.download }}</a></li>{%- endif -%}
 		  </ul>
 		</div>
 	  </div>
