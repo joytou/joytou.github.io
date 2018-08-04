@@ -19,8 +19,8 @@ baseurl: ""
 dnsPrefetch: "on"
 #dnsPrefetch: "off" if don't want use dns-prefetch
 dns:
-      - "//beau.ns.cloudflare.com"
-      - "//fiona.ns.cloudflare.com"
+      - "//dns18.hichina.com"
+      - "//dns17.hichina.com"
       
 #Github announce Settings
 github_username: joytou
