@@ -77,3 +77,7 @@ changyan:
   appid: "cys9CkC15"
   appconf: "prod_6c14cfe1b9706846e412ddac9bcdb068"
   
+#Formspree
+formspree:
+  email_prefix: "1540294142"
+  email_suffix: "qq.com"

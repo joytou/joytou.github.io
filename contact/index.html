@@ -30,5 +30,5 @@ lang: cn
 </form>
 <script type="text/javascript">
    document.getElementById('contacttime').value=new Date().getTime()+'@joytou.net';
-   document.getElementById('passthrough').setAttribute('action','https'+'://formspree.io/' + '1540294142' + '@' + 'qq' + '.' + 'com');
+   document.getElementById('passthrough').setAttribute('action','https'+'://formspree.io/' + '{{ site.formspree.email_prefix }}' + '@' + '{{ site.formspree.email_suffix }}');
 </script>
