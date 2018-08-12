@@ -9,7 +9,7 @@ stickie: false
 category: official
 tags: [github, profile]
 ---
-![image](//joytou.net/assets/1534058755587.jpg)
+<img src="//joytou.net/assets/1534058755587.jpg" class="img-responsive">
 最近我壹直在忙碌著開發、完善[github-profile](https://github.com/joytou/github-profile)項目。為什麽？因為我想簡化我的博客的資料頁，不然這裏改壹下資料那裏改壹下資料，難免總會忘記壹些地方。並且剛好碰巧查找到[mdo/github-buttons](https://github.com/mdo/github-buttons)開源項目，憑借著github-buttons項目的思路，慢慢的把github-profile項目給琢磨出來。
 
 所以現在，我想把它與大家壹起分享，並獲得大家的反饋。

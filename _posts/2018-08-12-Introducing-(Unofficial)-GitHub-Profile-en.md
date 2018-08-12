@@ -9,7 +9,7 @@ stickie: false
 category: official
 tags: [github, profile]
 ---
-![image](//joytou.net/assets/1534058755587.jpg)
+<img src="//joytou.net/assets/1534058755587.jpg" class="img-responsive">
 Recently I have been busy developing and improving the [github-profile](https://github.com/joytou/github-profile) project. why? Because I want to simplify the information page of my blog, otherwise I will change some information here and there, it will inevitably forget some places. And just happened to find the [mdo/github-buttons](https://github.com/mdo/github-buttons) open source project, relying on the idea of ​​the github-buttons project, slowly pondering the github-profile project.
 
 So now, I want to share it with everyone and get feedback from everyone.
