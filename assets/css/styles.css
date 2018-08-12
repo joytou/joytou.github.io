@@ -20,6 +20,11 @@ h6, .h6 {
   color: #333;
 }
 
+li
+{
+word-break:break-all;
+word-wrap: break-word;
+}
 
 /*
  * Override Bootstrap's default container.
